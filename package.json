@@ -31,13 +31,13 @@
 	"dependencies": {
 		"@ctx-core/auth0": "^16.0.16",
 		"@ctx-core/auth0-management": "^1.2.43",
-		"@ctx-core/dialog": "^9.2.24",
-		"@ctx-core/dom": "^5.10.24",
-		"@ctx-core/error": "^5.1.57",
-		"@ctx-core/fetch": "^6.1.55",
-		"@ctx-core/jwt": "^3.3.7",
+		"@ctx-core/dialog": "^9.2.25",
+		"@ctx-core/dom": "^5.10.25",
+		"@ctx-core/error": "^5.1.58",
+		"@ctx-core/fetch": "^6.1.56",
+		"@ctx-core/jwt": "^3.3.8",
 		"@ctx-core/logger": "^3.1.10",
-		"@ctx-core/object": "^6.3.7"
+		"@ctx-core/object": "^6.3.8"
 	},
 	"devDependencies": {
 		"svelte": "^3.16.0",
