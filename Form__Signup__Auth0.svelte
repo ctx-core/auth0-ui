@@ -6,7 +6,7 @@ import {
 	open__login__auth0,
 	open__forgot_password__auth0,
 } from '@ctx-core/auth0/store'
-import { __submit__signup } from './Auth0.svelte.js'
+import { __submit__signup, _schedule__clear__forms } from './Auth0.svelte.js'
 export let class__error = ''
 export let class__input = ''
 export let class__button = ''
@@ -27,9 +27,19 @@ $: error__password = $__error__token__auth0 && $__error__token__auth0.password
 let error__password_confirmation
 $: error__password_confirmation = $__error__token__auth0 && error__password_confirmation
 //endregion
+let error_text
+$: {
+	let error_text_a1 = []
+	if ($__error__token__auth0) {
+		for (let key in $__error__token__auth0) {
+			error_text_a1.push($__error__token__auth0[key])
+		}
+	}
+	error_text = error_text_a1.join('<br>') || ''
+}
 </script>
 
-<div bind:this="{root}" class="form signup">
+<div bind:this={root} class="form signup">
 	<Close__Dialog__Auth0></Close__Dialog__Auth0>
 	<h1><slot name="signup_text">Sign Up</slot></h1>
 	<form
@@ -38,17 +48,16 @@ $: error__password_confirmation = $__error__token__auth0 && error__password_conf
 		method="post"
 		on:submit="{event =>
 			__submit__signup(event, {
-				root,
 				email__signup,
 				password__signup,
 				password_confirmation__signup
-			})
+			}, _schedule__clear__forms(root))
 		}"
 	>
 		{#if $__error__token__auth0}
 			<ul>
 				<li class="error {class__error}">
-					{$__error__token__auth0.error}: {$__error__token__auth0.error_description}
+					{error_text}
 				</li>
 			</ul>
 		{/if}

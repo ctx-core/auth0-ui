@@ -5,7 +5,7 @@ import {
 	__AUTH0_DOMAIN,
 	__error__token__auth0,
 } from '@ctx-core/auth0/store'
-import { __submit__change_password } from './Auth0.svelte.js'
+import { __submit__change_password, _schedule__clear__forms } from './Auth0.svelte.js'
 const dispatch = createEventDispatcher()
 export let class__error = ''
 export let class__input = ''
@@ -27,13 +27,13 @@ $: error__password_confirmation =
 	$__error__token__auth0
 	&& $__error__token__auth0.password_confirmation
 //endregion
-async function __submit__change_password__() {
+async function __submit__change_password__(event) {
 	dispatch('submit__start')
 	try {
-		await __submit__change_password({
+		await __submit__change_password(event, {
 			password__change_password,
 			password_confirmation__change_password,
-		})
+		}, _schedule__clear__forms(root))
 		dispatch('success')
 	} catch (error) {
 		dispatch('error', { error })

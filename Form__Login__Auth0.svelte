@@ -7,7 +7,7 @@ import {
 	open__signup__auth0,
 	open__forgot_password__auth0,
 } from '@ctx-core/auth0/store'
-import { __submit__login } from './Auth0.svelte.js'
+import { __submit__login, _schedule__clear__forms } from './Auth0.svelte.js'
 export let class__error = ''
 export let class__input = ''
 export let class__button = ''
@@ -34,10 +34,9 @@ $: error__password = $__error__token__auth0 && $__error__token__auth0.password
 		method="post"
 		on:submit="{event =>
 			__submit__login(event, {
-				root,
 				username__login,
 				password__login
-			})}"
+			}, _schedule__clear__forms(root))}"
 	>
 		{#if $__txt__error__token__auth0}
 			<ul>

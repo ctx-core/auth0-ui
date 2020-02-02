@@ -1,5 +1,6 @@
 .rpt2_cache
 tsconfig.tsbuildinfo
+Auth0.svelte.js
 express.js
 html.js
 node.js

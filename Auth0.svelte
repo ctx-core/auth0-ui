@@ -45,8 +45,6 @@ export let dialog = false
 :global(.Auth0) {
 	display: block;
 	overflow: hidden;
-	height: 500px;
-	padding-top: 1rem;
 	&.dialog {
 		:global(div) {
 			:global(.close) {
