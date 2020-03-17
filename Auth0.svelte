@@ -27,9 +27,7 @@ export let dialog = false
 		<Form__Login__Auth0 {...$$props}></Form__Login__Auth0>
 	{:else if $__opened__signup}
 		<Form__Signup__Auth0 {...$$props}>
-			<div slot="tos__signup">
-				<slot name="tos__signup" slot="tos__signup"></slot>
-			</div>
+			<div slot="tos__signup"></div>
 		</Form__Signup__Auth0>
 	{:else if $__opened__forgot_password}
 		<Form__Forgot_Password__Auth0 {...$$props}></Form__Forgot_Password__Auth0>
