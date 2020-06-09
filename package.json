@@ -40,8 +40,8 @@
 		"@ctx-core/object": "^8.0.14"
 	},
 	"devDependencies": {
-		"svelte": "^3.23.0",
-		"typescript": "^3.9.3"
+		"svelte": "^3.23.1",
+		"typescript": "^3.9.5"
 	},
 	"gitHead": "13455d2fbc2e7bd032b822befd7d33fc50abba10"
 }
