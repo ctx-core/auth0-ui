@@ -2,9 +2,9 @@
 	"name": "@ctx-core/auth0-ui",
 	"version": "5.0.56",
 	"description": "ctx-core auth0 ui component & express endpoints",
-	"main": "index.js",
-	"module": "index.js",
-	"types": "index.ts",
+	"main": "./index.js",
+	"module": "./index.js",
+	"types": "./index.ts",
 	"scripts": {
 		"build": "npm run clean && npm run compile",
 		"clean": "rm -f tsconfig.tsbuildinfo",
