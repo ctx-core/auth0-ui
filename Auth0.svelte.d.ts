@@ -6,7 +6,7 @@ export interface Ctx__submit__signup {
     password__signup: HTMLInputElement;
     password_confirmation__signup: HTMLInputElement;
 }
-export declare function __submit__signup(event: Event, ctx: Ctx__submit__signup, schedule__clear__forms?: () => void): boolean;
+export declare function __submit__signup(event: Event, ctx: Ctx__submit__signup, schedule__clear__forms?: () => void): Promise<boolean>;
 export interface Ctx__submit__login {
     username__login: HTMLInputElement;
     password__login: HTMLInputElement;

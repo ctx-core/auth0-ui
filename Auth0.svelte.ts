@@ -1,7 +1,5 @@
 import { onDestroy } from 'svelte'
 import { get } from 'svelte/store'
-// @ts-ignore
-import { subscribe__debug } from '@ctx-core/store'
 import { __AUTH0_DOMAIN } from '@ctx-core/auth0/store'
 import { _has__dom, __dom } from '@ctx-core/dom'
 import { subscribe } from '@ctx-core/store'
@@ -30,10 +28,7 @@ import {
 	validate__forgot_password,
 	validate__change_password
 } from '@ctx-core/auth0/validation'
-import { log, warn } from '@ctx-core/logger'
-const logPrefix = '@ctx-core/auth0-ui/Auth0.svelte.js'
 export async function onMount__auth0(root) {
-	log(`${logPrefix}|onMount__auth0`)
 	if (_has__dom()) {
 		const unsubscribe =
 			subscribe(__class__opened__auth0, ()=>schedule__clear__forms(root))
@@ -44,7 +39,6 @@ export function _onMount__auth0(root) {
 	return ()=>onMount__auth0(root)
 }
 export async function __close(event) {
-	log(`${logPrefix}|__close`)
 	event.preventDefault()
 	close__auth0()
 }
@@ -53,8 +47,7 @@ export interface Ctx__submit__signup {
 	password__signup:HTMLInputElement
 	password_confirmation__signup:HTMLInputElement
 }
-export function __submit__signup(event:Event, ctx:Ctx__submit__signup, schedule__clear__forms = ()=>{}) {
-	log(`${logPrefix}|__submit__signup`)
+export async function __submit__signup(event:Event, ctx:Ctx__submit__signup, schedule__clear__forms = ()=>{}) {
 	event.preventDefault()
 	const {
 		email__signup,
@@ -74,7 +67,7 @@ export function __submit__signup(event:Event, ctx:Ctx__submit__signup, schedule_
 		set__error__token__auth0(error__token__auth0)
 		return false
 	}
-	signup({
+	await signup({
 		email,
 		password
 	}, schedule__clear__forms)
@@ -84,7 +77,6 @@ export interface Ctx__submit__login {
 	password__login:HTMLInputElement
 }
 export function __submit__login(event:Event, ctx:Ctx__submit__login, schedule__clear__forms = ()=>{}) {
-	log(`${logPrefix}|__submit__login`)
 	event.preventDefault()
 	const { username__login, password__login } = ctx
 	const username = username__login.value
@@ -95,7 +87,6 @@ export interface Ctx__submit__forgot_password {
 	email__forgot_password:HTMLInputElement
 }
 export async function __submit__forgot_password(event:Event, ctx:Ctx__submit__forgot_password) {
-	log(`${logPrefix}|__submit__forgot_password`)
 	event.preventDefault()
 	const { email__forgot_password } = ctx
 	const email = email__forgot_password.value
@@ -118,7 +109,6 @@ export interface Ctx__submit__signup {
 	password_confirmation__change_password:HTMLInputElement
 }
 export function __submit__change_password(event:Event, ctx, schedule__clear__forms = ()=>{}) {
-	log(`${logPrefix}|__submit__change_password`)
 	event.preventDefault()
 	const {
 		password__change_password,
@@ -139,7 +129,6 @@ export function __submit__change_password(event:Event, ctx, schedule__clear__for
 	return change_password({ password }, schedule__clear__forms)
 }
 async function signup(form, schedule__clear__forms = ()=>{}) {
-	log(`${logPrefix}|signup`)
 	const response =
 		await post__signup__dbconnections__auth0(_body__password_realm(form))
 	const userinfo__auth0 = await response.json()
@@ -164,7 +153,6 @@ async function signup(form, schedule__clear__forms = ()=>{}) {
 	}, schedule__clear__forms)
 }
 async function login(form, schedule__clear__forms = ()=>{}) {
-	log(`${logPrefix}|login`)
 	const AUTH0_DOMAIN = get(__AUTH0_DOMAIN)
 	const response =
 		await post__token__oauth__auth0(
@@ -181,7 +169,6 @@ async function login(form, schedule__clear__forms = ()=>{}) {
 	}
 }
 async function change_password(form, schedule__clear__forms = ()=>{}) {
-	log(`${logPrefix}|change_password`)
 	const { password } = form
 	let error
 	try {
@@ -197,7 +184,7 @@ async function change_password(form, schedule__clear__forms = ()=>{}) {
 			error = __json.error || 'Error changing Password'
 		}
 	} catch (e) {
-		warn(e)
+		console.warn(e)
 		error = e.message
 	}
 	if (error) {
@@ -213,7 +200,6 @@ export function _schedule__clear__forms(root) {
 }
 export function schedule__clear__forms(root) {
 	setTimeout(()=>{
-		log(`${logPrefix}|clear__forms`)
 		clear__error__token__auth0()
 		clear__inputs(__dom('input[type=text]', root))
 		clear__inputs(__dom('input[type=password]', root))
