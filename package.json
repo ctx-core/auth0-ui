@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/auth0-ui",
-	"version": "5.0.115",
+	"version": "5.0.116",
 	"description": "ctx-core auth0 ui component & express endpoints",
 	"main": "./index.js",
 	"module": "./index.js",
