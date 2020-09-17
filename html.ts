@@ -6,8 +6,8 @@ export function _html__script__auth() {
 		var search = location.search
 		var values__search = _values(search.substr(1))
 		var hash = location.hash
-		var token__auth0 = _values(hash.substr(1))
-		var json__token__auth0 = JSON.stringify(token__auth0)
+		var auth0_token = _values(hash.substr(1))
+		var json__token__auth0 = JSON.stringify(auth0_token)
 		var url__redirect =
 					values__search
 					&& values__search.url__redirect

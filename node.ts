@@ -3,13 +3,13 @@ import { get__user__v2__auth0 } from '@ctx-core/auth0-management/fetch'
 import { get__jwks__json } from '@ctx-core/auth0/fetch'
 import { validate__user, _user_id } from '@ctx-core/auth0'
 import { throw__response__fetch } from '@ctx-core/fetch'
-import { _token__jwt__authorization__header } from '@ctx-core/jwt'
-import { throw__bad_credentials } from '@ctx-core/error'
+import { _jwt_token__authorization__header } from '@ctx-core/jwt'
+import { error_ctx_type, throw_bad_credentials } from '@ctx-core/error'
 export async function _email__jwt__verify(authorization) {
-	const decoded__token__jwt = await _decoded__token__jwt__koa(authorization)
-	let email = decoded__token__jwt.email
+	const decoded__jwt_token = await _decoded__jwt_token__koa(authorization)
+	let email = decoded__jwt_token.email
 	if (!email) {
-		const user_id = _user_id(decoded__token__jwt)
+		const user_id = _user_id(decoded__jwt_token)
 		const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN
 		const ctx__request = {
 			AUTH0_DOMAIN,
@@ -23,20 +23,20 @@ export async function _email__jwt__verify(authorization) {
 	return email
 }
 export async function _user_id__jwt__verify(authorization) {
-	const decoded__token__jwt = await _decoded__token__jwt__koa(authorization)
-	const user_id = _user_id(decoded__token__jwt)
+	const decoded__jwt_token = await _decoded__jwt_token__koa(authorization)
+	const user_id = _user_id(decoded__jwt_token)
 	return user_id
 }
-export function _decoded__token__jwt__koa(authorization) {
-	const token__jwt = _token__jwt__authorization__header(authorization)
-	if (!token__jwt) {
-		throw__bad_credentials({})
+export function _decoded__jwt_token__koa(authorization) {
+	const jwt_token = _jwt_token__authorization__header(authorization)
+	if (!jwt_token) {
+		throw_bad_credentials({} as error_ctx_type)
 	}
-	return _decoded__token__jwt(token__jwt)
+	return _decoded__jwt_token(jwt_token)
 }
-export async function _decoded__token__jwt(token__jwt) {
+export async function _decoded__jwt_token(jwt_token) {
 	const cert__jwks = await _cert__jwks()
-	const decoded__token__auth0 = jwt.verify(token__jwt, cert__jwks)
+	const decoded__token__auth0 = jwt.verify(jwt_token, cert__jwks)
 	return decoded__token__auth0
 }
 export async function _cert__jwks() {
