@@ -1,5 +1,24 @@
 # @ctx-core/auth0-ui
 
+## 6.0.0
+
+### Major Changes
+
+- Typescript strict checking
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+  - @ctx-core/auth0@21.0.0
+  - @ctx-core/auth0-management@2.0.0
+  - @ctx-core/dialog@10.0.0
+  - @ctx-core/dom@7.0.0
+  - @ctx-core/error@7.0.0
+  - @ctx-core/fetch@7.0.0
+  - @ctx-core/jwt@6.0.0
+  - @ctx-core/object@12.0.0
+  - @ctx-core/store@17.0.0
+
 ## 5.0.124
 
 ### Patch Changes
