@@ -1,5 +1,21 @@
 # @ctx-core/auth0-ui
 
+## 6.0.4
+
+### Patch Changes
+
+- fix: install issues: using explicit workspace: versioning
+- Updated dependencies [undefined]
+  - @ctx-core/auth0@21.0.4
+  - @ctx-core/auth0-management@2.0.4
+  - @ctx-core/dialog@10.0.2
+  - @ctx-core/dom@7.0.2
+  - @ctx-core/error@7.0.1
+  - @ctx-core/fetch@7.0.4
+  - @ctx-core/jwt@6.0.1
+  - @ctx-core/object@12.0.1
+  - @ctx-core/store@17.0.2
+
 ## 6.0.3
 
 ### Patch Changes
