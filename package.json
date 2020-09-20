@@ -1,6 +1,6 @@
 {
   "name": "@ctx-core/auth0-ui",
-  "version": "6.0.8",
+  "version": "6.0.9",
   "description": "ctx-core auth0 ui component & express endpoints",
   "keywords": [
     "ctx-core",

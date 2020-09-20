@@ -1,5 +1,11 @@
 # @ctx-core/auth0-ui
 
+## 6.0.9
+
+### Patch Changes
+
+- version bump: sync with npm
+
 ## 6.0.8
 
 ### Patch Changes
