@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/auth0-ui",
-	"version": "6.0.9",
+	"version": "6.0.10",
 	"description": "ctx-core auth0 ui component & express endpoints",
 	"keywords": [
 		"ctx-core",
@@ -27,15 +27,15 @@
 		"prepublishOnly": "npm run compile"
 	},
 	"dependencies": {
-		"@ctx-core/auth0": "workspace:^21.0.8",
-		"@ctx-core/auth0-management": "workspace:^2.0.8",
-		"@ctx-core/dialog": "workspace:^10.0.4",
-		"@ctx-core/dom": "workspace:^7.0.4",
-		"@ctx-core/error": "workspace:^7.0.2",
-		"@ctx-core/fetch": "workspace:^7.0.8",
-		"@ctx-core/jwt": "workspace:^6.0.4",
-		"@ctx-core/object": "workspace:^12.0.2",
-		"@ctx-core/store": "workspace:^17.0.4",
+		"@ctx-core/auth0": "workspace:^21.0.9",
+		"@ctx-core/auth0-management": "workspace:^2.0.9",
+		"@ctx-core/dialog": "workspace:^10.0.5",
+		"@ctx-core/dom": "workspace:^7.0.5",
+		"@ctx-core/error": "workspace:^7.0.3",
+		"@ctx-core/fetch": "workspace:^7.0.9",
+		"@ctx-core/jwt": "workspace:^6.0.5",
+		"@ctx-core/object": "workspace:^12.0.3",
+		"@ctx-core/store": "workspace:^17.0.5",
 		"jsonwebtoken": "^8.5.1"
 	},
 	"devDependencies": {
