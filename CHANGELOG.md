@@ -1,5 +1,14 @@
 # @ctx-core/auth0-ui
 
+## 6.0.21
+
+### Patch Changes
+
+- version bump to sync with npm
+- Updated dependencies [undefined]
+  - @ctx-core/auth0@21.0.19
+  - @ctx-core/auth0-management@2.0.19
+
 ## 6.0.20
 
 ### Patch Changes
