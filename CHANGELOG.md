@@ -1,5 +1,20 @@
 # @ctx-core/auth0-ui
 
+## 6.0.55
+
+### Patch Changes
+
+- fix: tsc build issues
+- Updated dependencies [undefined]
+- Updated dependencies [undefined]
+  - @ctx-core/store@23.0.3
+  - @ctx-core/auth0@21.0.53
+  - @ctx-core/auth0-management@2.0.52
+  - @ctx-core/dom@7.0.46
+  - @ctx-core/jwt@6.0.17
+  - @ctx-core/dialog@10.0.44
+  - @ctx-core/fetch@7.0.51
+
 ## 6.0.54
 
 ### Patch Changes
