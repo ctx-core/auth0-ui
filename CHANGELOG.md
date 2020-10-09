@@ -1,5 +1,13 @@
 # @ctx-core/auth0-ui
 
+## 6.0.63
+
+### Patch Changes
+
+- @ctx-core/fetch@7.0.57
+- @ctx-core/auth0@21.0.61
+- @ctx-core/auth0-management@2.0.60
+
 ## 6.0.62
 
 ### Patch Changes
