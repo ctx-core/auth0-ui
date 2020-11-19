@@ -1,5 +1,21 @@
 # @ctx-core/auth0-ui
 
+## 6.0.78
+
+### Patch Changes
+
+- typescript: ^4.0.5 -> ^4.1.2
+- Updated dependencies [undefined]
+  - @ctx-core/auth0@21.0.76
+  - @ctx-core/auth0-management@2.0.75
+  - @ctx-core/dialog@10.0.54
+  - @ctx-core/dom@7.1.8
+  - @ctx-core/error@7.0.16
+  - @ctx-core/fetch@7.0.72
+  - @ctx-core/jwt@6.0.19
+  - @ctx-core/object@13.0.2
+  - @ctx-core/store@23.0.13
+
 ## 6.0.77
 
 ### Patch Changes
