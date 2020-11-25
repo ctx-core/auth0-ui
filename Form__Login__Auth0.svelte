@@ -1,70 +1,71 @@
-<script>
-import Close__Dialog__Auth0 from './Close__Dialog__Auth0.svelte'
+<script lang="ts">
 import {
-	__AUTH0_DOMAIN,
-	__error__token__auth0,
-	__txt__error__token__auth0,
-	open__signup__auth0,
-	open__forgot_password__auth0,
-} from '@ctx-core/auth0/store'
-import { __submit__login, _schedule__clear__forms } from './Auth0.svelte.js'
-export let class__error = ''
-export let class__input = ''
-export let class__button = ''
-export let class__label = ''
+	AUTH0_DOMAIN_b,
+	auth0_token_error_b,
+	auth0_token_error_txt_b,
+	open_auth0_forgot_password_b, open_auth0_signup_b
+} from '@ctx-core/auth0'
+import Close__Dialog__Auth0 from './Close__Dialog__Auth0.svelte'
+import { Auth0_c } from './Auth0_c'
+export let ctx
+export let error_class = ''
+export let input_class = ''
+export let button_class = ''
+export let label_class = ''
+const auth0_token_error = auth0_token_error_b(ctx)
+const auth0_token_error_txt = auth0_token_error_txt_b(ctx)
+const AUTH0_DOMAIN = AUTH0_DOMAIN_b(ctx)
+const open_auth0_signup = open_auth0_signup_b(ctx)
+const open_auth0_forgot_password = open_auth0_forgot_password_b(ctx)
+const _ = new Auth0_c(ctx)
 let root
-let username__login
-let password__login
-//region error__username
-let error__username
-$: error__username = $__error__token__auth0 && $__error__token__auth0.username
-//endregion
-//region error__password
-let error__password
-$: error__password = $__error__token__auth0 && $__error__token__auth0.password
-//endregion
+let username_login_input, password_login_input
+let error__username//region
+$: error__username = $auth0_token_error && $auth0_token_error.username //endregion
+let error__password//region
+$: error__password = $auth0_token_error && $auth0_token_error.password //endregion
 </script>
 
 <div bind:this="{root}" class="form {$$props.class||''}">
 	<Close__Dialog__Auth0></Close__Dialog__Auth0>
 	<h1><slot name="login_text">Welcome</slot></h1>
 	<form
-		action="https://{$__AUTH0_DOMAIN}/oauth/token"
+		action="https://{$AUTH0_DOMAIN}/oauth/token"
 		accept-charset="UTF-8"
 		method="post"
 		on:submit="{event =>
-			__submit__login(event, {
-				username__login,
-				password__login
-			}, _schedule__clear__forms(root))}"
+			_.onsubmit_login(event, {
+				username_login_input,
+				password_login_input
+			}, _._schedule_forms_clear(root))}"
 	>
-		{#if $__txt__error__token__auth0}
+		{#if $auth0_token_error_txt}
 			<ul>
-				<li class="error {class__error}">
-					{$__txt__error__token__auth0}
+				<li class="error {error_class}">
+					{$auth0_token_error_txt}
 				</li>
 			</ul>
 		{/if}
 		<fieldset>
 			<label class="field">
-				<div class="{class__label}">Email</div>
+				<div class="{label_class}">Email</div>
 				<input
-					bind:this="{username__login}"
+					bind:this="{username_login_input}"
 					placeholder="your@email.com"
 					required="required"
-					class="form-control {class__input}"
+					class="form-control {input_class}"
 					class:invalid="{error__username}"
 					type="email"
 					id="username-login"
 					name="username"/>
 			</label>
 			<label class="field">
-				<div class="{class__label}">Password</div>
+				<div class="{label_class}">Password</div>
 				<input
-					bind:this="{password__login}"
+					bind:this="{password_login_input}"
 					placeholder="**********"
 					required="required"
-					class="{class__input}"
+					class="{input_class}"
 					class:invalid="{error__password}"
 					id="password-login"
 					type="password"
@@ -75,15 +76,15 @@ $: error__password = $__error__token__auth0 && $__error__token__auth0.password
 			<input
 				type="submit"
 				value="Login"
-				class="button {class__button}"
+				class="button {button_class}"
 			/>
 			<label
-				class="navigation__auth {class__label}"
-				on:click="{open__signup__auth0}"
+				class="navigation__auth {label_class}"
+				on:click="{open_auth0_signup}"
 			>Don't have an account? Signup&hellip;</label>
 			<label
-				class="navigation__auth {class__label}"
-				on:click="{open__forgot_password__auth0}"
+				class="navigation__auth {label_class}"
+				on:click="{open_auth0_forgot_password}"
 			>Forgot Password?</label>
 		</footer>
 	</form>

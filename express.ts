@@ -1,40 +1,46 @@
-import { _user_id, validate__user } from '@ctx-core/auth0'
+import { _user_id, validate_auth0_user } from '@ctx-core/auth0'
 import {
-	get__user__v2__auth0, get__users_by_email__v2__auth0, patch__user__v2__auth0
-} from '@ctx-core/auth0-management/fetch'
-import { _decoded__jwt_token__koa } from './node'
+	get_auth0_v2_user_b, get_auth0_v2_users_by_email_b, patch_auth0_v2_user_b,
+} from '@ctx-core/auth0-management'
+import { _koa_jwt_token_decoded_b } from './node'
 export async function post__change_password__auth0(req, res) {
+	const ctx = {}
+	const patch_auth0_v2_user = patch_auth0_v2_user_b(ctx)
+	const get_auth0_v2_user = get_auth0_v2_user_b(ctx)
+	const _koa_jwt_token_decoded = _koa_jwt_token_decoded_b(ctx)
+	const get_auth0_v2_users_by_email = get_auth0_v2_users_by_email_b(ctx)
 	const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN
 	const user__password = await _user__password()
 	const { user_id } = user__password
 	if (!user__password) {
-		validate__user(null)
+		validate_auth0_user(null)
 		return
 	}
 	const { body } = req
 	const { password } = body
-	const response = await patch__user__v2__auth0(user_id, { password })
+	const response = await patch_auth0_v2_user(user_id, { password })
 	const user = await response.json()
-	validate__user(user)
+	validate_auth0_user(user)
 	res.end(JSON.stringify({ status: 200 }))
 	async function _user__password() {
-		const decoded__jwt_token = await _decoded__jwt_token__koa(req.headers['authorization'])
-		const user_id = _user_id(decoded__jwt_token)
-		const response__user = await get__user__v2__auth0({ AUTH0_DOMAIN, user_id })
+		const jwt_token_decoded = await _koa_jwt_token_decoded(req.headers['authorization'])
+		const user_id = _user_id(jwt_token_decoded)
+		const response__user = await get_auth0_v2_user({ AUTH0_DOMAIN, user_id })
 		const user__request = await response__user.json()
 		const { email } = user__request
 		if (!email) return
-		if (is__username_password_authentication(user__request)) {
+		if (is_username_password_authentication(user__request)) {
 			return user__request
 		}
-		const response__users_by_email = await get__users_by_email__v2__auth0({ AUTH0_DOMAIN, email })
+		const response__users_by_email =
+			await get_auth0_v2_users_by_email({ AUTH0_DOMAIN, email })
 		const users = await response__users_by_email.json()
 		for (let i = 0; i < users.length; i++) {
 			const user = users[i]
-			if (is__username_password_authentication(user)) return user
+			if (is_username_password_authentication(user)) return user
 		}
 	}
-	function is__username_password_authentication(user) {
+	function is_username_password_authentication(user) {
 		return user.identities[0].connection == 'Username-Password-Authentication'
 	}
 }

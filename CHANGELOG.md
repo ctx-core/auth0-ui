@@ -1,5 +1,28 @@
 # @ctx-core/auth0-ui
 
+## 6.1.0
+
+### Minor Changes
+
+- \_b: required ctx argument & generic type updates
+- Extract separate modules
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+- Updated dependencies [undefined]
+- Updated dependencies [undefined]
+- Updated dependencies [undefined]
+  - @ctx-core/object@15.0.0
+  - @ctx-core/auth0@21.2.0
+  - @ctx-core/auth0-management@2.1.0
+  - @ctx-core/dialog@10.2.0
+  - @ctx-core/jwt@6.2.0
+  - @ctx-core/dom@7.1.13
+  - @ctx-core/error@7.1.2
+  - @ctx-core/fetch@7.0.77
+  - @ctx-core/store@23.1.2
+
 ## 6.0.83
 
 ### Patch Changes

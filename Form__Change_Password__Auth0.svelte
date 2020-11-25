@@ -1,39 +1,36 @@
-<script>
+<script lang="ts">
 import { createEventDispatcher } from 'svelte'
+import { AUTH0_DOMAIN_b, auth0_token_error_b } from '@ctx-core/auth0'
 import Close__Dialog__Auth0 from './Close__Dialog__Auth0.svelte'
-import {
-	__AUTH0_DOMAIN,
-	__error__token__auth0,
-} from '@ctx-core/auth0/store'
-import { __submit__change_password, _schedule__clear__forms } from './Auth0.svelte.js'
+import { Auth0_c } from './Auth0_c'
+import { getContext_auth0_ui_ctx } from './getContext_auth0_ui_ctx'
+const ctx = getContext_auth0_ui_ctx()
 const dispatch = createEventDispatcher()
-export let class__error = ''
-export let class__input = ''
-export let class__button = ''
-export let class__label = ''
+export let error_class = ''
+export let input_class = ''
+export let button_class = ''
+export let label_class = ''
+const AUTH0_DOMAIN = AUTH0_DOMAIN_b(ctx)
+const auth0_token_error = auth0_token_error_b(ctx)
+const _ = new Auth0_c(ctx)
 let root
-let email__forgot_password
-let password__change_password
-let password_confirmation__change_password
-//region error__password
-let error__password
-$: error__password =
-	$__error__token__auth0
-	&& $__error__token__auth0.password
-//endregion
-//region error__password_confirmation
-let error__password_confirmation
-$: error__password_confirmation =
-	$__error__token__auth0
-	&& $__error__token__auth0.password_confirmation
-//endregion
-async function __submit__change_password__(event) {
+let password_input
+let password_confirmation_input
+let password_error //region
+$: password_error =
+	$auth0_token_error
+	&& $auth0_token_error.password //endregion
+let password_error_confirmation //region
+$: password_error_confirmation =
+	$auth0_token_error
+	&& $auth0_token_error.password_confirmation //endregion
+async function in_onsubmit_change_password(event) {
 	dispatch('submit__start')
 	try {
-		await __submit__change_password(event, {
-			password__change_password,
-			password_confirmation__change_password,
-		}, _schedule__clear__forms(root))
+		await _.onsubmit_change_password(event, {
+			password_input,
+			password_confirmation_input,
+		}, _._schedule_forms_clear(root))
 		dispatch('success')
 	} catch (error) {
 		dispatch('error', { error })
@@ -48,54 +45,54 @@ async function __submit__change_password__(event) {
 	<Close__Dialog__Auth0></Close__Dialog__Auth0>
 	<h1>Change Password</h1>
 	<form
-		action="https://{$__AUTH0_DOMAIN}/dbconnections/change_password"
+		action="https://{$AUTH0_DOMAIN}/dbconnections/change_password"
 		accept-charset="UTF-8"
 		method="post"
-		on:submit|preventDefault="{__submit__change_password__}"
+		on:submit|preventDefault="{in_onsubmit_change_password}"
 	>
-		{#if $__error__token__auth0}
+		{#if $auth0_token_error}
 			<ul>
-				{#if error__password}
-					<li class="error {class__error}">
-						{error__password}
+				{#if password_error}
+					<li class="error {error_class}">
+						{password_error}
 					</li>
 				{/if}
-				{#if error__password_confirmation}
-					<li class="error {class__error}">
-						{error__password_confirmation}
+				{#if password_error_confirmation}
+					<li class="error {error_class}">
+						{password_error_confirmation}
 					</li>
 				{/if}
 			</ul>
 		{/if}
 		<fieldset>
 		<label class="field">
-			<div class="{class__label}">Password</div>
+			<div class="{label_class}">Password</div>
 			<input
-				bind:this={password__change_password}
+				bind:this={password_input}
 				placeholder="**********"
 				required="required"
-				class="{class__input}"
-				class:invalid="{error__password}"
+				class="{input_class}"
+				class:invalid="{password_error}"
 				id="password-change_password"
 				type="password"
 				name="password"/>
 		</label>
 		<label class="field">
-			<div class="{class__label}">Confirm Password</div>
+			<div class="{label_class}">Confirm Password</div>
 			<input
-				bind:this={password_confirmation__change_password}
+				bind:this={password_confirmation_input}
 				type="password"
 				id="password_confirmation-change_password"
 				name="password_confirmation"
-				class="{class__input}"
-				class:invalid="{error__password_confirmation}"
+				class="{input_class}"
+				class:invalid="{password_error_confirmation}"
 				required="required"
 				placeholder="**********"
 			/>
 		</label>
 		</fieldset>
 		<footer>
-			<input type="submit" value="Change Password" class="button {class__button}"/>
+			<input type="submit" value="Change Password" class="button {button_class}"/>
 		</footer>
 	</form>
 </div>

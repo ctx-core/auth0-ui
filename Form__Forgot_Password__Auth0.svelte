@@ -1,49 +1,48 @@
-<script>
+<script lang="ts">
+import { AUTH0_DOMAIN_b, auth0_token_error_b, open_auth0_login_b, open_auth0_signup_b } from '@ctx-core/auth0'
 import Close__Dialog__Auth0 from './Close__Dialog__Auth0.svelte'
-import {
-	__AUTH0_DOMAIN,
-	__error__token__auth0,
-	open__login__auth0,
-	open__signup__auth0,
-} from '@ctx-core/auth0/store'
-import { __submit__forgot_password } from './Auth0.svelte.js'
-export let class__error = ''
-export let class__input = ''
-export let class__button = ''
-export let class__label = ''
-let root
-let email__forgot_password
-let password__signup
-let password_confirmation__signup
-let error__email
-$: error__email = $__error__token__auth0 && $__error__token__auth0.email
+import { Auth0_c } from './Auth0_c'
+import { getContext_auth0_ui_ctx } from './getContext_auth0_ui_ctx'
+export let error_class = ''
+export let input_class = ''
+export let button_class = ''
+export let label_class = ''
+const ctx = getContext_auth0_ui_ctx()
+const AUTH0_DOMAIN = AUTH0_DOMAIN_b(ctx)
+const auth0_token_error = auth0_token_error_b(ctx)
+const open_auth0_login = open_auth0_login_b(ctx)
+const open_auth0_signup = open_auth0_signup_b(ctx)
+const _ = new Auth0_c(ctx)
+let email_input
+let email_error
+$: email_error = $auth0_token_error && $auth0_token_error.email
 </script>
 
-<div bind:this={root} class="form forgot_password">
+<div class="form forgot_password">
 	<Close__Dialog__Auth0></Close__Dialog__Auth0>
 	<h1>Forgot Password</h1>
 	<form
-		action="https://{$__AUTH0_DOMAIN}/passwordless/start"
+		action="https://{$AUTH0_DOMAIN}/passwordless/start"
 		accept-charset="UTF-8"
 		method="post"
-		on:submit="{event => __submit__forgot_password(event, { email__forgot_password })}"
+		on:submit="{event => _.onsubmit_forgot_password(event, { email_input })}"
 	>
-		{#if $__error__token__auth0}
+		{#if $auth0_token_error}
 			<ul>
-				<li class="error {class__error}">
-					{$__error__token__auth0.error}: {$__error__token__auth0.error_description}
+				<li class="error {error_class}">
+					{$auth0_token_error.error}: {$auth0_token_error.error_description}
 				</li>
 			</ul>
 		{/if}
 		<fieldset>
 			<label class="field">
-				<div class="{class__label}">Email</div>
+				<div class="{label_class}">Email</div>
 				<input
-					bind:this={email__forgot_password}
+					bind:this={email_input}
 					placeholder="your@email.com"
 					required="required"
-					class="form-control {class__input}"
-					class:invalid="{error__email}"
+					class="form-control {input_class}"
+					class:invalid="{email_error}"
 					type="email"
 					id="email-forgot_password"
 					name="email"/>
@@ -53,15 +52,15 @@ $: error__email = $__error__token__auth0 && $__error__token__auth0.email
 			<input
 				type="submit"
 				value="Reset Password"
-				class="button {class__button}"
+				class="button {button_class}"
 			/>
 			<label
-				class="navigation__auth {class__label}"
-				on:click="{open__login__auth0}"
+				class="navigation__auth {label_class}"
+				on:click="{open_auth0_login}"
 			>Have an account? Log in&hellip;</label>
 			<label
-				class="navigation__auth {class__label}"
-				on:click="{open__signup__auth0}"
+				class="navigation__auth {label_class}"
+				on:click="{open_auth0_signup}"
 			>Don't have an account? Signup&hellip;</label>
 		</footer>
 	</form>

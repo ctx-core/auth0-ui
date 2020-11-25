@@ -1,39 +1,46 @@
 <script>
+import { setContext } from 'svelte'
 import {
-	__class__opened__auth0,
-	__opened__auth0,
-	__opened__signup,
-	__opened__login,
-	__opened__forgot_password,
-	__opened__check_email__forgot_password,
-	__opened__change_password,
-} from '@ctx-core/auth0/store'
+	auth0_forgot_password_opened_b, auth0_opened_class_b, auth0_login_opened_b, auth0_signup_opened_b,
+	auth0_forgot_password_check_email_opened_b, auth0_change_password_opened_b
+} from '@ctx-core/auth0'
+import { Auth0_c } from './Auth0_c'
+import { auth0_ui_ctx_key } from './auth0_ui_ctx_key'
 import Close__Dialog__Auth0 from './Close__Dialog__Auth0.svelte'
 import Form__Login__Auth0 from './Form__Login__Auth0.svelte'
 import Form__Signup__Auth0 from './Form__Signup__Auth0.svelte'
 import Form__Forgot_Password__Auth0 from './Form__Forgot_Password__Auth0.svelte'
 import Form__Check_Email__Forgot_Password__Auth0 from './Form__Check_Email__Forgot_Password__Auth0.svelte'
 import Form__Change_Password__Auth0 from './Form__Change_Password__Auth0.svelte'
+export let ctx = {}
 export let dialog = false
+setContext(auth0_ui_ctx_key, ctx)
+const auth0_change_password_opened = auth0_change_password_opened_b(ctx)
+const auth0_opened_class = auth0_opened_class_b(ctx)
+const auth0_forgot_password_check_email_opened = auth0_forgot_password_check_email_opened_b(ctx)
+const auth0_forgot_password_opened = auth0_forgot_password_opened_b(ctx)
+const auth0_login_opened = auth0_login_opened_b(ctx)
+const auth0_signup_opened = auth0_signup_opened_b(ctx)
+const c = new Auth0_c(ctx)
 </script>
 
 <div
-	class="Auth0 {$__class__opened__auth0} {$$props.class || ''}"
+	class="Auth0 {$auth0_opened_class} {$$props.class || ''}"
 	class:dialog="{dialog}"
-	class:visible={!!$__class__opened__auth0}
+	class:visible={!!$auth0_opened_class}
 >
 	<Close__Dialog__Auth0></Close__Dialog__Auth0>
-	{#if $__opened__login}
+	{#if $auth0_login_opened}
 		<Form__Login__Auth0 {...$$props}></Form__Login__Auth0>
-	{:else if $__opened__signup}
+	{:else if $auth0_signup_opened}
 		<Form__Signup__Auth0 {...$$props}>
 			<div slot="tos__signup"></div>
 		</Form__Signup__Auth0>
-	{:else if $__opened__forgot_password}
+	{:else if $auth0_forgot_password_opened}
 		<Form__Forgot_Password__Auth0 {...$$props}></Form__Forgot_Password__Auth0>
-	{:else if $__opened__check_email__forgot_password}
+	{:else if $auth0_forgot_password_check_email_opened}
 		<Form__Check_Email__Forgot_Password__Auth0></Form__Check_Email__Forgot_Password__Auth0>
-	{:else if $__opened__change_password}
+	{:else if $auth0_change_password_opened}
 		<Form__Change_Password__Auth0 {...$$props}></Form__Change_Password__Auth0>
 	{/if}
 	<slot></slot>
@@ -74,8 +81,8 @@ export let dialog = false
 				display: block;
 			}
 		}
-		&.navigation__auth-check_email__forgot_password:checked {
-			~ .check_email__forgot_password {
+		&.navigation__auth-forgot_password_check_email:checked {
+			~ .forgot_password_check_email {
 				display: block;
 			}
 		}
