@@ -10,14 +10,14 @@ export async function post_auth0_change_password(req, res) {
 	const get_auth0_v2_user = get_auth0_v2_user_b(ctx)
 	const _koa_jwt_token_decoded = _koa_jwt_token_decoded_b(ctx)
 	const get_auth0_v2_users_by_email = get_auth0_v2_users_by_email_b(ctx)
-	const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN
+	const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN as string
 	const password_user = await _password_user()
 	const { user_id } = password_user
 	if (!password_user) {
 		validate_auth0_user(null)
 		return
 	}
-	const { body } = req
+	const body:post_auth0_change_password_body_type = req.body
 	const { password } = body
 	const response = await patch_auth0_v2_user(user_id, { password })
 	const user:Auth0UserProfile = await response.json()
@@ -44,6 +44,9 @@ export async function post_auth0_change_password(req, res) {
 	function is_username_password_authentication(user) {
 		return user.identities[0].connection == 'Username-Password-Authentication'
 	}
+}
+export interface post_auth0_change_password_body_type {
+	password:string
 }
 export {
 	post_auth0_change_password as post__change_password__auth0

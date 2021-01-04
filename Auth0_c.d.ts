@@ -18,7 +18,7 @@ export declare class Auth0_c {
     readonly open_auth0_login: import("@ctx-core/auth0").open_auth0_login_type;
     readonly open_auth0_forgot_password_check_email: import("@ctx-core/auth0").open_auth0_forgot_password_check_email_type;
     readonly post_auth0_dbconnections_signup: import("@ctx-core/auth0").post_auth0_dbconnections_signup_type;
-    readonly post_auth0_oauth_token: (body: import("@ctx-core/auth0").post_auth0_oauth_token_body_type) => any;
+    readonly post_auth0_oauth_token: import("@ctx-core/auth0").post_auth0_oauth_token_type;
     readonly post_auth0_auth_change_password: import("@ctx-core/auth0").post_auth0_auth_change_password_type;
     readonly post_auth0_passwordless_start: import("@ctx-core/auth0").post_auth0_passwordless_start_type;
     constructor(ctx: object);

@@ -1,5 +1,5 @@
 import { onDestroy } from 'svelte'
-import { has__dom, __dom } from '@ctx-core/dom'
+import { has__dom, _dom_a1 } from '@ctx-core/dom'
 import { get, subscribe } from '@ctx-core/store'
 import {
 	auth0_token_error_b, auth0_token_json_b, post_auth0_oauth_token_b,
@@ -111,8 +111,8 @@ export class Auth0_c {
 	schedule_forms_clear = (root:HTMLElement)=>{
 		setTimeout(()=>{
 			this.clear_auth0_token_error()
-			clear_inputs(__dom('input[type=text]', root))
-			clear_inputs(__dom('input[type=password]', root))
+			clear_inputs(_dom_a1('input[type=text]', root))
+			clear_inputs(_dom_a1('input[type=password]', root))
 		}, 100)
 	}
 	onsubmit_signup = async (event:Event, ctx:onsubmit_signup_ctx_I, schedule_forms_clear = ()=>{})=>{
