@@ -1,5 +1,14 @@
 # @ctx-core/auth0-ui
 
+## 6.2.1
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+  - @ctx-core/jwt@6.2.20
+  - @ctx-core/auth0@21.3.1
+  - @ctx-core/auth0-management@2.2.1
+
 ## 6.2.0
 
 ### Minor Changes
