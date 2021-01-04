@@ -1,1 +1,1 @@
-export declare const _jwks_cert_b: (ctx: object, opts?: import("@ctx-core/object")._be_opts_type | undefined) => () => Promise<string>;
+export declare const _jwks_cert_b: import("@ctx-core/object").be_type<() => Promise<string>, object>;

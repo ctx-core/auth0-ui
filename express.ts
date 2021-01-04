@@ -3,26 +3,27 @@ import {
 	get_auth0_v2_user_b, get_auth0_v2_users_by_email_b, patch_auth0_v2_user_b,
 } from '@ctx-core/auth0-management'
 import { _koa_jwt_token_decoded_b } from './node'
-export async function post__change_password__auth0(req, res) {
+import type { Auth0UserProfile } from 'auth0-js'
+export async function post_auth0_change_password(req, res) {
 	const ctx = {}
 	const patch_auth0_v2_user = patch_auth0_v2_user_b(ctx)
 	const get_auth0_v2_user = get_auth0_v2_user_b(ctx)
 	const _koa_jwt_token_decoded = _koa_jwt_token_decoded_b(ctx)
 	const get_auth0_v2_users_by_email = get_auth0_v2_users_by_email_b(ctx)
 	const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN
-	const user__password = await _user__password()
-	const { user_id } = user__password
-	if (!user__password) {
+	const password_user = await _password_user()
+	const { user_id } = password_user
+	if (!password_user) {
 		validate_auth0_user(null)
 		return
 	}
 	const { body } = req
 	const { password } = body
 	const response = await patch_auth0_v2_user(user_id, { password })
-	const user = await response.json()
+	const user:Auth0UserProfile = await response.json()
 	validate_auth0_user(user)
 	res.end(JSON.stringify({ status: 200 }))
-	async function _user__password() {
+	async function _password_user() {
 		const jwt_token_decoded = await _koa_jwt_token_decoded(req.headers['authorization'])
 		const user_id = _user_id(jwt_token_decoded)
 		const response__user = await get_auth0_v2_user({ AUTH0_DOMAIN, user_id })
@@ -43,4 +44,7 @@ export async function post__change_password__auth0(req, res) {
 	function is_username_password_authentication(user) {
 		return user.identities[0].connection == 'Username-Password-Authentication'
 	}
+}
+export {
+	post_auth0_change_password as post__change_password__auth0
 }
