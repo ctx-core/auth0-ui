@@ -1,5 +1,19 @@
 # @ctx-core/auth0-ui
 
+## 6.2.17
+
+### Patch Changes
+
+- @ctx-core/auth0@21.3.16
+- @ctx-core/dialog@10.2.30
+- @ctx-core/dom@7.1.45
+- @ctx-core/jwt@6.2.23
+- @ctx-core/object@16.0.4
+- @ctx-core/store@23.3.4
+- @ctx-core/auth0-management@2.2.17
+- @ctx-core/fetch@7.1.24
+- @ctx-core/error@7.1.23
+
 ## 6.2.16
 
 ### Patch Changes
