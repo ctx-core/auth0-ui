@@ -1,4 +1,4 @@
-export function _html__script__auth() {
+export function _auth_script_html() {
 	return `
 <script>
 	(function() {
@@ -29,4 +29,7 @@ export function _html__script__auth() {
 	})()
 </script>
 	`.trim()
+}
+export {
+	_auth_script_html as _html__script__auth
 }

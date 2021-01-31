@@ -1,9 +1,9 @@
+import type { Auth0UserProfile } from 'auth0-js'
 import { _user_id, validate_auth0_user } from '@ctx-core/auth0'
 import {
 	get_auth0_v2_user_b, get_auth0_v2_users_by_email_b, patch_auth0_v2_user_b,
 } from '@ctx-core/auth0-management'
-import { _koa_jwt_token_decoded_b } from './node'
-import type { Auth0UserProfile } from 'auth0-js'
+import { _koa_jwt_token_decoded_b } from './_koa_jwt_token_decoded_b'
 export async function post_auth0_change_password(req, res) {
 	const ctx = {}
 	const patch_auth0_v2_user = patch_auth0_v2_user_b(ctx)
