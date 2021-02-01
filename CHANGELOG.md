@@ -1,5 +1,19 @@
 # @ctx-core/auth0-ui
 
+## 7.1.1
+
+### Patch Changes
+
+- @ctx-core/auth0@22.0.4
+- @ctx-core/dialog@11.1.1
+- @ctx-core/dom@8.1.1
+- @ctx-core/jwt@7.0.1
+- @ctx-core/object@17.0.1
+- @ctx-core/store@24.0.2
+- @ctx-core/auth0-management@3.0.4
+- @ctx-core/fetch@8.0.4
+- @ctx-core/error@8.0.1
+
 ## 7.1.0
 
 ### Minor Changes
