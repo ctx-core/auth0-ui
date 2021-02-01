@@ -1,6 +1,6 @@
 <script lang="ts">
 import { AUTH0_DOMAIN_b, auth0_token_error_b, open_auth0_forgot_password_b, open_auth0_login_b } from '@ctx-core/auth0'
-import Close__Dialog__Auth0 from './Close__Dialog__Auth0.svelte'
+import Auth0_Dialog_Close from './Auth0_Dialog_Close.svelte'
 import { Auth0_c } from './Auth0_c'
 import { getContext_auth0_ui_ctx } from './getContext_auth0_ui_ctx'
 export let class__error = ''
@@ -36,7 +36,7 @@ $: {
 </script>
 
 <div bind:this={root} class="form signup">
-	<Close__Dialog__Auth0></Close__Dialog__Auth0>
+	<Auth0_Dialog_Close></Auth0_Dialog_Close>
 	<h1><slot name="signup_text">Sign Up</slot></h1>
 	<form
 		action="https://{$AUTH0_DOMAIN}/dbconnections/signup"

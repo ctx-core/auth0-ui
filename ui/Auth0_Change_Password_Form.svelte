@@ -1,7 +1,7 @@
 <script lang="ts">
 import { createEventDispatcher } from 'svelte'
 import { AUTH0_DOMAIN_b, auth0_token_error_b } from '@ctx-core/auth0'
-import Close__Dialog__Auth0 from './Close__Dialog__Auth0.svelte'
+import Auth0_Dialog_Close from './Auth0_Dialog_Close.svelte'
 import { Auth0_c } from './Auth0_c'
 import { getContext_auth0_ui_ctx } from './getContext_auth0_ui_ctx'
 const ctx = getContext_auth0_ui_ctx()
@@ -41,8 +41,8 @@ async function in_onsubmit_change_password(event) {
 }
 </script>
 
-<div bind:this="{root}" class="form change_password Form__Change_Password__Auth0">
-	<Close__Dialog__Auth0></Close__Dialog__Auth0>
+<div bind:this="{root}" class="form change_password Auth0_Change_Password_Form">
+	<Auth0_Dialog_Close></Auth0_Dialog_Close>
 	<h1>Change Password</h1>
 	<form
 		action="https://{$AUTH0_DOMAIN}/dbconnections/change_password"

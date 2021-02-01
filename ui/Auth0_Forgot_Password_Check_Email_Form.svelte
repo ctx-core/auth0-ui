@@ -1,10 +1,10 @@
 <script>
-import Close__Dialog__Auth0 from './Close__Dialog__Auth0.svelte'
+import Auth0_Dialog_Close from './Auth0_Dialog_Close.svelte'
 let root
 </script>
 
 <div bind:this="{root}" class="form forgot_password_check_email">
-	<Close__Dialog__Auth0></Close__Dialog__Auth0>
+	<Auth0_Dialog_Close></Auth0_Dialog_Close>
 	<h1>Check Your Email</h1>
 	<p>An email to reset you password has been sent to you.</p>
 </div>

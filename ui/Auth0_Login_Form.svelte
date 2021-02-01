@@ -5,7 +5,7 @@ import {
 	auth0_token_error_txt_b,
 	open_auth0_forgot_password_b, open_auth0_signup_b
 } from '@ctx-core/auth0'
-import Close__Dialog__Auth0 from './Close__Dialog__Auth0.svelte'
+import Auth0_Dialog_Close from './Auth0_Dialog_Close.svelte'
 import { Auth0_c } from './Auth0_c'
 export let ctx
 export let error_class = ''
@@ -27,7 +27,7 @@ $: error__password = $auth0_token_error && $auth0_token_error.password //endregi
 </script>
 
 <div bind:this="{root}" class="form {$$props.class||''}">
-	<Close__Dialog__Auth0></Close__Dialog__Auth0>
+	<Auth0_Dialog_Close></Auth0_Dialog_Close>
 	<h1><slot name="login_text">Welcome</slot></h1>
 	<form
 		action="https://{$AUTH0_DOMAIN}/oauth/token"
