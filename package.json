@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/auth0-ui",
-	"version": "7.1.26",
+	"version": "7.1.27",
 	"description": "ctx-core auth0 ui component & express endpoints",
 	"keywords": [
 		"ctx-core",
@@ -28,20 +28,20 @@
 		"prepublishOnly": "npm run compile"
 	},
 	"dependencies": {
-		"@ctx-core/auth0": "workspace:^22.0.27",
-		"@ctx-core/auth0-management": "workspace:^3.0.28",
-		"@ctx-core/dialog": "workspace:^11.2.7",
-		"@ctx-core/dom": "workspace:^8.1.15",
-		"@ctx-core/error": "workspace:^8.0.8",
-		"@ctx-core/fetch": "workspace:^8.0.25",
-		"@ctx-core/jwt": "workspace:^7.0.8",
-		"@ctx-core/object": "workspace:^17.0.8",
-		"@ctx-core/store": "workspace:^24.0.16",
+		"@ctx-core/auth0": "workspace:^22.0.28",
+		"@ctx-core/auth0-management": "workspace:^3.0.29",
+		"@ctx-core/dialog": "workspace:^11.2.8",
+		"@ctx-core/dom": "workspace:^8.1.16",
+		"@ctx-core/error": "workspace:^8.0.9",
+		"@ctx-core/fetch": "workspace:^8.0.26",
+		"@ctx-core/jwt": "workspace:^7.0.9",
+		"@ctx-core/object": "workspace:^17.0.9",
+		"@ctx-core/store": "workspace:^24.0.17",
 		"jsonwebtoken": "^8.5.1",
 		"svelte": "3.32.3"
 	},
 	"devDependencies": {
-		"typescript": "^4.1.5"
+		"typescript": "^4.2.2"
 	},
 	"publishConfig": {
 		"access": "public"
