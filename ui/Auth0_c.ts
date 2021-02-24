@@ -1,5 +1,5 @@
 import { onDestroy } from 'svelte'
-import { has__dom, _dom_a1 } from '@ctx-core/dom'
+import { has_dom, _dom_a1 } from '@ctx-core/dom'
 import { get, subscribe } from '@ctx-core/store'
 import {
 	auth0_token_error_b, auth0_token_json_b, post_auth0_oauth_token_b,
@@ -34,7 +34,7 @@ export class Auth0_c {
 	readonly post_auth0_passwordless_start = post_auth0_passwordless_start_b(this.ctx)
 	constructor(protected ctx:object) {}
 	onMount = async (root)=>{
-		if (has__dom) {
+		if (has_dom) {
 			const unsubscribe =
 				subscribe(this.auth0_opened_class, ()=>this.schedule_forms_clear(root))
 			onDestroy(unsubscribe)
