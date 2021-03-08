@@ -1,5 +1,35 @@
 # @ctx-core/auth0-ui
 
+## 7.1.45
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+  - @ctx-core/object@17.4.0
+  - @ctx-core/auth0@22.0.44
+  - @ctx-core/auth0-management@3.0.45
+  - @ctx-core/dialog@11.2.21
+  - @ctx-core/dom@8.2.11
+  - @ctx-core/error@8.0.18
+  - @ctx-core/fetch@8.0.42
+  - @ctx-core/store@24.1.12
+  - @ctx-core/jwt@7.0.18
+
+## 7.1.44
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+  - @ctx-core/object@17.3.2
+  - @ctx-core/auth0@22.0.43
+  - @ctx-core/auth0-management@3.0.44
+  - @ctx-core/dialog@11.2.20
+  - @ctx-core/dom@8.2.10
+  - @ctx-core/error@8.0.17
+  - @ctx-core/fetch@8.0.41
+  - @ctx-core/store@24.1.11
+  - @ctx-core/jwt@7.0.17
+
 ## 7.1.43
 
 ### Patch Changes
