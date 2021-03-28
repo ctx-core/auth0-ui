@@ -1,1 +1,1 @@
-export declare const _jwt_token_decoded_b: import("@ctx-core/object").be_type<(jwt_token: any) => Promise<any>, object>;
+export declare const _jwt_token_decoded_b: import("@ctx-core/object").Be<(jwt_token: any) => Promise<any>, object>;
