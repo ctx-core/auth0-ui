@@ -35,7 +35,7 @@
 		"@ctx-core/error": "workspace:^8.0.22",
 		"@ctx-core/fetch": "workspace:^8.0.51",
 		"@ctx-core/jwt": "workspace:^7.0.22",
-		"@ctx-core/object": "workspace:^17.5.2",
+		"@ctx-core/object": "workspace:^17.5.3",
 		"@ctx-core/store": "workspace:^24.1.18",
 		"jsonwebtoken": "^8.5.1",
 		"svelte": "3.37.0"
