@@ -1,5 +1,16 @@
 # @ctx-core/auth0-ui
 
+## 7.1.81
+
+### Patch Changes
+
+- svelte: 3.38.0 -> 3.38.1
+- Updated dependencies [undefined]
+  - @ctx-core/auth0@22.0.82
+  - @ctx-core/auth0-management@3.0.81
+  - @ctx-core/dialog@11.2.54
+  - @ctx-core/store@24.7.2
+
 ## 7.1.80
 
 ### Patch Changes
