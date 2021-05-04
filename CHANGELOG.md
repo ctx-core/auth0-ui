@@ -1,5 +1,16 @@
 # @ctx-core/auth0-ui
 
+## 7.1.85
+
+### Patch Changes
+
+- update dependencies
+- Updated dependencies [undefined]
+  - @ctx-core/auth0@22.0.87
+  - @ctx-core/auth0-management@3.0.85
+  - @ctx-core/dialog@11.2.59
+  - @ctx-core/dom@8.2.48
+
 ## 7.1.84
 
 ### Patch Changes
