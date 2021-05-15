@@ -1,10 +1,11 @@
+import type { Request, Response } from 'express'
 import type { Auth0UserProfile } from 'auth0-js'
 import { _user_id, validate_auth0_user } from '@ctx-core/auth0'
 import {
 	get_auth0_v2_user_b, get_auth0_v2_users_by_email_b, patch_auth0_v2_user_b,
 } from '@ctx-core/auth0-management'
 import { _koa_jwt_token_decoded_b } from './_koa_jwt_token_decoded_b'
-export async function post_auth0_change_password(req, res) {
+export async function post_auth0_change_password(req:Request, res:Response) {
 	const ctx = {}
 	const patch_auth0_v2_user = patch_auth0_v2_user_b(ctx)
 	const get_auth0_v2_user = get_auth0_v2_user_b(ctx)
@@ -41,7 +42,7 @@ export async function post_auth0_change_password(req, res) {
 			if (is_username_password_authentication(user)) return user
 		}
 	}
-	function is_username_password_authentication(user) {
+	function is_username_password_authentication(user:Auth0UserProfile) {
 		return user.identities[0].connection == 'Username-Password-Authentication'
 	}
 }
