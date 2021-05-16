@@ -1,5 +1,21 @@
 # @ctx-core/auth0-ui
 
+## 7.2.2
+
+### Patch Changes
+
+- .npmignore: + ~
+- Updated dependencies [undefined]
+  - @ctx-core/auth0@22.1.2
+  - @ctx-core/auth0-management@3.1.2
+  - @ctx-core/dialog@11.3.2
+  - @ctx-core/dom@8.3.2
+  - @ctx-core/error@8.1.2
+  - @ctx-core/fetch@8.1.2
+  - @ctx-core/jwt@7.1.2
+  - @ctx-core/object@17.6.2
+  - @ctx-core/store@24.8.2
+
 ## 7.2.1
 
 ### Patch Changes
