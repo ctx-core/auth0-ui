@@ -1,7 +1,7 @@
 import { password_realm_body_T, post_auth0_passwordless_start_optional_body_T, signup_data_I, login_data_I, auth0_grant_type_body_I, post_auth0_oauth_token_body_I } from '@ctx-core/auth0';
 export declare class Auth0_c {
     protected ctx: object;
-    readonly _auth0_body: import("@ctx-core/auth0")._auth0_body_type<post_auth0_passwordless_start_optional_body_T, import("@ctx-core/auth0").auth0_client_id_body_I>;
+    readonly _auth0_body: import("@ctx-core/auth0")._auth0_body_T<post_auth0_passwordless_start_optional_body_T, import("@ctx-core/auth0").auth0_client_id_body_I>;
     readonly _login_password_realm_body: import("@ctx-core/auth0")._password_realm_body_T<login_data_password_realm_body_I>;
     readonly _signup_password_realm_body: import("@ctx-core/auth0")._password_realm_body_T<signup_data_password_realm_body_I>;
     readonly auth0_opened_class: import("@ctx-core/auth0").auth0_opened_class_T;
