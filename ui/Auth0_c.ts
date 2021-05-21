@@ -126,7 +126,7 @@ export class Auth0_c {
 			clear_inputs(_dom_a1('input[type=password]', root))
 		}, 100)
 	}
-	onsubmit_signup = async (event:Event, ctx:onsubmit_signup_ctx_I, schedule_forms_clear = ()=>{})=>{
+	onsubmit_signup = async (event:Event, ctx:onsubmit_signup_Ctx, schedule_forms_clear = ()=>{})=>{
 		event.preventDefault()
 		const {
 			email_input,
@@ -151,14 +151,14 @@ export class Auth0_c {
 			password
 		}, schedule_forms_clear)
 	}
-	onsubmit_login = async (event:Event, ctx:onsubmit_login_ctx_I, schedule_forms_clear = ()=>{})=>{
+	onsubmit_login = async (event:Event, ctx:onsubmit_login_Ctx, schedule_forms_clear = ()=>{})=>{
 		event.preventDefault()
 		const { username_login_input, password_login_input } = ctx
 		const username = username_login_input.value
 		const password = password_login_input.value
 		await this.login({ username, password }, schedule_forms_clear)
 	}
-	onsubmit_forgot_password = async (event:Event, ctx:onsubmit_forgot_password_ctx_I)=>{
+	onsubmit_forgot_password = async (event:Event, ctx:onsubmit_forgot_password_Ctx)=>{
 		event.preventDefault()
 		const { email_input } = ctx
 		const email = email_input.value
@@ -178,7 +178,7 @@ export class Auth0_c {
 		this.open_auth0_forgot_password_check_email()
 	}
 	onsubmit_change_password = async (
-		event:Event, ctx:onsubmit_change_password_ctx_I, schedule_forms_clear = ()=>{}
+		event:Event, ctx:onsubmit_change_password_Ctx, schedule_forms_clear = ()=>{}
 	)=>{
 		event.preventDefault()
 		const {
@@ -214,18 +214,18 @@ export interface signup_data_password_realm_body_I
 	extends signup_data_I, password_realm_body_T, auth0_grant_type_body_I, post_auth0_oauth_token_body_I {}
 export interface login_data_password_realm_body_I
 	extends login_data_I, password_realm_body_T, auth0_grant_type_body_I, post_auth0_oauth_token_body_I {}
-export interface onsubmit_change_password_ctx_I {
+export interface onsubmit_change_password_Ctx {
 	password_input:HTMLInputElement
 	password_confirmation_input:HTMLInputElement
 }
-export interface onsubmit_forgot_password_ctx_I {
+export interface onsubmit_forgot_password_Ctx {
 	email_input:HTMLInputElement
 }
-export interface onsubmit_login_ctx_I {
+export interface onsubmit_login_Ctx {
 	username_login_input:HTMLInputElement
 	password_login_input:HTMLInputElement
 }
-export interface onsubmit_signup_ctx_I {
+export interface onsubmit_signup_Ctx {
 	email_input:HTMLInputElement
 	password_input:HTMLInputElement
 	password_confirmation_input:HTMLInputElement

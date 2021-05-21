@@ -1,10 +1,10 @@
 import { _b } from '@ctx-core/object'
-import { _jwks_x5c_b, _jwks_x5c_ctx_I } from './_jwks_x5c_b'
+import { _jwks_x5c_b, _jwks_x5c_Ctx } from './_jwks_x5c_b'
 const key = '_jwks_cert'
-export interface _jwks_cert_ctx_I extends _jwks_x5c_ctx_I {
+export interface _jwks_cert_Ctx extends _jwks_x5c_Ctx {
 	_jwks_cert?:_jwks_cert_T
 }
-export const _jwks_cert_b = _b<_jwks_cert_ctx_I, typeof key>(key, ctx=>{
+export const _jwks_cert_b = _b<_jwks_cert_Ctx, typeof key>(key, ctx=>{
 	const _jwks_x5c = _jwks_x5c_b(ctx)
 	return _jwks_cert as _jwks_cert_T
 	async function _jwks_cert() {

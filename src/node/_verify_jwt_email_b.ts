@@ -1,13 +1,13 @@
 import { _b } from '@ctx-core/object'
 import { _user_id, validate_auth0_user } from '@ctx-core/auth0'
-import { get_auth0_v2_user_b, get_auth0_v2_user_ctx_I } from '@ctx-core/auth0-management'
-import { _koa_jwt_token_decoded_b, _koa_jwt_token_decoded_ctx_I } from './_koa_jwt_token_decoded_b'
+import { get_auth0_v2_user_b, get_auth0_v2_user_Ctx } from '@ctx-core/auth0-management'
+import { _koa_jwt_token_decoded_b, _koa_jwt_token_decoded_Ctx } from './_koa_jwt_token_decoded_b'
 const key = '_verify_jwt_email'
-export interface _verify_jwt_email_ctx_I
-	extends get_auth0_v2_user_ctx_I, _koa_jwt_token_decoded_ctx_I {
+export interface _verify_jwt_email_Ctx
+	extends get_auth0_v2_user_Ctx, _koa_jwt_token_decoded_Ctx {
 	_verify_jwt_email?:_verify_jwt_email_T
 }
-export const _verify_jwt_email_b = _b<_verify_jwt_email_ctx_I, typeof key>(key, ctx=>{
+export const _verify_jwt_email_b = _b<_verify_jwt_email_Ctx, typeof key>(key, ctx=>{
 	const get_auth0_v2_user = get_auth0_v2_user_b(ctx)
 	const _koa_jwt_token_decoded = _koa_jwt_token_decoded_b(ctx)
 	return _verify_jwt_email as _verify_jwt_email_T

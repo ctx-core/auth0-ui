@@ -1,11 +1,11 @@
 import { _b } from '@ctx-core/object'
 import { throw__response__fetch } from '@ctx-core/fetch'
-import { get_jwks_json_b, get_jwks_json_ctx_I } from '@ctx-core/auth0'
+import { get_jwks_json_b, get_jwks_json_Ctx } from '@ctx-core/auth0'
 const key = '_jwks_x5c'
-export interface _jwks_x5c_ctx_I extends get_jwks_json_ctx_I {
+export interface _jwks_x5c_Ctx extends get_jwks_json_Ctx {
 	_jwks_x5c?:_jwks_x5c_T
 }
-export const _jwks_x5c_b = _b<_jwks_x5c_ctx_I, typeof key>(key, ctx=>{
+export const _jwks_x5c_b = _b<_jwks_x5c_Ctx, typeof key>(key, ctx=>{
 	const get_jwks_json = get_jwks_json_b(ctx)
 	return _jwks_x5c as _jwks_x5c_T
 	async function _jwks_x5c() {

@@ -25,28 +25,28 @@ export declare class Auth0_c {
     }, schedule_forms_clear?: () => void) => Promise<void>;
     _schedule_forms_clear: (root: HTMLElement) => () => void;
     schedule_forms_clear: (root: HTMLElement) => void;
-    onsubmit_signup: (event: Event, ctx: onsubmit_signup_ctx_I, schedule_forms_clear?: () => void) => Promise<false | undefined>;
-    onsubmit_login: (event: Event, ctx: onsubmit_login_ctx_I, schedule_forms_clear?: () => void) => Promise<void>;
-    onsubmit_forgot_password: (event: Event, ctx: onsubmit_forgot_password_ctx_I) => Promise<void>;
-    onsubmit_change_password: (event: Event, ctx: onsubmit_change_password_ctx_I, schedule_forms_clear?: () => void) => Promise<void>;
+    onsubmit_signup: (event: Event, ctx: onsubmit_signup_Ctx, schedule_forms_clear?: () => void) => Promise<false | undefined>;
+    onsubmit_login: (event: Event, ctx: onsubmit_login_Ctx, schedule_forms_clear?: () => void) => Promise<void>;
+    onsubmit_forgot_password: (event: Event, ctx: onsubmit_forgot_password_Ctx) => Promise<void>;
+    onsubmit_change_password: (event: Event, ctx: onsubmit_change_password_Ctx, schedule_forms_clear?: () => void) => Promise<void>;
     onclose: (event: MouseEvent) => Promise<void>;
 }
 export interface signup_data_password_realm_body_I extends signup_data_I, password_realm_body_T, auth0_grant_type_body_I, post_auth0_oauth_token_body_I {
 }
 export interface login_data_password_realm_body_I extends login_data_I, password_realm_body_T, auth0_grant_type_body_I, post_auth0_oauth_token_body_I {
 }
-export interface onsubmit_change_password_ctx_I {
+export interface onsubmit_change_password_Ctx {
     password_input: HTMLInputElement;
     password_confirmation_input: HTMLInputElement;
 }
-export interface onsubmit_forgot_password_ctx_I {
+export interface onsubmit_forgot_password_Ctx {
     email_input: HTMLInputElement;
 }
-export interface onsubmit_login_ctx_I {
+export interface onsubmit_login_Ctx {
     username_login_input: HTMLInputElement;
     password_login_input: HTMLInputElement;
 }
-export interface onsubmit_signup_ctx_I {
+export interface onsubmit_signup_Ctx {
     email_input: HTMLInputElement;
     password_input: HTMLInputElement;
     password_confirmation_input: HTMLInputElement;

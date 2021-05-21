@@ -1,11 +1,11 @@
 import { _b } from '@ctx-core/object'
 import { _user_id } from '@ctx-core/auth0'
-import { _koa_jwt_token_decoded_b, _koa_jwt_token_decoded_ctx_I } from './_koa_jwt_token_decoded_b'
+import { _koa_jwt_token_decoded_b, _koa_jwt_token_decoded_Ctx } from './_koa_jwt_token_decoded_b'
 const key = '_verify_jwt_user_id'
-export interface _verify_jwt_user_id_ctx_I extends _koa_jwt_token_decoded_ctx_I {
+export interface _verify_jwt_user_id_Ctx extends _koa_jwt_token_decoded_Ctx {
 	_verify_jwt_user_id?:_verify_jwt_user_id_T
 }
-export const _verify_jwt_user_id_b = _b<_verify_jwt_user_id_ctx_I, typeof key>(key, ctx=>{
+export const _verify_jwt_user_id_b = _b<_verify_jwt_user_id_Ctx, typeof key>(key, ctx=>{
 	const _koa_jwt_token_decoded = _koa_jwt_token_decoded_b(ctx)
 	return _verify_jwt_user_id as _verify_jwt_user_id_T
 	async function _verify_jwt_user_id(authorization:string) {
