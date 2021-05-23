@@ -1,5 +1,22 @@
 # @ctx-core/auth0-ui
 
+## 7.3.0
+
+### Minor Changes
+
+- - auth0_ui_Ctx
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+- Updated dependencies [undefined]
+- Updated dependencies [undefined]
+- Updated dependencies [undefined]
+  - @ctx-core/auth0@22.2.0
+  - @ctx-core/jwt@7.2.0
+  - @ctx-core/dialog@11.4.0
+  - @ctx-core/auth0-management@3.2.0
+
 ## 7.2.8
 
 ### Patch Changes

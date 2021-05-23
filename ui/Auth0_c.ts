@@ -2,35 +2,36 @@ import { onDestroy } from 'svelte'
 import { has_dom, _dom_a1 } from '@ctx-core/dom'
 import { subscribe } from '@ctx-core/store'
 import {
-	auth0_token_error_b,
-	auth0_token_json_b,
-	post_auth0_oauth_token_b,
-	_password_realm_body_b,
-	close_auth0_b,
-	logout_auth0_token_error_b,
-	post_auth0_dbconnections_signup_b,
-	post_auth0_auth_change_password_b,
-	open_auth0_login_b,
-	validate_auth0_signup,
-	clear_auth0_token_error_b,
-	auth0_opened_class_b,
-	validate_auth0_forgot_password,
-	post_auth0_passwordless_start_b,
-	_auth0_body_b,
-	open_auth0_forgot_password_check_email_b,
-	validate_auth0_change_password,
-	password_realm_body_T,
-	post_auth0_passwordless_start_body_T,
-	post_auth0_passwordless_start_optional_body_T,
-	signup_data_I,
-	login_data_I,
-	auth0_grant_type_body_I,
-	post_auth0_oauth_token_body_I,
+	auth0_token_error_b, auth0_token_json_b, post_auth0_oauth_token_b, _password_realm_body_b,
+	close_auth0_b, logout_auth0_token_error_b, post_auth0_dbconnections_signup_b,
+	post_auth0_auth_change_password_b, open_auth0_login_b, validate_auth0_signup,
+	clear_auth0_token_error_b, auth0_opened_class_b, validate_auth0_forgot_password,
+	post_auth0_passwordless_start_b, _auth0_body_b, open_auth0_forgot_password_check_email_b,
+	validate_auth0_change_password, password_realm_body_T, post_auth0_passwordless_start_body_T,
+	post_auth0_passwordless_start_optional_body_T, signup_data_I, login_data_I, auth0_grant_type_body_I,
+	post_auth0_oauth_token_body_I, auth0_client_id_optional_body_I, _password_realm_body_T,
+	_auth0_body_T, auth0_client_id_body_I,
 } from '@ctx-core/auth0'
+import type { auth0_ui_Ctx } from '../src/auth0_ui_Ctx'
+export interface Auth0_c_Ctx
+	extends auth0_ui_Ctx {
+	_login_auth0_body:_auth0_body_T<auth0_client_id_optional_body_I, login_data_password_realm_body_I>
+	_login_password_realm_body:_password_realm_body_T<login_data_password_realm_body_I>
+	_signup_auth0_body:_auth0_body_T<auth0_client_id_optional_body_I, signup_data_password_realm_body_I>
+	_signup_password_realm_body:_password_realm_body_T<signup_data_password_realm_body_I>
+}
+export const _login_key = (base:string)=>`_login${base}` as keyof Auth0_c_Ctx
+export const _signup_key = (base:string)=>`_signup${base}` as keyof Auth0_c_Ctx
 export class Auth0_c {
-	readonly _auth0_body = _auth0_body_b<post_auth0_passwordless_start_optional_body_T>(this.ctx)
-	readonly _login_password_realm_body = _password_realm_body_b<login_data_password_realm_body_I>(this.ctx)
-	readonly _signup_password_realm_body = _password_realm_body_b<signup_data_password_realm_body_I>(this.ctx)
+	readonly _auth0_body = _auth0_body_b<Auth0_c_Ctx, post_auth0_passwordless_start_optional_body_T, login_data_password_realm_body_I>(
+		this.ctx, _login_key
+	)
+	readonly _login_password_realm_body = _password_realm_body_b<Auth0_c_Ctx, auth0_client_id_optional_body_I, login_data_password_realm_body_I>(
+		this.ctx, _login_key
+	)
+	readonly _signup_password_realm_body = _password_realm_body_b<Auth0_c_Ctx, auth0_client_id_optional_body_I, signup_data_password_realm_body_I>(
+		this.ctx, _signup_key
+	)
 	readonly auth0_opened_class = auth0_opened_class_b(this.ctx)
 	readonly auth0_token_json = auth0_token_json_b(this.ctx)
 	readonly auth0_token_error = auth0_token_error_b(this.ctx)
@@ -43,7 +44,7 @@ export class Auth0_c {
 	readonly post_auth0_oauth_token = post_auth0_oauth_token_b(this.ctx)
 	readonly post_auth0_auth_change_password = post_auth0_auth_change_password_b(this.ctx)
 	readonly post_auth0_passwordless_start = post_auth0_passwordless_start_b(this.ctx)
-	constructor(protected ctx:object) {}
+	constructor(protected ctx:Auth0_c_Ctx) {}
 	onMount = async (root:HTMLElement)=>{
 		if (has_dom) {
 			const unsubscribe =
@@ -211,9 +212,19 @@ function clear_inputs(inputs:NodeList) {
 	}
 }
 export interface signup_data_password_realm_body_I
-	extends signup_data_I, password_realm_body_T, auth0_grant_type_body_I, post_auth0_oauth_token_body_I {}
+	extends signup_data_I,
+		auth0_client_id_body_I,
+		post_auth0_passwordless_start_body_T,
+		password_realm_body_T,
+		auth0_grant_type_body_I,
+		post_auth0_oauth_token_body_I {}
 export interface login_data_password_realm_body_I
-	extends login_data_I, password_realm_body_T, auth0_grant_type_body_I, post_auth0_oauth_token_body_I {}
+	extends login_data_I,
+		auth0_client_id_body_I,
+		post_auth0_passwordless_start_body_T,
+		password_realm_body_T,
+		auth0_grant_type_body_I,
+		post_auth0_oauth_token_body_I {}
 export interface onsubmit_change_password_Ctx {
 	password_input:HTMLInputElement
 	password_confirmation_input:HTMLInputElement

@@ -1,9 +1,18 @@
-import { password_realm_body_T, post_auth0_passwordless_start_optional_body_T, signup_data_I, login_data_I, auth0_grant_type_body_I, post_auth0_oauth_token_body_I } from '@ctx-core/auth0';
+import { password_realm_body_T, post_auth0_passwordless_start_body_T, post_auth0_passwordless_start_optional_body_T, signup_data_I, login_data_I, auth0_grant_type_body_I, post_auth0_oauth_token_body_I, auth0_client_id_optional_body_I, _password_realm_body_T, _auth0_body_T, auth0_client_id_body_I } from '@ctx-core/auth0';
+import type { auth0_ui_Ctx } from '../src/auth0_ui_Ctx';
+export interface Auth0_c_Ctx extends auth0_ui_Ctx {
+    _login_auth0_body: _auth0_body_T<auth0_client_id_optional_body_I, login_data_password_realm_body_I>;
+    _login_password_realm_body: _password_realm_body_T<login_data_password_realm_body_I>;
+    _signup_auth0_body: _auth0_body_T<auth0_client_id_optional_body_I, signup_data_password_realm_body_I>;
+    _signup_password_realm_body: _password_realm_body_T<signup_data_password_realm_body_I>;
+}
+export declare const _login_key: (base: string) => keyof Auth0_c_Ctx;
+export declare const _signup_key: (base: string) => keyof Auth0_c_Ctx;
 export declare class Auth0_c {
-    protected ctx: object;
-    readonly _auth0_body: import("@ctx-core/auth0")._auth0_body_T<post_auth0_passwordless_start_optional_body_T, import("@ctx-core/auth0").auth0_client_id_body_I>;
-    readonly _login_password_realm_body: import("@ctx-core/auth0")._password_realm_body_T<login_data_password_realm_body_I>;
-    readonly _signup_password_realm_body: import("@ctx-core/auth0")._password_realm_body_T<signup_data_password_realm_body_I>;
+    protected ctx: Auth0_c_Ctx;
+    readonly _auth0_body: _auth0_body_T<post_auth0_passwordless_start_optional_body_T, login_data_password_realm_body_I>;
+    readonly _login_password_realm_body: _password_realm_body_T<login_data_password_realm_body_I>;
+    readonly _signup_password_realm_body: _password_realm_body_T<signup_data_password_realm_body_I>;
     readonly auth0_opened_class: import("@ctx-core/auth0").auth0_opened_class_T;
     readonly auth0_token_json: import("@ctx-core/auth0").auth0_token_json_T;
     readonly auth0_token_error: import("@ctx-core/auth0").auth0_token_error_T;
@@ -16,7 +25,7 @@ export declare class Auth0_c {
     readonly post_auth0_oauth_token: import("@ctx-core/auth0").post_auth0_oauth_token_T;
     readonly post_auth0_auth_change_password: import("@ctx-core/auth0").post_auth0_auth_change_password_T;
     readonly post_auth0_passwordless_start: import("@ctx-core/auth0").post_auth0_passwordless_start_T;
-    constructor(ctx: object);
+    constructor(ctx: Auth0_c_Ctx);
     onMount: (root: HTMLElement) => Promise<void>;
     login: (data: login_data_I, schedule_forms_clear?: () => void) => Promise<void>;
     signup: (data: signup_data_I, schedule_forms_clear?: () => void) => Promise<void>;
@@ -31,9 +40,9 @@ export declare class Auth0_c {
     onsubmit_change_password: (event: Event, ctx: onsubmit_change_password_Ctx, schedule_forms_clear?: () => void) => Promise<void>;
     onclose: (event: MouseEvent) => Promise<void>;
 }
-export interface signup_data_password_realm_body_I extends signup_data_I, password_realm_body_T, auth0_grant_type_body_I, post_auth0_oauth_token_body_I {
+export interface signup_data_password_realm_body_I extends signup_data_I, auth0_client_id_body_I, post_auth0_passwordless_start_body_T, password_realm_body_T, auth0_grant_type_body_I, post_auth0_oauth_token_body_I {
 }
-export interface login_data_password_realm_body_I extends login_data_I, password_realm_body_T, auth0_grant_type_body_I, post_auth0_oauth_token_body_I {
+export interface login_data_password_realm_body_I extends login_data_I, auth0_client_id_body_I, post_auth0_passwordless_start_body_T, password_realm_body_T, auth0_grant_type_body_I, post_auth0_oauth_token_body_I {
 }
 export interface onsubmit_change_password_Ctx {
     password_input: HTMLInputElement;

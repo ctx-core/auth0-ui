@@ -1,13 +1,10 @@
 import { _b } from '@ctx-core/object'
 import { _user_id, validate_auth0_user } from '@ctx-core/auth0'
-import { get_auth0_v2_user_b, get_auth0_v2_user_Ctx } from '@ctx-core/auth0-management'
-import { _koa_jwt_token_decoded_b, _koa_jwt_token_decoded_Ctx } from './_koa_jwt_token_decoded_b'
+import { get_auth0_v2_user_b} from '@ctx-core/auth0-management'
+import type { auth0_ui_Ctx } from '../auth0_ui_Ctx'
+import { _koa_jwt_token_decoded_b} from './_koa_jwt_token_decoded_b'
 const key = '_verify_jwt_email'
-export interface _verify_jwt_email_Ctx
-	extends get_auth0_v2_user_Ctx, _koa_jwt_token_decoded_Ctx {
-	_verify_jwt_email?:_verify_jwt_email_T
-}
-export const _verify_jwt_email_b = _b<_verify_jwt_email_Ctx, typeof key>(key, ctx=>{
+export const _verify_jwt_email_b = _b<auth0_ui_Ctx, typeof key>(key, ctx=>{
 	const get_auth0_v2_user = get_auth0_v2_user_b(ctx)
 	const _koa_jwt_token_decoded = _koa_jwt_token_decoded_b(ctx)
 	return _verify_jwt_email as _verify_jwt_email_T

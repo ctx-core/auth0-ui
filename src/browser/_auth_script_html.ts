@@ -4,14 +4,14 @@ export function _auth_script_html() {
 	(function() {
 		var location = window.location
 		var search = location.search
-		var values__search = _values(search.substr(1))
+		var search_values = _values(search.substr(1))
 		var hash = location.hash
 		var auth0_token = _values(hash.substr(1))
-		var json__token__auth0 = JSON.stringify(auth0_token)
+		var auth0_token_json = JSON.stringify(auth0_token)
 		var redirect_url =
-					values__search
-					&& values__search.redirect_url
-		localStorage.setItem('json__token__auth0', json__token__auth0)
+					search_values
+					&& search_values.redirect_url
+		localStorage.setItem('auth0_token_json', auth0_token_json)
 		if (redirect_url) {
 			location.href = redirect_url
 		}
