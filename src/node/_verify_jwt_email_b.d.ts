@@ -1,3 +1,6 @@
+import { B } from '@ctx-core/object';
 import type { auth0_ui_Ctx } from '../auth0_ui_Ctx';
-export declare const _verify_jwt_email_b: import("@ctx-core/object").Be<auth0_ui_Ctx, "_verify_jwt_email", _verify_jwt_email_T>;
+declare const key = "_verify_jwt_email";
+export declare const _verify_jwt_email_b: B<auth0_ui_Ctx, typeof key>;
 export declare type _verify_jwt_email_T = (authorization: string) => Promise<string>;
+export {};

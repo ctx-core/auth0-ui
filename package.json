@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/auth0-ui",
-	"version": "7.3.2",
+	"version": "7.3.3",
 	"description": "ctx-core auth0 ui component & express endpoints",
 	"keywords": [
 		"ctx-core",
@@ -18,7 +18,7 @@
 	"author": "Brian Takita",
 	"main": "./src/index.js",
 	"module": "./src/index.js",
-	"types": "./src/index.ts",
+	"types": "./src/index.d.ts",
 	"browser": "./src/browser/index.js",
 	"scripts": {
 		"build": "npm run clean && npm run compile",
@@ -28,20 +28,20 @@
 		"prepublishOnly": "npm run compile"
 	},
 	"dependencies": {
-		"@ctx-core/auth0": "workspace:^22.2.2",
-		"@ctx-core/auth0-management": "workspace:^3.2.2",
-		"@ctx-core/dialog": "workspace:^11.4.2",
-		"@ctx-core/dom": "workspace:^8.3.9",
-		"@ctx-core/error": "workspace:^8.1.10",
-		"@ctx-core/fetch": "workspace:^8.1.10",
-		"@ctx-core/jwt": "workspace:^7.2.0",
-		"@ctx-core/object": "workspace:^18.0.5",
-		"@ctx-core/store": "workspace:^24.8.9",
+		"@ctx-core/auth0": "workspace:^22.2.3",
+		"@ctx-core/auth0-management": "workspace:^3.2.3",
+		"@ctx-core/dialog": "workspace:^11.4.3",
+		"@ctx-core/dom": "workspace:^8.3.10",
+		"@ctx-core/error": "workspace:^8.1.11",
+		"@ctx-core/fetch": "workspace:^8.1.11",
+		"@ctx-core/jwt": "workspace:^7.2.1",
+		"@ctx-core/object": "workspace:^18.0.6",
+		"@ctx-core/store": "workspace:^24.8.10",
 		"jsonwebtoken": "^8.5.1",
 		"svelte": "3.38.2"
 	},
 	"devDependencies": {
-		"@ctx-core/function": "workspace:^17.9.2",
+		"@ctx-core/function": "workspace:^17.9.3",
 		"@types/jsonwebtoken": "^8.5.1",
 		"typescript": "^4.2.4"
 	},
