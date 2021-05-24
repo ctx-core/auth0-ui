@@ -1,5 +1,21 @@
 # @ctx-core/auth0-ui
 
+## 7.4.1
+
+### Patch Changes
+
+- .gitignore: - \*.js
+- Updated dependencies [undefined]
+  - @ctx-core/auth0@22.3.1
+  - @ctx-core/auth0-management@3.3.1
+  - @ctx-core/dialog@11.5.1
+  - @ctx-core/dom@8.4.1
+  - @ctx-core/error@8.2.1
+  - @ctx-core/fetch@8.2.1
+  - @ctx-core/jwt@7.3.1
+  - @ctx-core/object@18.1.1
+  - @ctx-core/store@24.9.1
+
 ## 7.4.0
 
 ### Minor Changes
