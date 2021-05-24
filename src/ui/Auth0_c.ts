@@ -12,7 +12,7 @@ import {
 	post_auth0_oauth_token_body_I, auth0_client_id_optional_body_I, _password_realm_body_T,
 	_auth0_body_T, auth0_client_id_body_I,
 } from '@ctx-core/auth0'
-import type { auth0_ui_Ctx } from '../src/auth0_ui_Ctx'
+import type { auth0_ui_Ctx } from '../auth0_ui_Ctx'
 export interface Auth0_c_Ctx
 	extends auth0_ui_Ctx {
 	_login_auth0_body:_auth0_body_T<auth0_client_id_optional_body_I, login_data_password_realm_body_I>

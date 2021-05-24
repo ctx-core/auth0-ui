@@ -1,5 +1,24 @@
 # @ctx-core/auth0-ui
 
+## 7.4.0
+
+### Minor Changes
+
+- dist,types directory: addressing typescript build issues
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+  - @ctx-core/auth0@22.3.0
+  - @ctx-core/auth0-management@3.3.0
+  - @ctx-core/dialog@11.5.0
+  - @ctx-core/dom@8.4.0
+  - @ctx-core/error@8.2.0
+  - @ctx-core/fetch@8.2.0
+  - @ctx-core/jwt@7.3.0
+  - @ctx-core/object@18.1.0
+  - @ctx-core/store@24.9.0
+
 ## 7.3.3
 
 ### Patch Changes
