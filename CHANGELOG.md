@@ -1,5 +1,30 @@
 # @ctx-core/auth0-ui
 
+## 7.5.0
+
+### Minor Changes
+
+- fix tsc build directory issues
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+  - @ctx-core/auth0@22.4.0
+  - @ctx-core/auth0-management@3.4.0
+  - @ctx-core/dialog@11.6.0
+  - @ctx-core/dom@8.5.0
+  - @ctx-core/error@8.3.0
+  - @ctx-core/fetch@8.3.0
+  - @ctx-core/jwt@7.4.0
+  - @ctx-core/object@18.2.0
+  - @ctx-core/store@24.10.0
+
+## 7.4.2
+
+### Patch Changes
+
+- fix: tsc compile issue: move ui into src
+
 ## 7.4.1
 
 ### Patch Changes
