@@ -1,5 +1,11 @@
 # @ctx-core/auth0-ui
 
+## 7.5.1
+
+### Patch Changes
+
+- fix: package.json: "browser": points to dist directory
+
 ## 7.5.0
 
 ### Minor Changes
