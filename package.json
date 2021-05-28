@@ -44,7 +44,7 @@
 	},
 	"devDependencies": {
 		"@ctx-core/ctx-core-package-tools": "workspace:^6.4.2",
-		"@ctx-core/dev-tools": "workspace:^4.0.0",
+		"@ctx-core/dev-tools": "workspace:^4.0.1",
 		"@ctx-core/function": "workspace:^17.11.1",
 		"@types/jsonwebtoken": "^8.5.1",
 		"typescript": "^4.3.2"
