@@ -1,1 +1,1 @@
-/home/brian/work/ctx-core/ctx-core/packages/auth0-ui/src/ui/Auth0_Login_Form.svelte
+../../src/ui/Auth0_Login_Form.svelte

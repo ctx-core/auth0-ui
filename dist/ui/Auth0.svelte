@@ -1,1 +1,1 @@
-/home/brian/work/ctx-core/ctx-core/packages/auth0-ui/src/ui/Auth0.svelte
+../../src/ui/Auth0.svelte

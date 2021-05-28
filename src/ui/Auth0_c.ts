@@ -2,35 +2,51 @@ import { onDestroy } from 'svelte'
 import { has_dom, _dom_a1 } from '@ctx-core/dom'
 import { subscribe } from '@ctx-core/store'
 import {
-	auth0_token_error_b, auth0_token_json_b, post_auth0_oauth_token_b, _password_realm_body_b,
+	auth0_token_error_b, auth0_token_json_b, post_auth0_oauth_token_b, password_realm_body_fn_b,
 	close_auth0_b, logout_auth0_token_error_b, post_auth0_dbconnections_signup_b,
 	post_auth0_auth_change_password_b, open_auth0_login_b, validate_auth0_signup,
 	clear_auth0_token_error_b, auth0_opened_class_b, validate_auth0_forgot_password,
-	post_auth0_passwordless_start_b, _auth0_body_b, open_auth0_forgot_password_check_email_b,
+	post_auth0_passwordless_start_b, auth0_body_fn_b, open_auth0_forgot_password_check_email_b,
 	validate_auth0_change_password, password_realm_body_T, post_auth0_passwordless_start_body_T,
 	post_auth0_passwordless_start_optional_body_T, signup_data_I, login_data_I, auth0_grant_type_body_I,
-	post_auth0_oauth_token_body_I, auth0_client_id_optional_body_I, _password_realm_body_T,
-	_auth0_body_T, auth0_client_id_body_I,
+	post_auth0_oauth_token_body_I, password_realm_body_fn_T,
+	auth0_body_fn_T, auth0_client_id_body_I,
 } from '@ctx-core/auth0'
 import type { auth0_ui_Ctx } from '../auth0_ui_Ctx'
 export interface Auth0_c_Ctx
 	extends auth0_ui_Ctx {
-	_login_auth0_body:_auth0_body_T<auth0_client_id_optional_body_I, login_data_password_realm_body_I>
-	_login_password_realm_body:_password_realm_body_T<login_data_password_realm_body_I>
-	_signup_auth0_body:_auth0_body_T<auth0_client_id_optional_body_I, signup_data_password_realm_body_I>
-	_signup_password_realm_body:_password_realm_body_T<signup_data_password_realm_body_I>
+	login_auth0_body_fn:auth0_body_fn_T<login_data_password_realm_body_I>
+	login_password_realm_body_fn:password_realm_body_fn_T<login_data_password_realm_body_I>
+	signup_auth0_body_fn:auth0_body_fn_T<signup_data_password_realm_body_I>
+	signup_password_realm_body_fn:password_realm_body_fn_T<signup_data_password_realm_body_I>
 }
-export const _login_key = (base:string)=>`_login${base}` as keyof Auth0_c_Ctx
-export const _signup_key = (base:string)=>`_signup${base}` as keyof Auth0_c_Ctx
 export class Auth0_c {
-	readonly _auth0_body = _auth0_body_b<Auth0_c_Ctx, post_auth0_passwordless_start_optional_body_T, login_data_password_realm_body_I>(
-		this.ctx, _login_key
+	constructor(protected ctx:Auth0_c_Ctx) {}
+	readonly login_auth0_body_fn = auth0_body_fn_b</*@formatter:off*/
+		Auth0_c_Ctx,
+		'login_auth0_body_fn',
+		login_data_password_realm_body_I
+	/*@formatter:on*/>(this.ctx, 'login_auth0_body_fn')
+	readonly login_password_realm_body_fn = password_realm_body_fn_b</*@formatter:off*/
+		Auth0_c_Ctx,
+		'login_password_realm_body_fn',
+		login_data_password_realm_body_I
+/*@formatter:on*/>(
+		this.ctx,
+		'login_password_realm_body_fn',
+		this.login_auth0_body_fn
 	)
-	readonly _login_password_realm_body = _password_realm_body_b<Auth0_c_Ctx, auth0_client_id_optional_body_I, login_data_password_realm_body_I>(
-		this.ctx, _login_key
-	)
-	readonly _signup_password_realm_body = _password_realm_body_b<Auth0_c_Ctx, auth0_client_id_optional_body_I, signup_data_password_realm_body_I>(
-		this.ctx, _signup_key
+	readonly signup_auth0_body_fn = auth0_body_fn_b</*@formatter:off*/
+		Auth0_c_Ctx,
+		'signup_auth0_body_fn',
+		signup_data_password_realm_body_I
+	/*@formatter:on*/>(this.ctx, 'signup_auth0_body_fn')
+	readonly _signup_password_realm_body = password_realm_body_fn_b</*@formatter:off*/
+		Auth0_c_Ctx,
+		'signup_password_realm_body_fn',
+		signup_data_password_realm_body_I
+	/*@formatter:on*/>(
+		this.ctx, 'signup_password_realm_body_fn', this.signup_auth0_body_fn
 	)
 	readonly auth0_opened_class = auth0_opened_class_b(this.ctx)
 	readonly auth0_token_json = auth0_token_json_b(this.ctx)
@@ -44,7 +60,6 @@ export class Auth0_c {
 	readonly post_auth0_oauth_token = post_auth0_oauth_token_b(this.ctx)
 	readonly post_auth0_auth_change_password = post_auth0_auth_change_password_b(this.ctx)
 	readonly post_auth0_passwordless_start = post_auth0_passwordless_start_b(this.ctx)
-	constructor(protected ctx:Auth0_c_Ctx) {}
 	onMount = async (root:HTMLElement)=>{
 		if (has_dom) {
 			const unsubscribe =
@@ -54,7 +69,7 @@ export class Auth0_c {
 	}
 	login = async (data:login_data_I, schedule_forms_clear = ()=>{})=>{
 		const response = await this.post_auth0_oauth_token(
-			this._login_password_realm_body(data)
+			this.login_password_realm_body_fn(data)
 		)
 		if (response.ok) {
 			const $auth0_token_json = await response.text()
@@ -174,7 +189,7 @@ export class Auth0_c {
 			return
 		}
 		await this.post_auth0_passwordless_start(
-			this._auth0_body(data) as post_auth0_passwordless_start_body_T
+			this.login_auth0_body_fn(data) as post_auth0_passwordless_start_body_T
 		)
 		this.open_auth0_forgot_password_check_email()
 	}
