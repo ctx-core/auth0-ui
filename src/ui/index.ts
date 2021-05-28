@@ -1,3 +1,4 @@
+import 'svelte'
 import Auth0 from './Auth0.svelte'
 import Auth0_Dialog_Close from './Auth0_Dialog_Close.svelte'
 import Auth0_Change_Password_Form from './Auth0_Change_Password_Form.svelte'

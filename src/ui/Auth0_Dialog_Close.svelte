@@ -1,5 +1,5 @@
 <script>
-import Dialog_Close from '@ctx-core/dialog/Dialog_Close.svelte'
+import { Dialog_Close } from '@ctx-core/dialog'
 import { Auth0_c } from './Auth0_c'
 import { getContext_auth0_ui_ctx } from './getContext_auth0_ui_ctx'
 const ctx = getContext_auth0_ui_ctx()
