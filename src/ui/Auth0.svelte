@@ -1,7 +1,7 @@
 <script>
 import { setContext } from 'svelte'
 import {
-	auth0_forgot_password_opened_b, auth0_opened_class_b, auth0_login_opened_b, auth0_signup_opened_b,
+	auth0_forgot_password_opened_b, auth0_opened_class$_b, auth0_login_opened_b, auth0_signup_opened_b,
 	auth0_forgot_password_check_email_opened_b, auth0_change_password_opened_b
 } from '@ctx-core/auth0'
 import { Auth0_c } from './Auth0_c'
@@ -16,7 +16,7 @@ export let ctx = {}
 export let dialog = false
 setContext(auth0_ui_ctx_key, ctx)
 const auth0_change_password_opened = auth0_change_password_opened_b(ctx)
-const auth0_opened_class = auth0_opened_class_b(ctx)
+const auth0_opened_class$ = auth0_opened_class$_b(ctx)
 const auth0_forgot_password_check_email_opened = auth0_forgot_password_check_email_opened_b(ctx)
 const auth0_forgot_password_opened = auth0_forgot_password_opened_b(ctx)
 const auth0_login_opened = auth0_login_opened_b(ctx)
@@ -25,9 +25,9 @@ const c = new Auth0_c(ctx)
 </script>
 
 <div
-	class="Auth0 {$auth0_opened_class} {$$props.class || ''}"
+	class="Auth0 {$auth0_opened_class$} {$$props.class || ''}"
 	class:dialog="{dialog}"
-	class:visible={!!$auth0_opened_class}
+	class:visible={!!$auth0_opened_class$}
 >
 	<Auth0_Dialog_Close></Auth0_Dialog_Close>
 	{#if $auth0_login_opened}

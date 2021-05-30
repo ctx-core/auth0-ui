@@ -1,29 +1,30 @@
 <script lang="ts">
 import { createEventDispatcher } from 'svelte'
-import { AUTH0_DOMAIN_b, auth0_token_error_b } from '@ctx-core/auth0'
+import { AUTH0_DOMAIN$_b, auth0_token_error$_b } from '@ctx-core/auth0'
+import { getContext_auth0_ui_ctx } from '../browser'
+import type { auth0_ui_Ctx } from '../auth0_ui_Ctx'
 import Auth0_Dialog_Close from './Auth0_Dialog_Close.svelte'
 import { Auth0_c } from './Auth0_c'
-import { getContext_auth0_ui_ctx } from './getContext_auth0_ui_ctx'
-const ctx = getContext_auth0_ui_ctx()
+const ctx = getContext_auth0_ui_ctx() as auth0_ui_Ctx
 const dispatch = createEventDispatcher()
 export let error_class = ''
 export let input_class = ''
 export let button_class = ''
 export let label_class = ''
-const AUTH0_DOMAIN = AUTH0_DOMAIN_b(ctx)
-const auth0_token_error = auth0_token_error_b(ctx)
+const AUTH0_DOMAIN$ = AUTH0_DOMAIN$_b(ctx)
+const auth0_token_error$ = auth0_token_error$_b(ctx)
 const _ = new Auth0_c(ctx)
 let root
 let password_input
 let password_confirmation_input
 let password_error //region
 $: password_error =
-	$auth0_token_error
-	&& $auth0_token_error.password //endregion
+	$auth0_token_error$
+	&& $auth0_token_error$.password //endregion
 let password_error_confirmation //region
 $: password_error_confirmation =
-	$auth0_token_error
-	&& $auth0_token_error.password_confirmation //endregion
+	$auth0_token_error$
+	&& $auth0_token_error$.password_confirmation //endregion
 async function in_onsubmit_change_password(event) {
 	dispatch('submit__start')
 	try {
@@ -45,12 +46,12 @@ async function in_onsubmit_change_password(event) {
 	<Auth0_Dialog_Close></Auth0_Dialog_Close>
 	<h1>Change Password</h1>
 	<form
-		action="https://{$AUTH0_DOMAIN}/dbconnections/change_password"
+		action="https://{$AUTH0_DOMAIN$}/dbconnections/change_password"
 		accept-charset="UTF-8"
 		method="post"
 		on:submit|preventDefault="{in_onsubmit_change_password}"
 	>
-		{#if $auth0_token_error}
+		{#if $auth0_token_error$}
 			<ul>
 				{#if password_error}
 					<li class="error {error_class}">

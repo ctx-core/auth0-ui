@@ -1,5 +1,5 @@
 <script lang="ts">
-import { AUTH0_DOMAIN_b, auth0_token_error_b, open_auth0_forgot_password_b, open_auth0_login_b } from '@ctx-core/auth0'
+import { AUTH0_DOMAIN$_b, auth0_token_error$_b, open_auth0_forgot_password_b, open_auth0_login_b } from '@ctx-core/auth0'
 import Auth0_Dialog_Close from './Auth0_Dialog_Close.svelte'
 import { Auth0_c } from './Auth0_c'
 import { getContext_auth0_ui_ctx } from './getContext_auth0_ui_ctx'
@@ -8,27 +8,24 @@ export let class__input = ''
 export let class__button = ''
 export let class__label = ''
 const ctx = getContext_auth0_ui_ctx()
-const AUTH0_DOMAIN = AUTH0_DOMAIN_b(ctx)
-const auth0_token_error = auth0_token_error_b(ctx)
+const AUTH0_DOMAIN$ = AUTH0_DOMAIN$_b(ctx)
+const auth0_token_error$ = auth0_token_error$_b(ctx)
 const open_auth0_login = open_auth0_login_b(ctx)
 const open_auth0_forgot_password = open_auth0_forgot_password_b(ctx)
 const _ = new Auth0_c(ctx)
-let root
-let signup_email_input
-let signup_password_input
-let signup_password_confirmation_input
+let root, signup_email_input, signup_password_input, signup_password_confirmation_input
 let email_error //region
-$: email_error = $auth0_token_error && $auth0_token_error.email //endregion
-let error__password //region
-$: error__password = $auth0_token_error && $auth0_token_error.password //endregion
-let error__password_confirmation //region
-$: error__password_confirmation = $auth0_token_error && error__password_confirmation //endregion
+$: email_error = $auth0_token_error$ && $auth0_token_error$.email //endregion
+let password_error //region
+$: password_error = $auth0_token_error$ && $auth0_token_error$.password //endregion
+let password_error_confirmation //region
+$: password_error_confirmation = $auth0_token_error$ && password_error_confirmation //endregion
 let error_text
 $: {
 	let error_text_a1 = []
-	if ($auth0_token_error) {
-		for (let key in $auth0_token_error) {
-			error_text_a1.push($auth0_token_error[key])
+	if ($auth0_token_error$) {
+		for (let key in $auth0_token_error$) {
+			error_text_a1.push($auth0_token_error$[key])
 		}
 	}
 	error_text = error_text_a1.join('<br>') || ''
@@ -39,7 +36,7 @@ $: {
 	<Auth0_Dialog_Close></Auth0_Dialog_Close>
 	<h1><slot name="signup_text">Sign Up</slot></h1>
 	<form
-		action="https://{$AUTH0_DOMAIN}/dbconnections/signup"
+		action="https://{$AUTH0_DOMAIN$}/dbconnections/signup"
 		accept-charset="UTF-8"
 		method="post"
 		on:submit="{event =>
@@ -50,7 +47,7 @@ $: {
 			}, _._schedule_forms_clear(root))
 		}"
 	>
-		{#if $auth0_token_error}
+		{#if $auth0_token_error$}
 			<ul>
 				<li class="error {class__error}">
 					{error_text}
@@ -78,7 +75,7 @@ $: {
 					placeholder="**********"
 					required="required"
 					class="{class__input}"
-					class:invalid="{error__password}"
+					class:invalid="{password_error}"
 					id="password-signup"
 					type="password"
 					name="password"/>
@@ -90,7 +87,7 @@ $: {
 					placeholder="**********"
 					required="required"
 					class="{class__input}"
-					class:invalid="{error__password_confirmation}"
+					class:invalid="{password_error_confirmation}"
 					type="password"
 					name="password_confirmation"
 					id="password_confirmation-signup"/>
