@@ -1,9 +1,9 @@
-import { _b, B } from '@ctx-core/object'
+import { be_, B } from '@ctx-core/object'
 import { user_id_ } from '@ctx-core/auth0'
 import type { auth0_ui_Ctx } from '../auth0_ui_Ctx'
 import { koa_jwt_token_decoded__b} from './koa_jwt_token_decoded__b'
 const key = 'verify_jwt_user_id_'
-export const verify_jwt_user_id__b:B<auth0_ui_Ctx, typeof key> = _b(key, ctx=>{
+export const verify_jwt_user_id__b:B<auth0_ui_Ctx, typeof key> = be_(key, ctx=>{
 	const koa_jwt_token_decoded_ = koa_jwt_token_decoded__b(ctx)
 	return verify_jwt_user_id_ as verify_jwt_user_id__T
 	async function verify_jwt_user_id_(authorization:string) {
