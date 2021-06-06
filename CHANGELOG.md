@@ -1,5 +1,21 @@
 # @ctx-core/auth0-ui
 
+## 8.0.16
+
+### Patch Changes
+
+- fix: build: clean up old build files in dist
+- Updated dependencies [undefined]
+  - @ctx-core/auth0@23.0.16
+  - @ctx-core/auth0-management@4.0.13
+  - @ctx-core/dialog@12.0.22
+  - @ctx-core/dom@9.0.9
+  - @ctx-core/error@9.0.3
+  - @ctx-core/fetch@9.0.5
+  - @ctx-core/jwt@8.0.4
+  - @ctx-core/object@19.1.2
+  - @ctx-core/store@25.1.12
+
 ## 8.0.15
 
 ### Patch Changes
