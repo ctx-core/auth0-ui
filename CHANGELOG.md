@@ -1,5 +1,13 @@
 # @ctx-core/auth0-ui
 
+## 9.0.1
+
+### Patch Changes
+
+- remove npm run symlink
+- Updated dependencies [undefined]
+  - @ctx-core/dialog@14.0.1
+
 ## 9.0.0
 
 ### Major Changes

@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/auth0-ui",
-	"version": "9.0.0",
+	"version": "9.0.1",
 	"description": "ctx-core auth0 ui component & express endpoints",
 	"keywords": [
 		"ctx-core",
@@ -21,10 +21,9 @@
 	"types": "./src/index.d.ts",
 	"browser": "./dist/browser/index.js",
 	"scripts": {
-		"build": "npm run clean && npm run generate_ctx_I_file && npm run compile && npm run symlink",
+		"build": "npm run clean && npm run generate_ctx_I_file && npm run compile",
 		"clean": "rm -f tsconfig.tsbuildinfo && rm -f dist/**/*.js && rm -f dist/**/*.d.ts && rm -f dist/**/*.map",
 		"compile": "./node_modules/.bin/tsc -b .",
-		"symlink": "./node_modules/.bin/symlink_src_assets_to_dist .",
 		"exec": "$@",
 		"prepublishOnly": "npm run compile",
 		"generate_ctx_I_file": "./node_modules/.bin/generate_ctx_I_file"
@@ -32,7 +31,7 @@
 	"dependencies": {
 		"@ctx-core/auth0": "workspace:^24.0.0",
 		"@ctx-core/auth0-management": "workspace:^5.0.0",
-		"@ctx-core/dialog": "workspace:^14.0.0",
+		"@ctx-core/dialog": "workspace:^14.0.1",
 		"@ctx-core/dom": "workspace:^10.0.0",
 		"@ctx-core/error": "workspace:^10.0.0",
 		"@ctx-core/fetch": "workspace:^10.0.0",
