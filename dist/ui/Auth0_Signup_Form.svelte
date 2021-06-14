@@ -1,1 +1,0 @@
-../../src/ui/Auth0_Signup_Form.svelte

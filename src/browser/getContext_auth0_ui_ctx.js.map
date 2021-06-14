@@ -1,0 +1,1 @@
+{"version":3,"file":"getContext_auth0_ui_ctx.js","sourceRoot":"","sources":["../../browser/getContext_auth0_ui_ctx.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,UAAU,EAAE,MAAM,QAAQ,CAAA;AACnC,OAAO,EAAE,gBAAgB,EAAE,MAAM,oBAAoB,CAAA;AACrD,MAAM,UAAU,uBAAuB;IACrC,OAAO,UAAU,CAAC,gBAAgB,CAAC,CAAA;AACrC,CAAC"}

@@ -1,0 +1,55 @@
+import { password_realm_body_T, post_auth0_passwordless_start_body_T, signup_data_I, login_data_I, auth0_grant_type_body_I, post_auth0_oauth_token_body_I, auth0_client_id_body_I } from '@ctx-core/auth0';
+import type { auth0_ui_Ctx } from '../auth0_ui_Ctx';
+export declare class Auth0_c {
+    protected ctx: auth0_ui_Ctx;
+    constructor(ctx: auth0_ui_Ctx);
+    readonly login_auth0_body_fn: import("@ctx-core/auth0").auth0_body__T<login_data_password_realm_body_I>;
+    readonly login_password_realm_body_fn: import("@ctx-core/auth0").password_realm_body__T<login_data_password_realm_body_I>;
+    readonly signup_auth0_body_fn: import("@ctx-core/auth0").auth0_body__T<signup_data_password_realm_body_I>;
+    readonly _signup_password_realm_body: import("@ctx-core/auth0").password_realm_body__T<signup_data_password_realm_body_I>;
+    readonly auth0_opened_class: import("@ctx-core/auth0").auth0_opened_class$_T;
+    readonly auth0_token_json: import("@ctx-core/auth0").auth0_token_json$_T;
+    readonly auth0_token_error: import("@ctx-core/auth0").auth0_token_error$_T;
+    readonly clear_auth0_token_error: import("@ctx-core/auth0").clear_auth0_token_error_T;
+    readonly close_auth0: import("@ctx-core/auth0").close_auth0_T;
+    readonly logout_auth0_token_error: import("@ctx-core/auth0").logout_auth0_token_error_T;
+    readonly open_auth0_login: import("@ctx-core/auth0").open_auth0_login_T;
+    readonly open_auth0_forgot_password_check_email: import("@ctx-core/auth0").open_auth0_forgot_password_check_email_T;
+    readonly post_auth0_dbconnections_signup: import("@ctx-core/auth0").post_auth0_dbconnections_signup_T;
+    readonly post_auth0_oauth_token: import("@ctx-core/auth0").post_auth0_oauth_token_T;
+    readonly post_auth0_auth_change_password: import("@ctx-core/auth0").post_auth0_auth_change_password_T;
+    readonly post_auth0_passwordless_start: import("@ctx-core/auth0").post_auth0_passwordless_start_T;
+    onMount: (root: HTMLElement) => Promise<void>;
+    login: (data: login_data_I, schedule_forms_clear?: () => void) => Promise<void>;
+    signup: (data: signup_data_I, schedule_forms_clear?: () => void) => Promise<void>;
+    change_password: (form: {
+        password: string;
+    }, schedule_forms_clear?: () => void) => Promise<void>;
+    _schedule_forms_clear: (root: HTMLElement) => () => void;
+    schedule_forms_clear: (root: HTMLElement) => void;
+    onsubmit_signup: (event: Event, ctx: onsubmit_signup_Ctx, schedule_forms_clear?: () => void) => Promise<false | undefined>;
+    onsubmit_login: (event: Event, ctx: onsubmit_login_Ctx, schedule_forms_clear?: () => void) => Promise<void>;
+    onsubmit_forgot_password: (event: Event, ctx: onsubmit_forgot_password_Ctx) => Promise<void>;
+    onsubmit_change_password: (event: Event, ctx: onsubmit_change_password_Ctx, schedule_forms_clear?: () => void) => Promise<void>;
+    onclose: (event: MouseEvent) => Promise<void>;
+}
+export interface signup_data_password_realm_body_I extends signup_data_I, auth0_client_id_body_I, post_auth0_passwordless_start_body_T, password_realm_body_T, auth0_grant_type_body_I, post_auth0_oauth_token_body_I {
+}
+export interface login_data_password_realm_body_I extends login_data_I, auth0_client_id_body_I, post_auth0_passwordless_start_body_T, password_realm_body_T, auth0_grant_type_body_I, post_auth0_oauth_token_body_I {
+}
+export interface onsubmit_change_password_Ctx {
+    password_input: HTMLInputElement;
+    password_confirmation_input: HTMLInputElement;
+}
+export interface onsubmit_forgot_password_Ctx {
+    email_input: HTMLInputElement;
+}
+export interface onsubmit_login_Ctx {
+    username_login_input: HTMLInputElement;
+    password_login_input: HTMLInputElement;
+}
+export interface onsubmit_signup_Ctx {
+    email_input: HTMLInputElement;
+    password_input: HTMLInputElement;
+    password_confirmation_input: HTMLInputElement;
+}

@@ -1,1 +1,0 @@
-../../src/ui/Auth0_Forgot_Password_Form.svelte

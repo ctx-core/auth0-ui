@@ -22,13 +22,13 @@ let password_error_confirmation //region
 $: password_error_confirmation = $auth0_token_error$ && password_error_confirmation //endregion
 let error_text
 $: {
-	let error_text_a1 = []
+	let error_text_a = []
 	if ($auth0_token_error$) {
 		for (let key in $auth0_token_error$) {
-			error_text_a1.push($auth0_token_error$[key])
+			error_text_a.push($auth0_token_error$[key])
 		}
 	}
-	error_text = error_text_a1.join('<br>') || ''
+	error_text = error_text_a.join('<br>') || ''
 }
 </script>
 
