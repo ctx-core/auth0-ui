@@ -1,5 +1,11 @@
 # @ctx-core/auth0-ui
 
+## 9.0.3
+
+### Patch Changes
+
+- fix: browser: load "./src/browser/index.js"
+
 ## 9.0.2
 
 ### Patch Changes
