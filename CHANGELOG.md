@@ -1,5 +1,21 @@
 # @ctx-core/auth0-ui
 
+## 9.0.14
+
+### Patch Changes
+
+- fix: npm run clean
+- Updated dependencies [undefined]
+  - @ctx-core/auth0@24.0.12
+  - @ctx-core/auth0-management@5.0.10
+  - @ctx-core/dialog@14.0.8
+  - @ctx-core/dom@10.0.4
+  - @ctx-core/error@10.0.3
+  - @ctx-core/fetch@10.0.8
+  - @ctx-core/jwt@9.0.4
+  - @ctx-core/object@20.0.4
+  - @ctx-core/store@26.0.5
+
 ## 9.0.13
 
 ### Patch Changes
