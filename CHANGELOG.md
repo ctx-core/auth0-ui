@@ -1,5 +1,21 @@
 # @ctx-core/auth0-ui
 
+## 9.0.16
+
+### Patch Changes
+
+- "prepare": "npm run clean && npm run compile"
+- Updated dependencies [undefined]
+  - @ctx-core/auth0@24.0.14
+  - @ctx-core/auth0-management@5.0.12
+  - @ctx-core/dialog@14.0.10
+  - @ctx-core/dom@10.0.6
+  - @ctx-core/error@10.0.5
+  - @ctx-core/fetch@10.0.10
+  - @ctx-core/jwt@9.0.6
+  - @ctx-core/object@20.0.6
+  - @ctx-core/store@26.0.7
+
 ## 9.0.15
 
 ### Patch Changes
