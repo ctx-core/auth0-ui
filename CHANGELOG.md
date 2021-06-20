@@ -1,5 +1,21 @@
 # @ctx-core/auth0-ui
 
+## 9.0.15
+
+### Patch Changes
+
+- npm run prepare instead of npm run prepublishOnly
+- Updated dependencies [undefined]
+  - @ctx-core/auth0@24.0.13
+  - @ctx-core/auth0-management@5.0.11
+  - @ctx-core/dialog@14.0.9
+  - @ctx-core/dom@10.0.5
+  - @ctx-core/error@10.0.4
+  - @ctx-core/fetch@10.0.9
+  - @ctx-core/jwt@9.0.5
+  - @ctx-core/object@20.0.5
+  - @ctx-core/store@26.0.6
+
 ## 9.0.14
 
 ### Patch Changes
