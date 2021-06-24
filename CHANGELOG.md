@@ -1,5 +1,21 @@
 # @ctx-core/auth0-ui
 
+## 9.0.21
+
+### Patch Changes
+
+- tsconfig.json: "lib": ["dom", "ESNext"]
+- Updated dependencies [undefined]
+  - @ctx-core/auth0@24.0.19
+  - @ctx-core/auth0-management@5.0.17
+  - @ctx-core/dialog@14.0.15
+  - @ctx-core/dom@10.0.10
+  - @ctx-core/error@10.1.1
+  - @ctx-core/fetch@10.0.14
+  - @ctx-core/jwt@9.0.10
+  - @ctx-core/object@20.1.1
+  - @ctx-core/store@26.0.12
+
 ## 9.0.20
 
 ### Patch Changes

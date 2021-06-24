@@ -158,6 +158,7 @@ export class Auth0_c {
 			email,
 			password
 		}, schedule_forms_clear)
+		return
 	}
 	onsubmit_login = async (event:Event, ctx:onsubmit_login_Ctx, schedule_forms_clear = ()=>{})=>{
 		event.preventDefault()

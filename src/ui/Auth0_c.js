@@ -117,6 +117,7 @@ export class Auth0_c {
                 email,
                 password
             }, schedule_forms_clear);
+            return;
         };
         this.onsubmit_login = async (event, ctx, schedule_forms_clear = () => { }) => {
             event.preventDefault();
