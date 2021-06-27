@@ -1,37 +1,38 @@
 {
 	"compileOnSave": true,
 	"compilerOptions": {
-		"target": "ES2018",
+		"allowSyntheticDefaultImports": true,
 		"composite": true,
 		"declaration": true,
-		"sourceMap": true,
-		"noEmitOnError": true,
-		"noErrorTruncation": true,
+		"declarationDir": "dist",
+		"esModuleInterop": true,
+		"importsNotUsedAsValues": "error",
+		"lib": ["dom", "ESNext"],
+		"mapRoot": "dist",
 		"module": "esnext",
 		"moduleResolution": "node",
-		"esModuleInterop": true,
+		"noEmitOnError": true,
+		"noErrorTruncation": true,
 		"noImplicitAny": true,
-		"resolveJsonModule": true,
-		"allowSyntheticDefaultImports": true,
 		"noImplicitThis": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
+		"outDir": "dist",
+		"resolveJsonModule": true,
+		"rootDir": "src",
+		"sourceMap": true,
+		"strict": true,
+		"strictFunctionTypes": true,
+		"target": "ES2018",
 		"typeRoots": [
 			"../../../node_modules/@types",
 			"../../node_modules/@types",
 			"node_modules/@types"
-		],
-		"rootDir": "src",
-		"outDir": "src",
-		"mapRoot": "src",
-		"declarationDir": "src",
-		"lib": ["dom", "ESNext"],
-		"importsNotUsedAsValues": "error",
-		"strict": true
+		]
 	},
 	"exclude": [
-		"node_modules",
-		"dist"
+		"dist",
+		"node_modules"
 	],
 	"references": []
 }

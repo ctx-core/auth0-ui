@@ -2,70 +2,76 @@ import { onDestroy } from 'svelte'
 import { has_dom, dom_a_ } from '@ctx-core/dom'
 import { subscribe } from '@ctx-core/store'
 import {
-	auth0_token_error$_b, auth0_token_json$_b, post_auth0_oauth_token_b, password_realm_body__b,
-	close_auth0_b, logout_auth0_token_error_b, post_auth0_dbconnections_signup_b,
-	post_auth0_auth_change_password_b, open_auth0_login_b, validate_auth0_signup,
-	clear_auth0_token_error_b, auth0_opened_class$_b, validate_auth0_forgot_password,
-	post_auth0_passwordless_start_b, auth0_body__b, open_auth0_forgot_password_check_email_b,
-	validate_auth0_change_password, password_realm_body_T, post_auth0_passwordless_start_body_T,
-	post_auth0_passwordless_start_optional_body_T, signup_data_I, login_data_I, auth0_grant_type_body_I,
-	post_auth0_oauth_token_body_I, auth0_client_id_body_I,
+	auth0_body__b, auth0_opened_class$_b, auth0_token_error$_b,
+	auth0_token_json$_b, clear_auth0_token_error_b, close_auth0_b,
+	logout_auth0_token_error_b, open_auth0_forgot_password_check_email_b, open_auth0_login_b,
+	password_realm_body__b, post_auth0_auth_change_password_b, post_auth0_dbconnections_signup_b,
+	post_auth0_oauth_token_b, post_auth0_passwordless_start_b, validate_auth0_change_password,
+	validate_auth0_forgot_password, validate_auth0_signup
+} from '@ctx-core/auth0'
+import type {
+	auth0_body__T, auth0_client_id_body_I, auth0_grant_type_body_I,
+	login_data_I, logout_auth0_token_error_T, open_auth0_forgot_password_check_email_T,
+	open_auth0_login_T, password_realm_body__T, password_realm_body_T,
+	post_auth0_auth_change_password_T, post_auth0_dbconnections_signup_T, post_auth0_oauth_token_body_I,
+	post_auth0_oauth_token_T, post_auth0_passwordless_start_body_T,
+	post_auth0_passwordless_start_optional_body_T, post_auth0_passwordless_start_T, signup_data_I
 } from '@ctx-core/auth0'
 import type { auth0_ui_Ctx } from '../auth0_ui_Ctx'
 export class Auth0_c {
 	constructor(protected ctx:auth0_ui_Ctx) {}
-	readonly login_auth0_body_fn = auth0_body__b</*@formatter:off*/
+	readonly login_auth0_body_ = auth0_body__b</*@formatter:off*/
 		auth0_ui_Ctx,
-		'login_auth0_body_fn',
+		'login_auth0_body_',
 		login_data_password_realm_body_I
-	/*@formatter:on*/>(this.ctx, 'login_auth0_body_fn')
-	readonly login_password_realm_body_fn = password_realm_body__b</*@formatter:off*/
+	/*@formatter:on*/>(this.ctx, 'login_auth0_body_')
+	readonly login_password_realm_body_ = password_realm_body__b</*@formatter:off*/
 		auth0_ui_Ctx,
-		'login_password_realm_body_fn',
+		'login_password_realm_body_',
 		login_data_password_realm_body_I
 /*@formatter:on*/>(
 		this.ctx,
-		'login_password_realm_body_fn',
-		this.login_auth0_body_fn
+		'login_password_realm_body_',
+		this.login_auth0_body_
 	)
-	readonly signup_auth0_body_fn = auth0_body__b</*@formatter:off*/
+	readonly signup_auth0_body_:auth0_body__T<signup_data_password_realm_body_I> = auth0_body__b</*@formatter:off*/
 		auth0_ui_Ctx,
-		'signup_auth0_body_fn',
+		'signup_auth0_body_',
 		signup_data_password_realm_body_I
-	/*@formatter:on*/>(this.ctx, 'signup_auth0_body_fn')
-	readonly _signup_password_realm_body = password_realm_body__b</*@formatter:off*/
+	/*@formatter:on*/>(this.ctx, 'signup_auth0_body_')
+	readonly signup_password_realm_body_:password_realm_body__T<signup_data_password_realm_body_I> = password_realm_body__b</*@formatter:off*/
 		auth0_ui_Ctx,
 		'signup_password_realm_body_fn',
 		signup_data_password_realm_body_I
 	/*@formatter:on*/>(
-		this.ctx, 'signup_password_realm_body_fn', this.signup_auth0_body_fn
+		this.ctx, 'signup_password_realm_body_fn', this.signup_auth0_body_
 	)
 	readonly auth0_opened_class = auth0_opened_class$_b(this.ctx)
-	readonly auth0_token_json = auth0_token_json$_b(this.ctx)
+	readonly auth0_token_json$ = auth0_token_json$_b(this.ctx)
 	readonly auth0_token_error = auth0_token_error$_b(this.ctx)
 	readonly clear_auth0_token_error = clear_auth0_token_error_b(this.ctx)
 	readonly close_auth0 = close_auth0_b(this.ctx)
-	readonly logout_auth0_token_error = logout_auth0_token_error_b(this.ctx)
-	readonly open_auth0_login = open_auth0_login_b(this.ctx)
-	readonly open_auth0_forgot_password_check_email = open_auth0_forgot_password_check_email_b(this.ctx)
-	readonly post_auth0_dbconnections_signup = post_auth0_dbconnections_signup_b(this.ctx)
-	readonly post_auth0_oauth_token = post_auth0_oauth_token_b(this.ctx)
-	readonly post_auth0_auth_change_password = post_auth0_auth_change_password_b(this.ctx)
-	readonly post_auth0_passwordless_start = post_auth0_passwordless_start_b(this.ctx)
-	onMount = async (root:HTMLElement)=>{
+	readonly logout_auth0_token_error:logout_auth0_token_error_T = logout_auth0_token_error_b(this.ctx)
+	readonly open_auth0_login:open_auth0_login_T = open_auth0_login_b(this.ctx)
+	readonly open_auth0_forgot_password_check_email:open_auth0_forgot_password_check_email_T = open_auth0_forgot_password_check_email_b(this.ctx)
+	readonly post_auth0_dbconnections_signup:post_auth0_dbconnections_signup_T = post_auth0_dbconnections_signup_b(this.ctx)
+	readonly post_auth0_oauth_token:post_auth0_oauth_token_T = post_auth0_oauth_token_b(this.ctx)
+	readonly post_auth0_auth_change_password:post_auth0_auth_change_password_T = post_auth0_auth_change_password_b(this.ctx)
+	readonly post_auth0_passwordless_start:post_auth0_passwordless_start_T = post_auth0_passwordless_start_b(this.ctx)
+	readonly onMount = async (root:HTMLElement)=>{
 		if (has_dom) {
 			const unsubscribe =
 				subscribe(this.auth0_opened_class, ()=>this.schedule_forms_clear(root))
 			onDestroy(unsubscribe)
 		}
 	}
-	login = async (data:login_data_I, schedule_forms_clear = ()=>{})=>{
+	readonly login = async (data:login_data_I, schedule_forms_clear = ()=>{})=>{
 		const response = await this.post_auth0_oauth_token(
-			this.login_password_realm_body_fn(data)
+			this.login_password_realm_body_(data)
 		)
 		if (response.ok) {
-			const $auth0_token_json = await response.text()
-			this.auth0_token_json.$ = $auth0_token_json
+			const auth0_token_json = await response.text()
+			this.auth0_token_json$.$ = auth0_token_json
 			schedule_forms_clear()
 			this.close_auth0()
 		} else {
@@ -74,8 +80,8 @@ export class Auth0_c {
 			this.logout_auth0_token_error($auth_token_error)
 		}
 	}
-	signup = async (data:signup_data_I, schedule_forms_clear = ()=>{})=>{
-		const response = await this.post_auth0_dbconnections_signup(this._signup_password_realm_body(data))
+	readonly signup = async (data:signup_data_I, schedule_forms_clear = ()=>{})=>{
+		const response = await this.post_auth0_dbconnections_signup(this.signup_password_realm_body_(data))
 		const auth0_userinfo = await response.json()
 		const { statusCode } = auth0_userinfo
 		if (statusCode) {
@@ -97,7 +103,7 @@ export class Auth0_c {
 			password: data.password,
 		}, schedule_forms_clear)
 	}
-	change_password = async (form:{ password:string }, schedule_forms_clear = ()=>{})=>{
+	readonly change_password = async (form:{ password:string }, schedule_forms_clear = ()=>{})=>{
 		const { password } = form
 		let error
 		try {
@@ -124,17 +130,17 @@ export class Auth0_c {
 		schedule_forms_clear()
 		this.close_auth0()
 	}
-	_schedule_forms_clear = (root:HTMLElement)=>{
+	readonly schedule_forms_clear_:(root:HTMLElement)=>void = (root:HTMLElement)=>{
 		return ()=>this.schedule_forms_clear(root)
 	}
-	schedule_forms_clear = (root:HTMLElement)=>{
+	readonly schedule_forms_clear = (root:HTMLElement)=>{
 		setTimeout(()=>{
 			this.clear_auth0_token_error()
 			clear_inputs(dom_a_('input[type=text]', root))
 			clear_inputs(dom_a_('input[type=password]', root))
 		}, 100)
 	}
-	onsubmit_signup = async (event:Event, ctx:onsubmit_signup_Ctx, schedule_forms_clear = ()=>{})=>{
+	readonly onsubmit_signup = async (event:Event, ctx:onsubmit_signup_Ctx, schedule_forms_clear = ()=>{})=>{
 		event.preventDefault()
 		const {
 			email_input,
@@ -160,14 +166,14 @@ export class Auth0_c {
 		}, schedule_forms_clear)
 		return
 	}
-	onsubmit_login = async (event:Event, ctx:onsubmit_login_Ctx, schedule_forms_clear = ()=>{})=>{
+	readonly onsubmit_login = async (event:Event, ctx:onsubmit_login_Ctx, schedule_forms_clear = ()=>{})=>{
 		event.preventDefault()
 		const { username_login_input, password_login_input } = ctx
 		const username = username_login_input.value
 		const password = password_login_input.value
 		await this.login({ username, password }, schedule_forms_clear)
 	}
-	onsubmit_forgot_password = async (event:Event, ctx:onsubmit_forgot_password_Ctx)=>{
+	readonly onsubmit_forgot_password = async (event:Event, ctx:onsubmit_forgot_password_Ctx)=>{
 		event.preventDefault()
 		const { email_input } = ctx
 		const email = email_input.value
@@ -182,11 +188,11 @@ export class Auth0_c {
 			return
 		}
 		await this.post_auth0_passwordless_start(
-			this.login_auth0_body_fn(data) as post_auth0_passwordless_start_body_T
+			this.login_auth0_body_(data) as post_auth0_passwordless_start_body_T
 		)
 		this.open_auth0_forgot_password_check_email()
 	}
-	onsubmit_change_password = async (
+	readonly onsubmit_change_password = async (
 		event:Event, ctx:onsubmit_change_password_Ctx, schedule_forms_clear = ()=>{}
 	)=>{
 		event.preventDefault()
@@ -208,7 +214,7 @@ export class Auth0_c {
 		}
 		return await this.change_password({ password }, schedule_forms_clear)
 	}
-	onclose = async (event:MouseEvent)=>{
+	readonly onclose = async (event:MouseEvent)=>{
 		event.preventDefault()
 		this.close_auth0()
 	}
