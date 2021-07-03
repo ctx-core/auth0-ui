@@ -1,5 +1,14 @@
 # @ctx-core/auth0-ui
 
+## 9.0.37
+
+### Patch Changes
+
+- update dependencies
+- Updated dependencies [undefined]
+  - @ctx-core/dialog@14.0.27
+  - @ctx-core/fetch@10.0.27
+
 ## 9.0.36
 
 ### Patch Changes
