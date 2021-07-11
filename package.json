@@ -30,7 +30,7 @@
 		"prepublishOnly": "npm run build"
 	},
 	"dependencies": {
-		"@ctx-core/auth0": "workspace:^24.0.51",
+		"@ctx-core/auth0": "workspace:^24.0.52",
 		"@ctx-core/auth0-management": "workspace:^5.0.41",
 		"@ctx-core/dialog": "workspace:^14.0.39",
 		"@ctx-core/dom": "workspace:^10.0.26",
