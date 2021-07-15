@@ -1,5 +1,24 @@
 # @ctx-core/auth0-ui
 
+## 10.0.0
+
+### Major Changes
+
+- "type": "module": module npm type
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+  - @ctx-core/auth0@25.0.0
+  - @ctx-core/auth0-management@6.0.0
+  - @ctx-core/dialog@15.0.0
+  - @ctx-core/dom@11.0.0
+  - @ctx-core/error@11.0.0
+  - @ctx-core/fetch@11.0.0
+  - @ctx-core/jwt@10.0.0
+  - @ctx-core/object@21.0.0
+  - @ctx-core/store@27.0.0
+
 ## 9.0.61
 
 ### Patch Changes
