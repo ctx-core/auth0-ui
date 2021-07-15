@@ -1,4 +1,4 @@
-export function auth_script_html_() {
+export function auth_script_html_():string {
 	return `
 <script>
 	(function() {

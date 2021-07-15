@@ -4,8 +4,8 @@ import {
 	auth0_forgot_password_opened$_b, auth0_opened_class$_b, auth0_login_opened$_b, auth0_signup_opened$_b,
 	auth0_forgot_password_check_email_opened$_b, auth0_change_password_opened$_b
 } from '@ctx-core/auth0'
-import { auth0_ui_ctx_key } from '../browser'
-import type { auth0_ui_Ctx } from '../auth0_ui_Ctx'
+import { auth0_ui_ctx_key } from '../auth0_ui_ctx_key.js'
+import type { auth0_ui_Ctx } from '../auth0_ui_Ctx.js'
 import { Auth0_c } from './Auth0_c.js'
 import Auth0_Dialog_Close from './Auth0_Dialog_Close.svelte'
 import Auth0_Login_Form from './Auth0_Login_Form.svelte'

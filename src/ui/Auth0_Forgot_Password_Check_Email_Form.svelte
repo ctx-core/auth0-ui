@@ -1,6 +1,6 @@
-<script>
+<script lang="ts">
 import Auth0_Dialog_Close from './Auth0_Dialog_Close.svelte'
-let root
+let root:HTMLDivElement
 </script>
 
 <div bind:this="{root}" class="form forgot_password_check_email">

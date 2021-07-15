@@ -1,5 +1,16 @@
 # @ctx-core/auth0-ui
 
+## 10.0.4
+
+### Patch Changes
+
+- fix: module imports;types
+- Updated dependencies [undefined]
+  - @ctx-core/dialog@15.0.4
+  - @ctx-core/dom@11.0.3
+  - @ctx-core/error@11.0.3
+  - @ctx-core/jwt@10.0.3
+
 ## 10.0.3
 
 ### Patch Changes

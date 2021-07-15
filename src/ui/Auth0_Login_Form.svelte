@@ -1,13 +1,10 @@
 <script lang="ts">
 import {
-	AUTH0_DOMAIN$_b,
-	auth0_token_error$_b,
-	auth0_token_error_txt_b,
-	open_auth0_forgot_password_b, open_auth0_signup_b
+	AUTH0_DOMAIN$_b, auth0_token_error$_b, auth0_token_error_txt_b, open_auth0_forgot_password_b, open_auth0_signup_b
 } from '@ctx-core/auth0'
-import type { auth0_ui_Ctx } from '../auth0_ui_Ctx'
+import type { auth0_ui_Ctx } from '../auth0_ui_Ctx.js'
 import Auth0_Dialog_Close from './Auth0_Dialog_Close.svelte'
-import { Auth0_c } from './Auth0_c'
+import { Auth0_c } from './Auth0_c.js'
 export let ctx:auth0_ui_Ctx
 export let error_class = ''
 export let input_class = ''

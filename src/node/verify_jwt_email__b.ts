@@ -1,8 +1,8 @@
 import { be_, B } from '@ctx-core/object'
 import { user_id_, validate_auth0_user } from '@ctx-core/auth0'
 import { get_auth0_v2_user_b} from '@ctx-core/auth0-management'
-import type { auth0_ui_Ctx } from '../auth0_ui_Ctx'
-import { koa_jwt_token_decoded__b} from './koa_jwt_token_decoded__b'
+import type { auth0_ui_Ctx } from '../auth0_ui_Ctx.js'
+import { koa_jwt_token_decoded__b} from './koa_jwt_token_decoded__b.js'
 const key = 'verify_jwt_email_'
 export const verify_jwt_email__b:B<auth0_ui_Ctx, typeof key> = be_(key, ctx=>{
 	const get_auth0_v2_user = get_auth0_v2_user_b(ctx)

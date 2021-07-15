@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken'
 import { be_, B } from '@ctx-core/object'
-import type { auth0_ui_Ctx } from '../auth0_ui_Ctx'
-import { jwks_cert__b } from './jwks_cert__b'
+import type { auth0_ui_Ctx } from '../auth0_ui_Ctx.js'
+import { jwks_cert__b } from './jwks_cert__b.js'
 const key = 'jwt_token_decoded_'
 export const jwt_token_decoded__b:B<auth0_ui_Ctx, typeof key> = be_(key, ctx=>{
 	const jwks_cert_ = jwks_cert__b(ctx)

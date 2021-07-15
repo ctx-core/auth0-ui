@@ -1,21 +1,22 @@
 <script lang="ts">
 import { AUTH0_DOMAIN$_b, auth0_token_error$_b, open_auth0_login_b, open_auth0_signup_b } from '@ctx-core/auth0'
+import { getContext_auth0_ui_ctx } from '../getContext_auth0_ui_ctx.js'
+import type { auth0_ui_Ctx } from '../auth0_ui_Ctx'
 import Auth0_Dialog_Close from './Auth0_Dialog_Close.svelte'
 import { Auth0_c } from './Auth0_c.js'
-import { getContext_auth0_ui_ctx } from './getContext_auth0_ui_ctx'
 export let error_class = ''
 export let input_class = ''
 export let button_class = ''
 export let label_class = '.js'
-const ctx = getContext_auth0_ui_ctx()
+const ctx = getContext_auth0_ui_ctx() as auth0_ui_Ctx
 const AUTH0_DOMAIN$ = AUTH0_DOMAIN$_b(ctx)
 const auth0_token_error$ = auth0_token_error$_b(ctx)
 const open_auth0_login = open_auth0_login_b(ctx)
 const open_auth0_signup = open_auth0_signup_b(ctx)
 const _ = new Auth0_c(ctx)
 let email_input
-let email_error
-$: email_error = $auth0_token_error$ && $auth0_token_error$.email
+let email_error:string[]
+$: email_error = $auth0_token_error$?.email
 </script>
 
 <div class="form forgot_password">

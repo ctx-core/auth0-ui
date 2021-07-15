@@ -1,7 +1,7 @@
 import { be_, B } from '@ctx-core/object'
 import { throw__response__fetch } from '@ctx-core/fetch'
 import { get_jwks_json_b } from '@ctx-core/auth0'
-import type { auth0_ui_Ctx } from '../auth0_ui_Ctx'
+import type { auth0_ui_Ctx } from '../auth0_ui_Ctx.js'
 const key = 'jwks_x5c_'
 export const jwks_x5c__b:B<auth0_ui_Ctx, typeof key> = be_(key, ctx=>{
 	const get_jwks_json = get_jwks_json_b(ctx)

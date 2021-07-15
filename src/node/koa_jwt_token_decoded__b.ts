@@ -3,8 +3,8 @@ import { be_, B } from '@ctx-core/object'
 import { header_authorization_jwt_token_ } from '@ctx-core/jwt'
 import { error_ctx_I, throw_bad_credentials } from '@ctx-core/error'
 import type { jwt_token_decoded_I } from '@ctx-core/auth0'
-import type { auth0_ui_Ctx } from '../auth0_ui_Ctx'
-import { jwt_token_decoded__b } from './jwt_token_decoded__b'
+import type { auth0_ui_Ctx } from '../auth0_ui_Ctx.js'
+import { jwt_token_decoded__b } from './jwt_token_decoded__b.js'
 const key = 'koa_jwt_token_decoded_'
 export const koa_jwt_token_decoded__b:B<auth0_ui_Ctx, typeof key> = be_(key, ctx=>{
 	const jwt_token_decoded_ = jwt_token_decoded__b(ctx)

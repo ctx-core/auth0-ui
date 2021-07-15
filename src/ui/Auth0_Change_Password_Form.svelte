@@ -1,10 +1,10 @@
 <script lang="ts">
 import { createEventDispatcher } from 'svelte'
 import { AUTH0_DOMAIN$_b, auth0_token_error$_b } from '@ctx-core/auth0'
-import { getContext_auth0_ui_ctx } from '../browser'
-import type { auth0_ui_Ctx } from '../auth0_ui_Ctx'
+import { getContext_auth0_ui_ctx } from '../getContext_auth0_ui_ctx.js'
+import type { auth0_ui_Ctx } from '../auth0_ui_Ctx.js'
 import Auth0_Dialog_Close from './Auth0_Dialog_Close.svelte'
-import { Auth0_c } from './Auth0_c'
+import { Auth0_c } from './Auth0_c.js'
 const ctx = getContext_auth0_ui_ctx() as auth0_ui_Ctx
 const dispatch = createEventDispatcher()
 export let error_class = ''
