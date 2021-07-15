@@ -1,5 +1,23 @@
 # @ctx-core/auth0-ui
 
+## 10.0.1
+
+### Patch Changes
+
+- 2a6971f80: fix: "type": "module"
+- fix: "type": "module"
+- Updated dependencies [2a6971f80]
+- Updated dependencies [undefined]
+  - @ctx-core/auth0@25.0.1
+  - @ctx-core/auth0-management@6.0.1
+  - @ctx-core/dialog@15.0.1
+  - @ctx-core/dom@11.0.1
+  - @ctx-core/error@11.0.1
+  - @ctx-core/fetch@11.0.1
+  - @ctx-core/jwt@10.0.1
+  - @ctx-core/object@21.0.1
+  - @ctx-core/store@27.0.1
+
 ## 10.0.0
 
 ### Major Changes

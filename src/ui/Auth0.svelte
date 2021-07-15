@@ -6,7 +6,7 @@ import {
 } from '@ctx-core/auth0'
 import { auth0_ui_ctx_key } from '../browser'
 import type { auth0_ui_Ctx } from '../auth0_ui_Ctx'
-import { Auth0_c } from './Auth0_c'
+import { Auth0_c } from './Auth0_c.js'
 import Auth0_Dialog_Close from './Auth0_Dialog_Close.svelte'
 import Auth0_Login_Form from './Auth0_Login_Form.svelte'
 import Auth0_Signup_Form from './Auth0_Signup_Form.svelte'

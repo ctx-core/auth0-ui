@@ -12,7 +12,7 @@ export let ctx:auth0_ui_Ctx
 export let error_class = ''
 export let input_class = ''
 export let button_class = ''
-export let label_class = ''
+export let label_class = '.js'
 const auth0_token_error = auth0_token_error$_b(ctx)
 const auth0_token_error_txt = auth0_token_error_txt_b(ctx)
 const AUTH0_DOMAIN = AUTH0_DOMAIN$_b(ctx)
