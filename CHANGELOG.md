@@ -1,5 +1,15 @@
 # @ctx-core/auth0-ui
 
+## 10.0.3
+
+### Patch Changes
+
+- import: + .js extention
+- Updated dependencies [undefined]
+  - @ctx-core/auth0@25.0.3
+  - @ctx-core/auth0-management@6.0.3
+  - @ctx-core/dialog@15.0.3
+
 ## 10.0.2
 
 ### Patch Changes

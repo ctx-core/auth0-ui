@@ -1,5 +1,5 @@
 import type { auth0_body__T, auth0_Ctx, password_realm_body__T } from '@ctx-core/auth0'
-import type { auth0_ui_ctx_I } from './auth0_ui_ctx_I.generated'
+import type { auth0_ui_ctx_I } from './auth0_ui_ctx_I.generated.js'
 import type {
 	login_data_password_realm_body_I, signup_data_password_realm_body_I
 } from './ui/Auth0_c.js'
