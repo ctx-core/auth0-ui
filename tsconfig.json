@@ -9,7 +9,7 @@
 		"importsNotUsedAsValues": "error",
 		"lib": ["dom", "ESNext"],
 		"mapRoot": "dist",
-		"module": "esnext",
+		"module": "commonjs",
 		"moduleResolution": "node",
 		"noEmitOnError": true,
 		"noErrorTruncation": true,
