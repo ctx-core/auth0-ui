@@ -1,5 +1,37 @@
 # @ctx-core/auth0-ui
 
+## 10.0.16
+
+### Patch Changes
+
+- fix: sourceMappingURL: "mapRoot": ""
+- Updated dependencies [undefined]
+  - @ctx-core/auth0@25.0.15
+  - @ctx-core/auth0-management@6.0.15
+  - @ctx-core/dialog@15.0.14
+  - @ctx-core/dom@11.0.12
+  - @ctx-core/error@11.0.11
+  - @ctx-core/fetch@11.0.14
+  - @ctx-core/jwt@10.0.11
+  - @ctx-core/object@21.0.10
+  - @ctx-core/store@27.0.9
+
+## 10.0.15
+
+### Patch Changes
+
+- tsconfig.json: "target": "es2019"
+- Updated dependencies [undefined]
+  - @ctx-core/auth0@25.0.14
+  - @ctx-core/auth0-management@6.0.14
+  - @ctx-core/dialog@15.0.13
+  - @ctx-core/dom@11.0.11
+  - @ctx-core/error@11.0.10
+  - @ctx-core/fetch@11.0.13
+  - @ctx-core/jwt@10.0.10
+  - @ctx-core/object@21.0.9
+  - @ctx-core/store@27.0.8
+
 ## 10.0.14
 
 ### Patch Changes

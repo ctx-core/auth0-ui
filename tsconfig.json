@@ -8,7 +8,7 @@
 		"esModuleInterop": true,
 		"importsNotUsedAsValues": "error",
 		"lib": ["dom", "ESNext"],
-		"mapRoot": "dist",
+		"mapRoot": "",
 		"module": "ESNext",
 		"moduleResolution": "node",
 		"noEmitOnError": true,
@@ -23,7 +23,7 @@
 		"sourceMap": true,
 		"strict": true,
 		"strictFunctionTypes": true,
-		"target": "ES2018",
+		"target": "ES2019",
 		"typeRoots": [
 			"../../../node_modules/@types",
 			"../../node_modules/@types",
