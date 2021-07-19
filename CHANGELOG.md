@@ -1,5 +1,20 @@
 # @ctx-core/auth0-ui
 
+## 10.0.21
+
+### Patch Changes
+
+- fix: "exports": "./package.json": "./package.json"
+- Updated dependencies [undefined]
+  - @ctx-core/auth0@25.0.20
+  - @ctx-core/auth0-management@6.0.20
+  - @ctx-core/dialog@15.0.16
+  - @ctx-core/dom@11.0.15
+  - @ctx-core/error@11.0.13
+  - @ctx-core/jwt@10.0.14
+  - @ctx-core/object@21.0.12
+  - @ctx-core/store@27.0.11
+
 ## 10.0.20
 
 ### Patch Changes
