@@ -53,7 +53,7 @@
 		"svelte": "3.41.0"
 	},
 	"devDependencies": {
-		"@ctx-core/ctx-core-package-tools": "workspace:^8.0.40",
+		"@ctx-core/ctx-core-package-tools": "workspace:^8.0.41",
 		"@ctx-core/dev-tools": "workspace:^7.0.18",
 		"@ctx-core/function": "workspace:^20.0.12",
 		"@types/jsonwebtoken": "^8.5.4",
