@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/auth0-ui",
-	"version": "10.0.60",
+	"version": "10.0.61",
 	"description": "ctx-core auth0 ui component & express endpoints",
 	"keywords": [
 		"ctx-core",
@@ -56,7 +56,7 @@
 		"@ctx-core/ctx-core-package-tools": "workspace:^8.0.52",
 		"@ctx-core/dev-tools": "workspace:^7.1.1",
 		"@ctx-core/function": "workspace:^20.0.13",
-		"@types/jsonwebtoken": "^8.5.4",
+		"@types/jsonwebtoken": "^8.5.5",
 		"typescript": "^4.3.5"
 	},
 	"publishConfig": {
