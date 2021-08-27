@@ -1,5 +1,14 @@
 # @ctx-core/auth0-ui
 
+## 10.0.76
+
+### Patch Changes
+
+- fix: typescript upgrade: build
+- Updated dependencies [undefined]
+  - @ctx-core/auth0@25.0.67
+  - @ctx-core/dom@11.0.22
+
 ## 10.0.75
 
 ### Patch Changes

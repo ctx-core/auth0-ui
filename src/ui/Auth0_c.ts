@@ -116,7 +116,7 @@ export class Auth0_c {
 				}
 				error = response_json.error || 'Error changing Password'
 			}
-		} catch (e) {
+		} catch (e:any) {
 			console.warn(e)
 			error = e.message
 		}
