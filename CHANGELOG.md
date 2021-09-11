@@ -1,5 +1,18 @@
 # @ctx-core/auth0-ui
 
+## 10.0.101
+
+### Patch Changes
+
+- update dependencies
+- Updated dependencies [undefined]
+  - @ctx-core/auth0@25.0.86
+  - @ctx-core/dialog@15.0.66
+  - @ctx-core/dom@11.0.26
+  - @ctx-core/jwt@10.0.24
+  - @ctx-core/object@21.0.20
+  - @ctx-core/store@27.0.30
+
 ## 10.0.100
 
 ### Patch Changes
