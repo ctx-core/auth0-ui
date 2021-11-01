@@ -44,7 +44,7 @@
 		"@ctx-core/dialog": "workspace:^15.0.77",
 		"@ctx-core/dom": "workspace:^11.0.28",
 		"@ctx-core/error": "workspace:^11.0.17",
-		"@ctx-core/fetch": "workspace:^11.0.77",
+		"@ctx-core/fetch": "workspace:^11.0.78",
 		"@ctx-core/jwt": "workspace:^10.0.25",
 		"@ctx-core/object": "workspace:^21.0.21",
 		"@ctx-core/store": "workspace:^27.0.35",
