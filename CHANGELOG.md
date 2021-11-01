@@ -1,5 +1,26 @@
 # @ctx-core/auth0-ui
 
+## 10.0.118
+
+### Patch Changes
+
+- typescript: ^4.4.3 -> ^4.4.4
+- svelte: 3.43.1 -> 3.44.0
+- Updated dependencies [undefined]
+- Updated dependencies [undefined]
+- Updated dependencies [undefined]
+- Updated dependencies [undefined]
+- Updated dependencies [undefined]
+  - @ctx-core/auth0@25.0.99
+  - @ctx-core/auth0-management@6.0.97
+  - @ctx-core/dialog@15.0.76
+  - @ctx-core/dom@11.0.28
+  - @ctx-core/error@11.0.17
+  - @ctx-core/fetch@11.0.77
+  - @ctx-core/jwt@10.0.25
+  - @ctx-core/object@21.0.21
+  - @ctx-core/store@27.0.34
+
 ## 10.0.117
 
 ### Patch Changes
