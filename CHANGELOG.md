@@ -1,5 +1,12 @@
 # @ctx-core/auth0-ui
 
+## 10.0.121
+
+### Patch Changes
+
+- fix: import 'ui/index.js' in 'index.js'
+- components: export \* as
+
 ## 10.0.120
 
 ### Patch Changes
