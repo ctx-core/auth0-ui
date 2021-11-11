@@ -13,8 +13,7 @@ import Auth0_Signup_Form from './Auth0_Signup_Form.svelte'
 import Auth0_Forgot_Password_Form from './Auth0_Forgot_Password_Form.svelte'
 import Auth0_Forgot_Password_Check_Email_Form from './Auth0_Forgot_Password_Check_Email_Form.svelte'
 import Auth0_Change_Password_Form from './Auth0_Change_Password_Form.svelte'
-export let ctx = {} as auth0_ui_Ctx
-export let dialog = false
+export let ctx = {} as auth0_ui_Ctx, dialog = false
 setContext(auth0_ui_ctx_key, ctx)
 const auth0_change_password_opened$ = auth0_change_password_opened$_b(ctx)
 const auth0_opened_class$ = auth0_opened_class$_b(ctx)
