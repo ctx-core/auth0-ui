@@ -1,5 +1,31 @@
 # @ctx-core/auth0-ui
 
+## 11.0.1
+
+### Patch Changes
+
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+  - @ctx-core/http@9.0.0
+  - @ctx-core/auth0@26.0.0
+  - @ctx-core/jwt@10.0.28
+  - @ctx-core/auth0-management@6.0.102
+
+## 11.0.0
+
+### Major Changes
+
+- extracted @ctx-core/auth0-service from @ctx-core/auth0-ui
+
+### Patch Changes
+
+- Updated dependencies
+  - @ctx-core/http@8.0.0
+
 ## 10.0.123
 
 ### Patch Changes

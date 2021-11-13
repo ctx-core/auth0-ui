@@ -1,22 +1,18 @@
 <script lang="ts">
 import { AUTH0_DOMAIN$_b, auth0_token_error$_b, open_auth0_login_b, open_auth0_signup_b } from '@ctx-core/auth0'
+import type { auth0_ui_Ctx } from '../auth0_ui_Ctx.js'
 import { getContext_auth0_ui_ctx } from '../getContext_auth0_ui_ctx.js'
-import type { auth0_ui_Ctx } from '../auth0_ui_Ctx'
-import Auth0_Dialog_Close from './Auth0_Dialog_Close.svelte'
 import { Auth0_c } from './Auth0_c.js'
-export let error_class = ''
-export let input_class = ''
-export let button_class = ''
-export let label_class = '.js'
+import Auth0_Dialog_Close from './Auth0_Dialog_Close.svelte'
+export let error_class = '', input_class = '', button_class = '', label_class = '.js'
 const ctx = getContext_auth0_ui_ctx() as auth0_ui_Ctx
 const AUTH0_DOMAIN$ = AUTH0_DOMAIN$_b(ctx)
 const auth0_token_error$ = auth0_token_error$_b(ctx)
 const open_auth0_login = open_auth0_login_b(ctx)
 const open_auth0_signup = open_auth0_signup_b(ctx)
 const _ = new Auth0_c(ctx)
-let email_input
-let email_error:string[]
-$: email_error = $auth0_token_error$?.email
+let email_input:HTMLInputElement, error:string
+$: error = $auth0_token_error$?.error
 </script>
 
 <div class="form forgot_password">
@@ -26,7 +22,7 @@ $: email_error = $auth0_token_error$?.email
 		action="https://{$AUTH0_DOMAIN$}/passwordless/start"
 		accept-charset="UTF-8"
 		method="post"
-		on:submit="{event => _.onsubmit_forgot_password(event, { email_input })}"
+		on:submit={event => _.onsubmit_forgot_password(event, { email_input })}
 	>
 		{#if $auth0_token_error$}
 			<ul>
@@ -37,13 +33,13 @@ $: email_error = $auth0_token_error$?.email
 		{/if}
 		<fieldset>
 			<label class="field">
-				<div class="{label_class}">Email</div>
+				<div class={label_class}>Email</div>
 				<input
 					bind:this={email_input}
 					placeholder="your@email.com"
 					required="required"
 					class="form-control {input_class}"
-					class:invalid="{email_error}"
+					class:invalid={error}
 					type="email"
 					id="email-forgot_password"
 					name="email"/>
@@ -57,11 +53,11 @@ $: email_error = $auth0_token_error$?.email
 			/>
 			<label
 				class="navigation__auth {label_class}"
-				on:click="{open_auth0_login}"
+				on:click={open_auth0_login}
 			>Have an account? Log in&hellip;</label>
 			<label
 				class="navigation__auth {label_class}"
-				on:click="{open_auth0_signup}"
+				on:click={open_auth0_signup}
 			>Don't have an account? Signup&hellip;</label>
 		</footer>
 	</form>
