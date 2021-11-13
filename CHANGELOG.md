@@ -1,5 +1,11 @@
 # @ctx-core/auth0-ui
 
+## 11.0.3
+
+### Patch Changes
+
+- - index.browser.js
+
 ## 11.0.2
 
 ### Patch Changes

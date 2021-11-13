@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/auth0-ui",
-	"version": "11.0.2",
+	"version": "11.0.3",
 	"description": "ctx-core auth0 ui component & express endpoints",
 	"keywords": [
 		"ctx-core",
@@ -27,7 +27,6 @@
 		},
 		"./package.json": "./package.json"
 	},
-	"browser": "./dist/index.browser.js",
 	"scripts": {
 		"build": "npm run generate_ctx_I_file && npm run compile",
 		"clean": "rm -rf dist",
