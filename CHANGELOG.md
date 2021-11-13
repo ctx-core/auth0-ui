@@ -1,5 +1,11 @@
 # @ctx-core/auth0-ui
 
+## 11.0.2
+
+### Patch Changes
+
+- fix: auth0_ui_ctx_I: remove props due to extracting @ctx-core/auth0-service
+
 ## 11.0.1
 
 ### Patch Changes
