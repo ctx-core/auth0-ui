@@ -1,5 +1,12 @@
 # @ctx-core/auth0-ui
 
+## 11.0.6
+
+### Patch Changes
+
+- fix: Auth0_c: signup: data.email
+  - @ctx-core/fetch@11.0.82
+
 ## 11.0.5
 
 ### Patch Changes

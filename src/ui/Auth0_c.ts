@@ -98,7 +98,7 @@ export class Auth0_c {
 		}
 		schedule_forms_clear()
 		await this.login({
-			username: data.username,
+			username: data.email,
 			password: data.password,
 		}, schedule_forms_clear)
 	}
@@ -146,12 +146,12 @@ export class Auth0_c {
 			password_input,
 			password_confirmation_input,
 		} = ctx
-		const username = email_input.value
+		const email = email_input.value
 		const password = password_input.value
 		const password_confirmation = password_confirmation_input.value
 		const auth0_token_error =
 			validate_auth0_signup({
-				username,
+				email,
 				password,
 				password_confirmation
 			})
@@ -160,7 +160,7 @@ export class Auth0_c {
 			return false
 		}
 		await this.signup({
-			username,
+			email,
 			password
 		}, schedule_forms_clear)
 		return

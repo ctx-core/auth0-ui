@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/auth0-ui",
-	"version": "11.0.5",
+	"version": "11.0.6",
 	"description": "ctx-core auth0 ui component & express endpoints",
 	"keywords": [
 		"ctx-core",
@@ -41,7 +41,7 @@
 		"@ctx-core/dialog": "workspace:^15.0.79",
 		"@ctx-core/dom": "workspace:^11.0.31",
 		"@ctx-core/error": "workspace:^11.0.19",
-		"@ctx-core/fetch": "workspace:^11.0.81",
+		"@ctx-core/fetch": "workspace:^11.0.82",
 		"@ctx-core/function": "workspace:^20.2.4",
 		"@ctx-core/http": "workspace:^9.0.1",
 		"@ctx-core/jwt": "workspace:^10.0.29",
