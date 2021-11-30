@@ -1,5 +1,48 @@
 # @ctx-core/auth0-ui
 
+## 11.0.10
+
+### Patch Changes
+
+- @swc/cli: ^0.1.51 -> ^0.1.52
+- @swc/core: ^1.2.111 -> ^1.2.113
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+  - @ctx-core/logger@9.0.23
+  - @ctx-core/auth0@26.0.5
+  - @ctx-core/auth0-management@6.0.108
+  - @ctx-core/dialog@15.0.82
+  - @ctx-core/dom@11.0.34
+  - @ctx-core/error@11.1.3
+  - @ctx-core/fetch@11.0.85
+  - @ctx-core/function@20.2.7
+  - @ctx-core/http@9.0.4
+  - @ctx-core/jwt@10.0.32
+  - @ctx-core/object@21.0.26
+  - @ctx-core/store@27.0.40
+
+## 11.0.9
+
+### Patch Changes
+
+- svelte: 3.44.1 -> 3.44.2
+- @swc/core: ^1.2.110 -> ^1.2.111
+- Updated dependencies
+- Updated dependencies
+  - @ctx-core/auth0@26.0.4
+  - @ctx-core/auth0-management@6.0.107
+  - @ctx-core/dialog@15.0.81
+  - @ctx-core/store@27.0.39
+  - @ctx-core/dom@11.0.33
+  - @ctx-core/error@11.1.2
+  - @ctx-core/fetch@11.0.84
+  - @ctx-core/function@20.2.6
+  - @ctx-core/http@9.0.3
+  - @ctx-core/jwt@10.0.31
+  - @ctx-core/logger@9.0.22
+  - @ctx-core/object@21.0.25
+
 ## 11.0.8
 
 ### Patch Changes
