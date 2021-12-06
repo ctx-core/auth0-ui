@@ -1,5 +1,23 @@
 # @ctx-core/auth0-ui
 
+## 11.0.18
+
+### Patch Changes
+
+- package.json: - "main": explicitly not support cjs
+- fix: import
+- Updated dependencies
+  - @ctx-core/auth0@26.0.13
+  - @ctx-core/auth0-management@6.0.115
+  - @ctx-core/dialog@15.0.87
+  - @ctx-core/dom@11.0.39
+  - @ctx-core/error@11.1.8
+  - @ctx-core/fetch@11.0.90
+  - @ctx-core/http@9.0.9
+  - @ctx-core/jwt@10.0.37
+  - @ctx-core/logger@9.0.27
+  - @ctx-core/store@27.0.45
+
 ## 11.0.17
 
 ### Patch Changes
