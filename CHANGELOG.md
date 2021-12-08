@@ -1,5 +1,11 @@
 # @ctx-core/auth0-ui
 
+## 12.1.0
+
+### Minor Changes
+
+- svelte-kit integration
+
 ## 12.0.1
 
 ### Patch Changes

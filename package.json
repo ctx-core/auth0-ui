@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/auth0-ui",
-	"version": "12.0.1",
+	"version": "12.1.0",
 	"description": "ctx-core auth0 ui component & express endpoints",
 	"keywords": [
 		"ctx-core",
@@ -19,6 +19,7 @@
 	"type": "module",
 	"module": "./dist/index.js",
 	"types": "./src/index.ts",
+	"svelte": "./src/index.js",
 	"exports": {
 		".": {
 			"import": "./dist/index.js"
@@ -26,11 +27,10 @@
 		"./package.json": "./package.json"
 	},
 	"scripts": {
-		"build": "npm run generate_ctx_I_file && npm run compile",
+		"build": "npm run compile",
 		"clean": "rm -rf dist",
 		"compile": "swc src --out-dir dist --copy-files --source-maps --config-file .swcrc",
 		"exec": "$@",
-		"generate_ctx_I_file": "swc $(./node_modules/.bin/generate_ctx_I_file | tail -n1) --out-dir dist --source-maps --config-file .swcrc",
 		"prepublishOnly": "npm run clean && npm run build"
 	},
 	"dependencies": {
@@ -53,12 +53,18 @@
 	"devDependencies": {
 		"@ctx-core/ctx-core-package-tools": "workspace:^8.0.85",
 		"@ctx-core/dev-tools": "workspace:^7.2.9",
+		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/kit": "next",
 		"@swc/cli": "^0.1.52",
 		"@swc/core": "^1.2.118",
 		"@types/jsonwebtoken": "^8.5.6",
 		"@types/polka": "^0.5.3",
 		"@types/trouter": "^3.1.0",
 		"svelte": "3.44.2",
+		"svelte-check": "^2.2.10",
+		"svelte-preprocess": "^4.9.8",
+		"svelte2tsx": "^0.4.11",
+		"tslib": "^2.3.1",
 		"typescript": "next"
 	},
 	"publishConfig": {
