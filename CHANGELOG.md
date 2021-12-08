@@ -1,5 +1,11 @@
 # @ctx-core/auth0-ui
 
+## 12.0.0
+
+### Major Changes
+
+- - Auth0_Loggedin_If
+
 ## 11.0.23
 
 ### Patch Changes

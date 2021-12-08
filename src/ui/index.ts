@@ -6,4 +6,3 @@ export * as Auth0_Forgot_Password_Check_Email_Form from './Auth0_Forgot_Password
 export * as Auth0_Forgot_Password_Form from './Auth0_Forgot_Password_Form.svelte'
 export * as Auth0_Login_Form from './Auth0_Login_Form.svelte'
 export * as Auth0_Signup_Form from './Auth0_Signup_Form.svelte'
-export * as Auth0_Loggedin_If from './Auth0_Loggedin_If.svelte'
