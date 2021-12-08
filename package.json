@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/auth0-ui",
-	"version": "12.0.0",
+	"version": "12.0.1",
 	"description": "ctx-core auth0 ui component & express endpoints",
 	"keywords": [
 		"ctx-core",
@@ -43,7 +43,7 @@
 		"@ctx-core/function": "workspace:^20.2.12",
 		"@ctx-core/http": "workspace:^9.0.9",
 		"@ctx-core/jwt": "workspace:^10.0.37",
-		"@ctx-core/logger": "workspace:^9.0.28",
+		"@ctx-core/logger": "workspace:^9.0.29",
 		"@ctx-core/object": "workspace:^21.0.30",
 		"@ctx-core/store": "workspace:^27.0.45",
 		"auth0-js": "^9.18.0",
