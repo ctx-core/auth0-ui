@@ -15,36 +15,25 @@ import {
 } from '@ctx-core/auth0'
 import { has_dom, dom_a_ } from '@ctx-core/dom'
 import { noop } from '@ctx-core/function'
+import type { Ctx } from '@ctx-core/object'
 import { subscribe } from '@ctx-core/store'
-import type { auth0_ui_Ctx } from '../auth0_ui_Ctx.js'
 export class Auth0_c {
-	constructor(protected ctx:auth0_ui_Ctx) {}
-	readonly login_auth0_body_ = auth0_body__b</*@formatter:off*/
-		auth0_ui_Ctx,
-		'login_auth0_body_',
-		login_data_password_realm_body_I
-	/*@formatter:on*/>(this.ctx, 'login_auth0_body_')
-	readonly login_password_realm_body_ = password_realm_body__b</*@formatter:off*/
-		auth0_ui_Ctx,
-		'login_password_realm_body_',
-		login_data_password_realm_body_I
-/*@formatter:on*/>(
+	constructor(protected ctx:Ctx) {}
+	readonly login_auth0_body_ =
+		auth0_body__b<login_data_password_realm_body_I>(
+			this.ctx, 'login_auth0_body_') as auth0_body__T<login_data_password_realm_body_I>
+	readonly login_password_realm_body_ = password_realm_body__b<login_data_password_realm_body_I>(
 		this.ctx,
 		'login_password_realm_body_',
 		this.login_auth0_body_
 	)
-	readonly signup_auth0_body_:auth0_body__T<signup_data_password_realm_body_I> = auth0_body__b</*@formatter:off*/
-		auth0_ui_Ctx,
-		'signup_auth0_body_',
-		signup_data_password_realm_body_I
-	/*@formatter:on*/>(this.ctx, 'signup_auth0_body_')
-	readonly signup_password_realm_body_:password_realm_body__T<signup_data_password_realm_body_I> = password_realm_body__b</*@formatter:off*/
-		auth0_ui_Ctx,
-		'signup_password_realm_body_fn',
-		signup_data_password_realm_body_I
-	/*@formatter:on*/>(
-		this.ctx, 'signup_password_realm_body_fn', this.signup_auth0_body_
-	)
+	readonly signup_auth0_body_ =
+		auth0_body__b<signup_data_password_realm_body_I>(
+			this.ctx, 'signup_auth0_body_') as auth0_body__T<signup_data_password_realm_body_I>
+	readonly signup_password_realm_body_:password_realm_body__T<signup_data_password_realm_body_I> =
+		password_realm_body__b<signup_data_password_realm_body_I>(
+			this.ctx, 'signup_password_realm_body_fn', this.signup_auth0_body_
+		)
 	readonly auth0_opened_class = auth0_opened_class$_b(this.ctx)
 	readonly auth0_token_json$ = auth0_token_json$_b(this.ctx)
 	readonly auth0_token_error = auth0_token_error$_b(this.ctx)

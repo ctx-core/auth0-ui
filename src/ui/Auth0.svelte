@@ -4,7 +4,6 @@ import {
 	auth0_forgot_password_opened$_b, auth0_opened_class$_b, auth0_login_opened$_b, auth0_signup_opened$_b,
 	auth0_forgot_password_check_email_opened$_b, auth0_change_password_opened$_b
 } from '@ctx-core/auth0'
-import type { auth0_ui_Ctx } from '../auth0_ui_Ctx.js'
 import { auth0_ui_ctx_key } from '../auth0_ui_ctx_key.js'
 import { Auth0_c } from './Auth0_c.js'
 import Auth0_Change_Password_Form from './Auth0_Change_Password_Form.svelte'
@@ -13,7 +12,8 @@ import Auth0_Forgot_Password_Check_Email_Form from './Auth0_Forgot_Password_Chec
 import Auth0_Forgot_Password_Form from './Auth0_Forgot_Password_Form.svelte'
 import Auth0_Login_Form from './Auth0_Login_Form.svelte'
 import Auth0_Signup_Form from './Auth0_Signup_Form.svelte'
-export let ctx = {} as auth0_ui_Ctx, dialog = false
+import { ctx_ } from '@ctx-core/object/dist'
+export let ctx = ctx_(), dialog = false
 setContext(auth0_ui_ctx_key, ctx)
 const auth0_change_password_opened$ = auth0_change_password_opened$_b(ctx)
 const auth0_opened_class$ = auth0_opened_class$_b(ctx)
@@ -46,7 +46,7 @@ const _ = new Auth0_c(ctx)
 	<slot></slot>
 </div>
 
-<style type="text/scss">
+<style lang="scss">
 :global(.Auth0) {
 	display: block;
 	overflow: hidden;

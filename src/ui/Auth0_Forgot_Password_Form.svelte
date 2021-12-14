@@ -1,11 +1,10 @@
 <script lang="ts">
 import { AUTH0_DOMAIN$_b, auth0_token_error$_b, open_auth0_login_b, open_auth0_signup_b } from '@ctx-core/auth0'
-import type { auth0_ui_Ctx } from '../auth0_ui_Ctx.js'
 import { getContext_auth0_ui_ctx } from '../getContext_auth0_ui_ctx.js'
 import { Auth0_c } from './Auth0_c.js'
 import Auth0_Dialog_Close from './Auth0_Dialog_Close.svelte'
 export let error_class = '', input_class = '', button_class = '', label_class = '.js'
-const ctx = getContext_auth0_ui_ctx() as auth0_ui_Ctx
+const ctx = getContext_auth0_ui_ctx()
 const AUTH0_DOMAIN$ = AUTH0_DOMAIN$_b(ctx)
 const auth0_token_error$ = auth0_token_error$_b(ctx)
 const open_auth0_login = open_auth0_login_b(ctx)

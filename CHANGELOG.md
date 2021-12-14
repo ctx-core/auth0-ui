@@ -1,5 +1,12 @@
 # @ctx-core/auth0-ui
 
+## 12.1.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @ctx-core/dialog@17.0.0
+
 ## 12.1.1
 
 ### Patch Changes
