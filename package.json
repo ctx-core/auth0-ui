@@ -50,7 +50,7 @@
 		"polka": "^0.5.2"
 	},
 	"devDependencies": {
-		"@ctx-core/ctx-core-package-tools": "workspace:^8.0.86",
+		"@ctx-core/ctx-core-package-tools": "workspace:^8.0.87",
 		"@ctx-core/dialog-ui-svelte": "workspace:^1.0.1",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
