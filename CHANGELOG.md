@@ -1,5 +1,25 @@
 # @ctx-core/auth0-ui
 
+## 12.1.5
+
+### Patch Changes
+
+- package.json: svelte: ./dist/index.js
+- Updated dependencies
+- Updated dependencies
+  - @ctx-core/auth0@27.0.2
+  - @ctx-core/auth0-management@7.0.2
+  - @ctx-core/dialog@17.0.1
+  - @ctx-core/dom@11.0.41
+  - @ctx-core/error@11.1.10
+  - @ctx-core/fetch@11.0.94
+  - @ctx-core/function@20.2.13
+  - @ctx-core/http@9.0.11
+  - @ctx-core/jwt@10.0.39
+  - @ctx-core/logger@9.0.33
+  - @ctx-core/object@22.0.1
+  - @ctx-core/store@27.0.48
+
 ## 12.1.4
 
 ### Patch Changes
