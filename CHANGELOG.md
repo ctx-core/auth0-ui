@@ -1,5 +1,24 @@
 # @ctx-core/auth0-ui
 
+## 12.1.7
+
+### Patch Changes
+
+- fix: tsconfig.json: "rootDir": "."
+- Updated dependencies
+  - @ctx-core/auth0@27.0.4
+  - @ctx-core/auth0-management@7.0.4
+  - @ctx-core/dialog@17.0.3
+  - @ctx-core/dom@11.0.43
+  - @ctx-core/error@11.1.12
+  - @ctx-core/fetch@11.0.96
+  - @ctx-core/function@20.2.15
+  - @ctx-core/http@9.0.13
+  - @ctx-core/jwt@10.0.41
+  - @ctx-core/logger@9.0.35
+  - @ctx-core/object@22.0.3
+  - @ctx-core/store@27.0.50
+
 ## 12.1.6
 
 ### Patch Changes
