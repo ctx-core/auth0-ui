@@ -1,5 +1,11 @@
 # @ctx-core/auth0-ui
 
+## 12.1.13
+
+### Patch Changes
+
+- fix: Auth0: import { ctx\_ } from '@ctx-core/object'
+
 ## 12.1.12
 
 ### Patch Changes
