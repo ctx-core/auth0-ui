@@ -1,5 +1,24 @@
 # @ctx-core/auth0-ui
 
+## 12.1.10
+
+### Patch Changes
+
+- package.json: "types": "./src/index.ts": better editing experience
+- Updated dependencies
+  - @ctx-core/auth0@27.0.7
+  - @ctx-core/auth0-management@7.0.7
+  - @ctx-core/dialog@17.0.6
+  - @ctx-core/dom@11.0.46
+  - @ctx-core/error@11.1.15
+  - @ctx-core/fetch@11.0.99
+  - @ctx-core/function@20.2.18
+  - @ctx-core/http@9.0.16
+  - @ctx-core/jwt@10.0.44
+  - @ctx-core/logger@9.0.38
+  - @ctx-core/object@22.0.6
+  - @ctx-core/store@27.0.53
+
 ## 12.1.9
 
 ### Patch Changes
