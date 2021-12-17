@@ -56,7 +56,7 @@
 		"polka": "next"
 	},
 	"devDependencies": {
-		"@ctx-core/ctx-core-package-tools": "workspace:^8.0.95",
+		"@ctx-core/ctx-core-package-tools": "workspace:^8.0.96",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
 		"@types/jsonwebtoken": "^8.5.6",
