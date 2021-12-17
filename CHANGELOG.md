@@ -1,5 +1,24 @@
 # @ctx-core/auth0-ui
 
+## 12.1.11
+
+### Patch Changes
+
+- tsconfig.json: "target": "ES2021"
+- Updated dependencies
+  - @ctx-core/auth0@27.0.8
+  - @ctx-core/auth0-management@7.0.8
+  - @ctx-core/dialog@17.0.7
+  - @ctx-core/dom@11.0.47
+  - @ctx-core/error@11.1.16
+  - @ctx-core/fetch@11.0.100
+  - @ctx-core/function@20.2.19
+  - @ctx-core/http@9.0.17
+  - @ctx-core/jwt@10.0.45
+  - @ctx-core/logger@9.0.39
+  - @ctx-core/object@22.0.7
+  - @ctx-core/store@27.0.54
+
 ## 12.1.10
 
 ### Patch Changes
