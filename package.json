@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/auth0-ui",
-	"version": "12.1.13",
+	"version": "12.1.14",
 	"description": "ctx-core auth0 ui component & express endpoints",
 	"keywords": [
 		"ctx-core",
@@ -18,7 +18,7 @@
 	"author": "Brian Takita",
 	"type": "module",
 	"svelte": "./dist/index.js",
-	"types": "./src/index.ts",
+	"types": "./dist/index.d.ts",
 	"exports": {
 		".": {
 			"import": "./dist/index.js"
@@ -36,19 +36,19 @@
 		"prepublishOnly": "npm run clean && npm run build"
 	},
 	"dependencies": {
-		"@ctx-core/auth0": "workspace:^27.0.8",
-		"@ctx-core/auth0-management": "workspace:^7.0.8",
-		"@ctx-core/dialog": "workspace:^17.0.7",
-		"@ctx-core/dialog-ui-svelte": "workspace:^1.0.8",
-		"@ctx-core/dom": "workspace:^11.0.47",
-		"@ctx-core/error": "workspace:^11.1.16",
-		"@ctx-core/fetch": "workspace:^11.0.100",
-		"@ctx-core/function": "workspace:^20.2.19",
-		"@ctx-core/http": "workspace:^9.0.17",
-		"@ctx-core/jwt": "workspace:^10.0.45",
-		"@ctx-core/logger": "workspace:^9.0.39",
-		"@ctx-core/object": "workspace:^22.0.7",
-		"@ctx-core/store": "workspace:^27.0.54",
+		"@ctx-core/auth0": "workspace:^27.0.9",
+		"@ctx-core/auth0-management": "workspace:^7.0.9",
+		"@ctx-core/dialog": "workspace:^17.0.8",
+		"@ctx-core/dialog-ui-svelte": "workspace:^1.0.9",
+		"@ctx-core/dom": "workspace:^11.0.48",
+		"@ctx-core/error": "workspace:^11.1.17",
+		"@ctx-core/fetch": "workspace:^11.0.101",
+		"@ctx-core/function": "workspace:^20.2.20",
+		"@ctx-core/http": "workspace:^9.0.18",
+		"@ctx-core/jwt": "workspace:^10.0.46",
+		"@ctx-core/logger": "workspace:^9.0.40",
+		"@ctx-core/object": "workspace:^22.0.8",
+		"@ctx-core/store": "workspace:^27.0.55",
 		"@swc/cli": "^0.1.55",
 		"@swc/core": "^1.2.120",
 		"auth0-js": "^9.18.0",
@@ -56,7 +56,7 @@
 		"polka": "next"
 	},
 	"devDependencies": {
-		"@ctx-core/ctx-core-package-tools": "workspace:^8.0.94",
+		"@ctx-core/ctx-core-package-tools": "workspace:^8.0.95",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
 		"@types/jsonwebtoken": "^8.5.6",
