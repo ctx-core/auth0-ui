@@ -1,5 +1,11 @@
 # @ctx-core/auth0-ui
 
+## 12.1.12
+
+### Patch Changes
+
+- fix: dependencies: + @ctx-core/dialog-ui-svelte
+
 ## 12.1.11
 
 ### Patch Changes
