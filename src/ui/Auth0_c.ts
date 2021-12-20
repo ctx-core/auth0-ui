@@ -16,7 +16,6 @@ import {
 import { has_dom, dom_a_ } from '@ctx-core/dom'
 import { noop } from '@ctx-core/function'
 import type { Ctx } from '@ctx-core/object'
-import { subscribe } from '@ctx-core/store'
 export class Auth0_c {
 	constructor(protected ctx:Ctx) {}
 	readonly login_auth0_body_ =
@@ -49,7 +48,7 @@ export class Auth0_c {
 	readonly onMount = async (root:HTMLElement)=>{
 		if (has_dom) {
 			const unsubscribe =
-				subscribe(this.auth0_opened_class, ()=>this.schedule_forms_clear(root))
+				this.auth0_opened_class.subscribe(()=>this.schedule_forms_clear(root))
 			onDestroy(unsubscribe)
 		}
 	}
