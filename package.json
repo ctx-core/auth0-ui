@@ -48,7 +48,7 @@
 		"@ctx-core/jwt": "workspace:^10.0.46",
 		"@ctx-core/logger": "workspace:^9.0.40",
 		"@ctx-core/object": "workspace:^22.0.8",
-		"@ctx-core/svelte": "workspace:^10.1.0",
+		"@ctx-core/svelte": "workspace:^10.1.1",
 		"@swc/cli": "^0.1.55",
 		"@swc/core": "^1.2.121",
 		"auth0-js": "^9.18.0",
@@ -56,7 +56,6 @@
 		"polka": "next"
 	},
 	"devDependencies": {
-		"@ctx-core/ctx-core-package-tools": "workspace:^8.0.97",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
 		"@types/jsonwebtoken": "^8.5.6",
