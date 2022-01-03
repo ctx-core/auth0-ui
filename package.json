@@ -41,7 +41,7 @@
 		"@ctx-core/dialog": "workspace:^18.0.6",
 		"@ctx-core/dialog-ui-svelte": "workspace:^1.0.10",
 		"@ctx-core/dom": "workspace:^11.1.2",
-		"@ctx-core/error": "workspace:^11.1.18",
+		"@ctx-core/error": "workspace:^11.1.19",
 		"@ctx-core/fetch": "workspace:^11.0.104",
 		"@ctx-core/function": "workspace:^20.2.21",
 		"@ctx-core/http": "workspace:^9.0.19",
