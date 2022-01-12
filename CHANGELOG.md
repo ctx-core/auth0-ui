@@ -1,5 +1,17 @@
 # @ctx-core/auth0-ui
 
+## 12.1.26
+
+### Patch Changes
+
+- 738370415: @types/jsonwebtoken: ^8.5.6 -> ^8.5.7
+- 738370415: svelte: ^3.45.0 -> ^3.46.1
+- Updated dependencies [738370415]
+  - @ctx-core/auth0@28.0.19
+  - @ctx-core/auth0-management@7.0.20
+  - @ctx-core/dialog-ui-svelte@1.0.14
+  - @ctx-core/svelte@10.1.6
+
 ## 12.1.25
 
 ### Patch Changes
