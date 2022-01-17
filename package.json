@@ -50,7 +50,7 @@
 		"@ctx-core/object": "workspace:^22.0.12",
 		"@ctx-core/svelte": "workspace:^10.1.6",
 		"@swc/cli": "^0.1.55",
-		"@swc/core": "^1.2.129",
+		"@swc/core": "^1.2.130",
 		"auth0-js": "^9.18.0",
 		"jsonwebtoken": "^8.5.1",
 		"polka": "next"
@@ -61,7 +61,7 @@
 		"@types/jsonwebtoken": "^8.5.7",
 		"@types/trouter": "^3.1.1",
 		"rimraf": "^3.0.2",
-		"svelte": "^3.46.1",
+		"svelte": "^3.46.2",
 		"svelte-check": "^2.3.0",
 		"svelte-preprocess": "^4.10.1",
 		"svelte2tsx": "^0.4.14",
