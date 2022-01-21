@@ -43,7 +43,7 @@
 		"@ctx-core/dom": "workspace:^11.1.5",
 		"@ctx-core/error": "workspace:^11.1.23",
 		"@ctx-core/fetch": "workspace:^11.0.113",
-		"@ctx-core/function": "workspace:^20.3.0",
+		"@ctx-core/function": "workspace:^20.4.0",
 		"@ctx-core/http": "workspace:^9.0.22",
 		"@ctx-core/jwt": "workspace:^10.0.50",
 		"@ctx-core/logger": "workspace:^9.0.44",
