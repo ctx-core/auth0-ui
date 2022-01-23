@@ -1,5 +1,13 @@
 # @ctx-core/auth0-ui
 
+## 12.2.5
+
+### Patch Changes
+
+- update dependencies
+- Updated dependencies
+  - @ctx-core/auth0-management@8.0.1
+
 ## 12.2.4
 
 ### Patch Changes
