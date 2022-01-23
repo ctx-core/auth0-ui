@@ -37,7 +37,7 @@
 	},
 	"dependencies": {
 		"@ctx-core/auth0": "workspace:^28.1.0",
-		"@ctx-core/auth0-management": "workspace:^7.1.1",
+		"@ctx-core/auth0-management": "workspace:^7.1.2",
 		"@ctx-core/dialog": "workspace:^18.0.16",
 		"@ctx-core/dialog-ui-svelte": "workspace:^1.0.14",
 		"@ctx-core/dom": "workspace:^11.1.5",
