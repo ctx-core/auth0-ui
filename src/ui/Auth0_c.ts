@@ -1,3 +1,4 @@
+import type { Auth0Error } from 'auth0-js'
 import { onDestroy } from 'svelte'
 import type {
 	auth0_body__T, auth0_client_id_body_I, auth0_grant_type_body_I, login_data_I, logout_auth0_token_error_T,
@@ -35,7 +36,7 @@ export class Auth0_c {
 		)
 	readonly auth0_opened_class = auth0_opened_class$_b(this.ctx)
 	readonly auth0_token_json$ = auth0_token_json$_b(this.ctx)
-	readonly auth0_token_error = auth0_token_error$_b(this.ctx)
+	readonly auth0_token_error$ = auth0_token_error$_b(this.ctx)
 	readonly clear_auth0_token_error = clear_auth0_token_error_b(this.ctx)
 	readonly close_auth0 = close_auth0_b(this.ctx)
 	readonly logout_auth0_token_error:logout_auth0_token_error_T = logout_auth0_token_error_b(this.ctx)
@@ -53,33 +54,33 @@ export class Auth0_c {
 		}
 	}
 	readonly login = async (data:login_data_I, schedule_forms_clear = ()=>{})=>{
-		const response = await this.post_auth0_oauth_token(
+		const [auth0_token, response] = await this.post_auth0_oauth_token(
 			this.login_password_realm_body_(data)
 		)
 		if (response.ok) {
-			const auth0_token_json = await response.text()
+			const auth0_token_json = JSON.stringify(auth0_token)
 			this.auth0_token_json$.$ = auth0_token_json
 			schedule_forms_clear()
 			this.close_auth0()
 		} else {
-			const $auth_token_error = await response.json()
-			this.auth0_token_error.$ = $auth_token_error
-			this.logout_auth0_token_error($auth_token_error)
+			const auth_token_error = auth0_token as Auth0Error
+			this.auth0_token_error$.$ = auth_token_error
+			this.logout_auth0_token_error(auth_token_error)
 		}
 	}
 	readonly signup = async (data:signup_data_I, schedule_forms_clear = ()=>{})=>{
-		const response = await this.post_auth0_dbconnections_signup(this.signup_password_realm_body_(data))
-		const auth0_userinfo = await response.json()
-		const { statusCode } = auth0_userinfo
+		const [auth0_userinfo] = await this.post_auth0_dbconnections_signup(this.signup_password_realm_body_(data))
+		const auth0_userinfo_Auth0Error = auth0_userinfo as Auth0Error
+		const { statusCode } = auth0_userinfo_Auth0Error
 		if (statusCode) {
 			const {
 				code,
 				description
-			} = auth0_userinfo
+			} = auth0_userinfo_Auth0Error
 			const email =
 				code === 'user_exists'
 				? 'This Email is already signed up'
-				: description
+				: description || ''
 			const auth0_token_error = { email }
 			this.logout_auth0_token_error(auth0_token_error)
 			return
@@ -94,8 +95,7 @@ export class Auth0_c {
 		const { password } = form
 		let error
 		try {
-			const response = await this.post_auth0_auth_change_password(password)
-			const response_json = await response.json()
+			const [response_json, response] = await this.post_auth0_auth_change_password(password)
 			if (!response.ok) {
 				if (response.status == 401) {
 					this.open_auth0_login()
