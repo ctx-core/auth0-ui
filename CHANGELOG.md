@@ -1,5 +1,13 @@
 # @ctx-core/auth0-ui
 
+## 12.2.6
+
+### Patch Changes
+
+- auth0-js: ^9.18.1 -> ^9.19.0
+- Updated dependencies
+  - @ctx-core/auth0@29.0.2
+
 ## 12.2.5
 
 ### Patch Changes
