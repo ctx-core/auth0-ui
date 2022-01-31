@@ -1,16 +1,14 @@
 <script lang="ts">
 import {
-	AUTH0_DOMAIN$_b, auth0_token_error$_b, open_auth0_forgot_password_b, open_auth0_login_b,
+	AUTH0_DOMAIN$_, auth0_token_error$_, open_auth0_forgot_password, open_auth0_login,
 } from '@ctx-core/auth0'
 import { getContext_auth0_ui_ctx } from '../getContext_auth0_ui_ctx.js'
 import { Auth0_c } from './Auth0_c.js'
 import Auth0_Dialog_Close from './Auth0_Dialog_Close.svelte'
 export let error_class = '', input_class = '', button_class = '', label_class = '.js'
 const ctx = getContext_auth0_ui_ctx()
-const AUTH0_DOMAIN$ = AUTH0_DOMAIN$_b(ctx)
-const auth0_token_error$ = auth0_token_error$_b(ctx)
-const open_auth0_login = open_auth0_login_b(ctx)
-const open_auth0_forgot_password = open_auth0_forgot_password_b(ctx)
+const AUTH0_DOMAIN$ = AUTH0_DOMAIN$_(ctx)
+const auth0_token_error$ = auth0_token_error$_(ctx)
 const _ = new Auth0_c(ctx)
 let root, signup_email_input, signup_password_input, signup_password_confirmation_input
 let error_username:string|undefined //region
@@ -107,12 +105,12 @@ $: {
 				class="button {button_class}"
 			/>
 			<label
-				class="navigation__auth {label_class}"
-				on:click={open_auth0_login}
+				class="auth_navigation {label_class}"
+				on:click={()=>open_auth0_login(ctx)}
 			>Have an account? Log in&hellip;</label>
 			<label
-				class="navigation__auth {label_class}"
-				on:click={open_auth0_forgot_password}
+				class="auth_navigation {label_class}"
+				on:click={()=>open_auth0_forgot_password(ctx)}
 			>Forgot Password?</label>
 		</footer>
 	</form>

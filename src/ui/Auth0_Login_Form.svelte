@@ -1,16 +1,14 @@
 <script lang="ts">
 import {
-	AUTH0_DOMAIN$_b, auth0_token_error$_b, auth0_token_error_txt$_b, open_auth0_forgot_password_b, open_auth0_signup_b
+	AUTH0_DOMAIN$_, auth0_token_error$_, auth0_token_error_txt$_, open_auth0_forgot_password, open_auth0_signup
 } from '@ctx-core/auth0'
 import type { Ctx } from '@ctx-core/object'
 import { Auth0_c } from './Auth0_c.js'
 import Auth0_Dialog_Close from './Auth0_Dialog_Close.svelte'
 export let ctx:Ctx, error_class = '', input_class = '', button_class = '', label_class = '.js'
-const auth0_token_error$ = auth0_token_error$_b(ctx)
-const auth0_token_error_txt$ = auth0_token_error_txt$_b(ctx)
-const AUTH0_DOMAIN = AUTH0_DOMAIN$_b(ctx)
-const open_auth0_signup = open_auth0_signup_b(ctx)
-const open_auth0_forgot_password = open_auth0_forgot_password_b(ctx)
+const auth0_token_error$ = auth0_token_error$_(ctx)
+const auth0_token_error_txt$ = auth0_token_error_txt$_(ctx)
+const AUTH0_DOMAIN = AUTH0_DOMAIN$_(ctx)
 const _ = new Auth0_c(ctx)
 let root:HTMLDivElement
 let username_login_input:HTMLInputElement, password_login_input:HTMLInputElement
@@ -73,12 +71,12 @@ $: error_password = $auth0_token_error$?.password //endregion
 				class="button {button_class}"
 			/>
 			<label
-				class="navigation__auth {label_class}"
-				on:click={open_auth0_signup}
+				class="auth_navigation {label_class}"
+				on:click={()=>open_auth0_signup(ctx)}
 			>Don't have an account? Signup&hellip;</label>
 			<label
-				class="navigation__auth {label_class}"
-				on:click={open_auth0_forgot_password}
+				class="auth_navigation {label_class}"
+				on:click={()=>open_auth0_forgot_password(ctx)}
 			>Forgot Password?</label>
 		</footer>
 	</form>

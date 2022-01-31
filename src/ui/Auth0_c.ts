@@ -1,17 +1,14 @@
 import type { Auth0Error } from 'auth0-js'
 import { onDestroy } from 'svelte'
 import type {
-	auth0_body__T, auth0_client_id_body_I, auth0_grant_type_body_I, login_data_I, logout_auth0_token_error_T,
-	open_auth0_forgot_password_check_email_T, open_auth0_login_T, password_realm_body__T, password_realm_body_T,
-	post_auth0_auth_change_password_T, post_auth0_dbconnections_signup_T, post_auth0_oauth_token_body_I,
-	post_auth0_oauth_token_T, post_auth0_passwordless_start_body_T, post_auth0_passwordless_start_optional_body_T,
-	post_auth0_passwordless_start_T, signup_data_I
+	auth0_client_id_body_I, auth0_grant_type_body_I, login_data_I, password_realm_body_T, post_auth0_oauth_token_body_I,
+	post_auth0_passwordless_start_body_T, post_auth0_passwordless_start_optional_body_T, signup_data_I
 } from '@ctx-core/auth0'
 import {
-	auth0_body__b, auth0_opened_class$_b, auth0_token_error$_b, auth0_token_json$_b, clear_auth0_token_error_b,
-	close_auth0_b, logout_auth0_token_error_b, open_auth0_forgot_password_check_email_b, open_auth0_login_b,
-	password_realm_body__b, post_auth0_auth_change_password_b, post_auth0_dbconnections_signup_b,
-	post_auth0_oauth_token_b, post_auth0_passwordless_start_b, validate_auth0_change_password,
+	auth0_body_, auth0_opened_class$_, auth0_token_error$_, auth0_token_json$_, clear_auth0_token_error_,
+	close_auth0, logout_auth0_token_error, open_auth0_forgot_password_check_email, open_auth0_login,
+	password_realm_body_, post_auth0_auth_change_password, post_auth0_dbconnections_signup,
+	post_auth0_oauth_token, post_auth0_passwordless_start, validate_auth0_change_password,
 	validate_auth0_forgot_password, validate_auth0_signup
 } from '@ctx-core/auth0'
 import { has_dom, dom_a_ } from '@ctx-core/dom'
@@ -19,33 +16,24 @@ import { noop } from '@ctx-core/function'
 import type { Ctx } from '@ctx-core/object'
 export class Auth0_c {
 	constructor(protected ctx:Ctx) {}
-	readonly login_auth0_body_ =
-		auth0_body__b<login_data_password_realm_body_I>(
-			this.ctx, 'login_auth0_body_') as auth0_body__T<login_data_password_realm_body_I>
-	readonly login_password_realm_body_ = password_realm_body__b<login_data_password_realm_body_I>(
-		this.ctx,
-		'login_password_realm_body_',
-		this.login_auth0_body_
-	)
-	readonly signup_auth0_body_ =
-		auth0_body__b<signup_data_password_realm_body_I>(
-			this.ctx, 'signup_auth0_body_') as auth0_body__T<signup_data_password_realm_body_I>
-	readonly signup_password_realm_body_:password_realm_body__T<signup_data_password_realm_body_I> =
-		password_realm_body__b<signup_data_password_realm_body_I>(
-			this.ctx, 'signup_password_realm_body_fn', this.signup_auth0_body_
+	readonly login_auth0_body_ = (data:any)=>
+		auth0_body_<login_data_password_realm_body_I>(
+			this.ctx, data
 		)
-	readonly auth0_opened_class = auth0_opened_class$_b(this.ctx)
-	readonly auth0_token_json$ = auth0_token_json$_b(this.ctx)
-	readonly auth0_token_error$ = auth0_token_error$_b(this.ctx)
-	readonly clear_auth0_token_error = clear_auth0_token_error_b(this.ctx)
-	readonly close_auth0 = close_auth0_b(this.ctx)
-	readonly logout_auth0_token_error:logout_auth0_token_error_T = logout_auth0_token_error_b(this.ctx)
-	readonly open_auth0_login:open_auth0_login_T = open_auth0_login_b(this.ctx)
-	readonly open_auth0_forgot_password_check_email:open_auth0_forgot_password_check_email_T = open_auth0_forgot_password_check_email_b(this.ctx)
-	readonly post_auth0_dbconnections_signup:post_auth0_dbconnections_signup_T = post_auth0_dbconnections_signup_b(this.ctx)
-	readonly post_auth0_oauth_token:post_auth0_oauth_token_T = post_auth0_oauth_token_b(this.ctx)
-	readonly post_auth0_auth_change_password:post_auth0_auth_change_password_T = post_auth0_auth_change_password_b(this.ctx)
-	readonly post_auth0_passwordless_start:post_auth0_passwordless_start_T = post_auth0_passwordless_start_b(this.ctx)
+	readonly login_password_realm_body_ = (data:any)=>
+		password_realm_body_<login_data_password_realm_body_I>(
+			this.ctx,
+			this.login_auth0_body_(data)
+		)
+	readonly signup_auth0_body_ = (data:any)=>
+		auth0_body_<signup_data_password_realm_body_I>(this.ctx, data) as signup_data_password_realm_body_I
+	readonly signup_password_realm_body_ = (data:any)=>
+		password_realm_body_<signup_data_password_realm_body_I>(this.ctx, this.signup_auth0_body_(data))
+	readonly auth0_opened_class = auth0_opened_class$_(this.ctx)
+	readonly auth0_token_json$ = auth0_token_json$_(this.ctx)
+	readonly auth0_token_error$ = auth0_token_error$_(this.ctx)
+	readonly clear_auth0_token_error = clear_auth0_token_error_(this.ctx)
+	readonly close_auth0 = ()=>close_auth0(this.ctx)
 	readonly onMount = async (root:HTMLElement)=>{
 		if (has_dom) {
 			const unsubscribe =
@@ -54,8 +42,8 @@ export class Auth0_c {
 		}
 	}
 	readonly login = async (data:login_data_I, schedule_forms_clear = ()=>{})=>{
-		const [auth0_token, response] = await this.post_auth0_oauth_token(
-			this.login_password_realm_body_(data)
+		const [auth0_token, response] = await post_auth0_oauth_token(
+			this.ctx, this.login_password_realm_body_(data)
 		)
 		if (response.ok) {
 			const auth0_token_json = JSON.stringify(auth0_token)
@@ -65,11 +53,13 @@ export class Auth0_c {
 		} else {
 			const auth_token_error = auth0_token as Auth0Error
 			this.auth0_token_error$.$ = auth_token_error
-			this.logout_auth0_token_error(auth_token_error)
+			logout_auth0_token_error(this.ctx, auth_token_error)
 		}
 	}
 	readonly signup = async (data:signup_data_I, schedule_forms_clear = ()=>{})=>{
-		const [auth0_userinfo] = await this.post_auth0_dbconnections_signup(this.signup_password_realm_body_(data))
+		const [auth0_userinfo] = await post_auth0_dbconnections_signup(
+			this.ctx,
+			this.signup_password_realm_body_(data))
 		const auth0_userinfo_Auth0Error = auth0_userinfo as Auth0Error
 		const { statusCode } = auth0_userinfo_Auth0Error
 		if (statusCode) {
@@ -82,7 +72,7 @@ export class Auth0_c {
 				? 'This Email is already signed up'
 				: description || ''
 			const auth0_token_error = { email }
-			this.logout_auth0_token_error(auth0_token_error)
+			logout_auth0_token_error(this.ctx, auth0_token_error)
 			return
 		}
 		schedule_forms_clear()
@@ -95,12 +85,12 @@ export class Auth0_c {
 		const { password } = form
 		let error
 		try {
-			const [response_json, response] = await this.post_auth0_auth_change_password(password)
+			const [response_json, response] = await post_auth0_auth_change_password(this.ctx, password)
 			if (!response.ok) {
 				if (response.status == 401) {
-					this.open_auth0_login()
+					open_auth0_login(this.ctx)
 					const auth0_token_error = { username: 'Authentication Error - Log in' }
-					this.logout_auth0_token_error(auth0_token_error)
+					logout_auth0_token_error(this.ctx, auth0_token_error)
 					return
 				}
 				error = response_json.error || 'Error changing Password'
@@ -111,7 +101,7 @@ export class Auth0_c {
 		}
 		if (error) {
 			const auth0_token_error = { password: error }
-			this.logout_auth0_token_error(auth0_token_error)
+			logout_auth0_token_error(this.ctx, auth0_token_error)
 			return
 		}
 		schedule_forms_clear()
@@ -144,7 +134,7 @@ export class Auth0_c {
 				password_confirmation
 			})
 		if (auth0_token_error) {
-			this.logout_auth0_token_error(auth0_token_error)
+			logout_auth0_token_error(this.ctx, auth0_token_error)
 			return false
 		}
 		await this.signup({
@@ -171,13 +161,13 @@ export class Auth0_c {
 		}
 		const auth0_token_error = validate_auth0_forgot_password(data)
 		if (auth0_token_error) {
-			this.logout_auth0_token_error(auth0_token_error)
+			logout_auth0_token_error(this.ctx, auth0_token_error)
 			return
 		}
-		await this.post_auth0_passwordless_start(
-			this.login_auth0_body_(data) as post_auth0_passwordless_start_body_T
+		await post_auth0_passwordless_start(
+			this.ctx, this.login_auth0_body_(data) as post_auth0_passwordless_start_body_T
 		)
-		this.open_auth0_forgot_password_check_email()
+		open_auth0_forgot_password_check_email(this.ctx)
 	}
 	readonly onsubmit_change_password = async (
 		event:Event, ctx:onsubmit_change_password_Ctx, schedule_forms_clear = noop
@@ -196,7 +186,7 @@ export class Auth0_c {
 					password_confirmation
 				})
 		if (auth0_token_error) {
-			this.logout_auth0_token_error(auth0_token_error)
+			logout_auth0_token_error(this.ctx, auth0_token_error)
 			throw auth0_token_error
 		}
 		return await this.change_password({ password }, schedule_forms_clear)

@@ -1,8 +1,8 @@
 <script lang="ts">
 import { setContext } from 'svelte'
 import {
-	auth0_forgot_password_opened$_b, auth0_opened_class$_b, auth0_login_opened$_b, auth0_signup_opened$_b,
-	auth0_forgot_password_check_email_opened$_b, auth0_change_password_opened$_b
+	auth0_forgot_password_opened$_, auth0_opened_class$_, auth0_login_opened$_, auth0_signup_opened$_,
+	auth0_forgot_password_check_email_opened$_, auth0_change_password_opened$_
 } from '@ctx-core/auth0'
 import { ctx_ } from '@ctx-core/object'
 import { auth0_ui_ctx_key } from '../auth0_ui_ctx_key.js'
@@ -15,12 +15,12 @@ import Auth0_Login_Form from './Auth0_Login_Form.svelte'
 import Auth0_Signup_Form from './Auth0_Signup_Form.svelte'
 export let ctx = ctx_(), dialog = false
 setContext(auth0_ui_ctx_key, ctx)
-const auth0_change_password_opened$ = auth0_change_password_opened$_b(ctx)
-const auth0_opened_class$ = auth0_opened_class$_b(ctx)
-const auth0_forgot_password_check_email_opened$ = auth0_forgot_password_check_email_opened$_b(ctx)
-const auth0_forgot_password_opened$ = auth0_forgot_password_opened$_b(ctx)
-const auth0_login_opened$ = auth0_login_opened$_b(ctx)
-const auth0_signup_opened$ = auth0_signup_opened$_b(ctx)
+const auth0_change_password_opened$ = auth0_change_password_opened$_(ctx)
+const auth0_opened_class$ = auth0_opened_class$_(ctx)
+const auth0_forgot_password_check_email_opened$ = auth0_forgot_password_check_email_opened$_(ctx)
+const auth0_forgot_password_opened$ = auth0_forgot_password_opened$_(ctx)
+const auth0_login_opened$ = auth0_login_opened$_(ctx)
+const auth0_signup_opened$ = auth0_signup_opened$_(ctx)
 const _ = new Auth0_c(ctx)
 </script>
 
@@ -61,38 +61,38 @@ const _ = new Auth0_c(ctx)
 		font-size: 2rem;
 		text-align: center;
 	}
-	[name=navigation__auth] {
+	[name=auth_navigation] {
 		display: none;
 		~ .form {
 			display: none;
 		}
-		&.navigation__auth-signup:checked {
+		&.auth_navigation-signup:checked {
 			~ .signup {
 				display: block;
 			}
 		}
-		&.navigation__auth-login:checked {
+		&.auth_navigation-login:checked {
 			~ .login {
 				display: block;
 			}
 		}
-		&.navigation__auth-forgot_password:checked {
+		&.auth_navigation-forgot_password:checked {
 			~ .forgot_password {
 				display: block;
 			}
 		}
-		&.navigation__auth-forgot_password_check_email:checked {
+		&.auth_navigation-forgot_password_check_email:checked {
 			~ .forgot_password_check_email {
 				display: block;
 			}
 		}
-		&.navigation__auth-change_password:checked {
+		&.auth_navigation-change_password:checked {
 			~ .change_password {
 				display: block;
 			}
 		}
 	}
-	:global(label.navigation__auth) {
+	:global(label.auth_navigation) {
 		color: #3EBBC0;
 		font-weight: bold;
 		&:hover {

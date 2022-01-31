@@ -1,14 +1,12 @@
 <script lang="ts">
-import { AUTH0_DOMAIN$_b, auth0_token_error$_b, open_auth0_login_b, open_auth0_signup_b } from '@ctx-core/auth0'
+import { AUTH0_DOMAIN$_, auth0_token_error$_, open_auth0_login, open_auth0_signup } from '@ctx-core/auth0'
 import { getContext_auth0_ui_ctx } from '../getContext_auth0_ui_ctx.js'
 import { Auth0_c } from './Auth0_c.js'
 import Auth0_Dialog_Close from './Auth0_Dialog_Close.svelte'
 export let error_class = '', input_class = '', button_class = '', label_class = '.js'
 const ctx = getContext_auth0_ui_ctx()
-const AUTH0_DOMAIN$ = AUTH0_DOMAIN$_b(ctx)
-const auth0_token_error$ = auth0_token_error$_b(ctx)
-const open_auth0_login = open_auth0_login_b(ctx)
-const open_auth0_signup = open_auth0_signup_b(ctx)
+const AUTH0_DOMAIN$ = AUTH0_DOMAIN$_(ctx)
+const auth0_token_error$ = auth0_token_error$_(ctx)
 const _ = new Auth0_c(ctx)
 let email_input:HTMLInputElement, error:string
 $: error = $auth0_token_error$?.error
@@ -51,12 +49,12 @@ $: error = $auth0_token_error$?.error
 				class="button {button_class}"
 			/>
 			<label
-				class="navigation__auth {label_class}"
-				on:click={open_auth0_login}
+				class="auth_navigation {label_class}"
+				on:click={()=>open_auth0_login(ctx)}
 			>Have an account? Log in&hellip;</label>
 			<label
-				class="navigation__auth {label_class}"
-				on:click={open_auth0_signup}
+				class="auth_navigation {label_class}"
+				on:click={()=>open_auth0_signup(ctx)}
 			>Don't have an account? Signup&hellip;</label>
 		</footer>
 	</form>
