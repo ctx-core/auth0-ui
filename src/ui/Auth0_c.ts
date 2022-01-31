@@ -5,7 +5,7 @@ import type {
 	post_auth0_passwordless_start_body_T, post_auth0_passwordless_start_optional_body_T, signup_data_I
 } from '@ctx-core/auth0'
 import {
-	auth0_body_, auth0_opened_class$_, auth0_token_error$_, auth0_token_json$_, clear_auth0_token_error_,
+	auth0_body_, auth0_opened_class$_, auth0_token_error$_, auth0_token_json$_, clear_auth0_token_error,
 	close_auth0, logout_auth0_token_error, open_auth0_forgot_password_check_email, open_auth0_login,
 	password_realm_body_, post_auth0_auth_change_password, post_auth0_dbconnections_signup,
 	post_auth0_oauth_token, post_auth0_passwordless_start, validate_auth0_change_password,
@@ -32,7 +32,6 @@ export class Auth0_c {
 	readonly auth0_opened_class = auth0_opened_class$_(this.ctx)
 	readonly auth0_token_json$ = auth0_token_json$_(this.ctx)
 	readonly auth0_token_error$ = auth0_token_error$_(this.ctx)
-	readonly clear_auth0_token_error = clear_auth0_token_error_(this.ctx)
 	readonly close_auth0 = ()=>close_auth0(this.ctx)
 	readonly onMount = async (root:HTMLElement)=>{
 		if (has_dom) {
@@ -112,7 +111,7 @@ export class Auth0_c {
 	}
 	readonly schedule_forms_clear = (root:HTMLElement)=>{
 		setTimeout(()=>{
-			this.clear_auth0_token_error()
+			clear_auth0_token_error(this.ctx)
 			clear_inputs(dom_a_('input[type=text]', root))
 			clear_inputs(dom_a_('input[type=password]', root))
 		}, 100)
