@@ -37,7 +37,7 @@
 	},
 	"dependencies": {
 		"@ctx-core/auth0": "workspace:^30.0.2",
-		"@ctx-core/auth0-management": "workspace:^9.0.2",
+		"@ctx-core/auth0-management": "workspace:^9.0.3",
 		"@ctx-core/dialog": "workspace:^19.0.0",
 		"@ctx-core/dialog-ui-svelte": "workspace:^1.0.14",
 		"@ctx-core/dom": "workspace:^11.1.5",
@@ -63,9 +63,9 @@
 		"@types/trouter": "^3.1.1",
 		"rimraf": "^3.0.2",
 		"svelte": "^3.46.3",
-		"svelte-check": "^2.4.0",
+		"svelte-check": "^2.4.1",
 		"svelte-preprocess": "^4.10.2",
-		"svelte2tsx": "^0.5.0",
+		"svelte2tsx": "^0.5.1",
 		"tslib": "^2.3.1",
 		"typescript": "next"
 	},
