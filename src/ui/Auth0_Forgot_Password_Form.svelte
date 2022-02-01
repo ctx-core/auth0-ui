@@ -8,7 +8,7 @@ const ctx = getContext_auth0_ui_ctx()
 const AUTH0_DOMAIN$ = AUTH0_DOMAIN$_(ctx)
 const auth0_token_error$ = auth0_token_error$_(ctx)
 const _ = new Auth0_c(ctx)
-let email_input:HTMLInputElement, error:string
+let email_input:HTMLInputElement, error:typeof $auth0_token_error$?.error
 $: error = $auth0_token_error$?.error
 </script>
 
