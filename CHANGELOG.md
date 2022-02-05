@@ -1,5 +1,11 @@
 # @ctx-core/auth0-ui
 
+## 12.2.21
+
+### Patch Changes
+
+- fix: Auth0_Signup_Form: error_password_confirmation
+
 ## 12.2.20
 
 ### Patch Changes

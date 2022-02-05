@@ -15,8 +15,8 @@ let error_username:string|undefined //region
 $: error_username = $auth0_token_error$?.username //endregion
 let error_password:string|undefined //region
 $: error_password = $auth0_token_error$?.password //endregion
-let error_password_confirmation:string|undefined //region
-$: error_password_confirmation = $auth0_token_error$ && error_password_confirmation //endregion
+let error_password_confirmation:boolean //region
+$: error_password_confirmation = !!$auth0_token_error$ //endregion
 let error_text:string
 $: {
 	let error_text_a = []
@@ -30,7 +30,7 @@ $: {
 </script>
 
 <div bind:this={root} class="form signup">
-	<Auth0_Dialog_Close></Auth0_Dialog_Close>
+	<Auth0_Dialog_Close/>
 	<h1><slot name="signup_text">Sign Up</slot></h1>
 	<form
 		action="https://{$AUTH0_DOMAIN$}/dbconnections/signup"
