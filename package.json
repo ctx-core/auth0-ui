@@ -45,7 +45,7 @@
 		"@ctx-core/fetch-undici": "workspace:^1.1.5",
 		"@ctx-core/function": "workspace:*",
 		"@ctx-core/http": "workspace:^9.0.23",
-		"@ctx-core/jwt": "workspace:^10.1.0",
+		"@ctx-core/jwt": "workspace:^10.1.1",
 		"@ctx-core/logger": "workspace:^9.0.44",
 		"@ctx-core/object": "workspace:*",
 		"@ctx-core/svelte": "workspace:^10.1.8",
