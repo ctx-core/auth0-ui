@@ -1,5 +1,17 @@
 # @ctx-core/auth0-ui
 
+## 12.2.46
+
+### Patch Changes
+
+- update dependencies
+- Updated dependencies
+  - @ctx-core/auth0@33.2.7
+  - @ctx-core/dialog@20.0.6
+  - @ctx-core/dom@11.1.8
+  - @ctx-core/jwt@10.1.2
+  - @ctx-core/object@22.1.1
+
 ## 12.2.45
 
 ### Patch Changes
