@@ -36,7 +36,7 @@
 		"prepublishOnly": "npm run clean && npm run build"
 	},
 	"dependencies": {
-		"@ctx-core/auth0": "^33.2.5",
+		"@ctx-core/auth0": "^33.2.6",
 		"@ctx-core/auth0-management": "^9.0.33",
 		"@ctx-core/dialog": "^20.0.5",
 		"@ctx-core/dialog-ui-svelte": "^1.0.14",
