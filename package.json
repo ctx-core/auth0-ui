@@ -50,7 +50,7 @@
 		"@ctx-core/object": "*",
 		"@ctx-core/svelte": "^10.1.8",
 		"@swc/cli": "^0.1.55",
-		"@swc/core": "^1.2.148",
+		"@swc/core": "^1.2.150",
 		"auth0-js": "^9.19.0",
 		"jsonwebtoken": "^8.5.1",
 		"polka": "next"
