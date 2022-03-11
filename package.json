@@ -36,9 +36,9 @@
 		"prepublishOnly": "npm run clean && npm run build"
 	},
 	"dependencies": {
-		"@ctx-core/auth0": "^34.0.2",
+		"@ctx-core/auth0": "^34.0.3",
 		"@ctx-core/auth0-management": "^9.0.37",
-		"@ctx-core/dialog": "^20.0.8",
+		"@ctx-core/dialog": "^20.0.9",
 		"@ctx-core/dialog-ui-svelte": "^1.0.14",
 		"@ctx-core/dom": "^11.1.8",
 		"@ctx-core/error": "^11.4.0",
@@ -50,7 +50,7 @@
 		"@ctx-core/object": "*",
 		"@ctx-core/svelte": "^10.1.8",
 		"@swc/cli": "^0.1.55",
-		"@swc/core": "^1.2.152",
+		"@swc/core": "^1.2.153",
 		"auth0-js": "^9.19.0",
 		"jsonwebtoken": "^8.5.1",
 		"polka": "next"
