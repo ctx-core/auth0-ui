@@ -1,5 +1,15 @@
 # @ctx-core/auth0-ui
 
+## 12.2.54
+
+### Patch Changes
+
+- update dependencies
+- Updated dependencies
+  - @ctx-core/auth0-management@9.0.41
+  - @ctx-core/jwt@10.1.3
+  - @ctx-core/svelte@10.1.10
+
 ## 12.2.53
 
 ### Patch Changes
