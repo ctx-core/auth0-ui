@@ -1,5 +1,11 @@
 # @ctx-core/auth0-ui
 
+## 12.2.67
+
+### Patch Changes
+
+- svelte-check: ^2.6.0 -> ^2.7.0
+
 ## 12.2.66
 
 ### Patch Changes
