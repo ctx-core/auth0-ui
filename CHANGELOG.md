@@ -1,5 +1,25 @@
 # @ctx-core/auth0-ui
 
+## 12.2.76
+
+### Patch Changes
+
+- @ctx-core/error: ^11.4.6 -> ^11.4.7
+- @ctx-core/svelte: ^10.1.17 -> ^10.1.18
+- @ctx-core/auth0-management: ^9.0.55 -> ^9.0.56
+- @ctx-core/http: ^9.0.29 -> ^9.0.30
+- @ctx-core/fetch-undici: ^2.1.5 -> ^2.1.6
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+  - @ctx-core/auth0@34.2.19
+  - @ctx-core/jwt@10.1.11
+  - @ctx-core/dialog@20.0.21
+  - @ctx-core/dom@11.1.17
+
 ## 12.2.75
 
 ### Patch Changes
