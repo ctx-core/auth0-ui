@@ -1,21 +1,21 @@
 <script lang="ts">
 import {
-	AUTH0_DOMAIN$_, auth0_token_error$_, auth0_token_error_txt$_, open_auth0_forgot_password, open_auth0_signup
+	AUTH0_DOMAIN__, auth0_token_error__, auth0_token_error_txt__, open_auth0_forgot_password, open_auth0_signup
 } from '@ctx-core/auth0'
 import type { Ctx } from '@ctx-core/object'
 import { Auth0_c } from './Auth0_c.js'
 import Auth0_Dialog_Close from './Auth0_Dialog_Close.svelte'
 export let ctx:Ctx, error_class = '', input_class = '', button_class = '', label_class = '.js'
-const auth0_token_error$ = auth0_token_error$_(ctx)
-const auth0_token_error_txt$ = auth0_token_error_txt$_(ctx)
-const AUTH0_DOMAIN = AUTH0_DOMAIN$_(ctx)
+const auth0_token_error_ = auth0_token_error__(ctx)
+const auth0_token_error_txt_ = auth0_token_error_txt__(ctx)
+const AUTH0_DOMAIN = AUTH0_DOMAIN__(ctx)
 const _ = new Auth0_c(ctx)
 let root:HTMLDivElement
 let username_login_input:HTMLInputElement, password_login_input:HTMLInputElement
 let error_username:string|undefined//region
-$: error_username = $auth0_token_error$?.username //endregion
+$: error_username = $auth0_token_error_?.username //endregion
 let error_password:string|undefined//region
-$: error_password = $auth0_token_error$?.password //endregion
+$: error_password = $auth0_token_error_?.password //endregion
 </script>
 
 <div bind:this={root} class="form {$$props.class||''}">
@@ -31,10 +31,10 @@ $: error_password = $auth0_token_error$?.password //endregion
 				password_login_input
 			}, ()=>_.schedule_forms_clear(root))}
 	>
-		{#if $auth0_token_error_txt$}
+		{#if $auth0_token_error_txt_}
 			<ul>
 				<li class="error {error_class}">
-					{$auth0_token_error_txt$}
+					{$auth0_token_error_txt_}
 				</li>
 			</ul>
 		{/if}

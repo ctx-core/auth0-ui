@@ -1,28 +1,28 @@
 <script lang="ts">
 import {
-	AUTH0_DOMAIN$_, auth0_token_error$_, open_auth0_forgot_password, open_auth0_login,
+	AUTH0_DOMAIN__, auth0_token_error__, open_auth0_forgot_password, open_auth0_login,
 } from '@ctx-core/auth0'
 import { getContext_auth0_ui_ctx } from '../getContext_auth0_ui_ctx.js'
 import { Auth0_c } from './Auth0_c.js'
 import Auth0_Dialog_Close from './Auth0_Dialog_Close.svelte'
 export let error_class = '', input_class = '', button_class = '', label_class = '.js'
 const ctx = getContext_auth0_ui_ctx()
-const AUTH0_DOMAIN$ = AUTH0_DOMAIN$_(ctx)
-const auth0_token_error$ = auth0_token_error$_(ctx)
+const AUTH0_DOMAIN_ = AUTH0_DOMAIN__(ctx)
+const auth0_token_error_ = auth0_token_error__(ctx)
 const _ = new Auth0_c(ctx)
 let root, signup_email_input, signup_password_input, signup_password_confirmation_input
 let error_username:string|undefined //region
-$: error_username = $auth0_token_error$?.username //endregion
+$: error_username = $auth0_token_error_?.username //endregion
 let error_password:string|undefined //region
-$: error_password = $auth0_token_error$?.password //endregion
+$: error_password = $auth0_token_error_?.password //endregion
 let error_password_confirmation:boolean //region
-$: error_password_confirmation = !!$auth0_token_error$ //endregion
+$: error_password_confirmation = !!$auth0_token_error_ //endregion
 let error_text:string
 $: {
 	let error_text_a = []
-	if ($auth0_token_error$) {
-		for (let key in $auth0_token_error$) {
-			error_text_a.push($auth0_token_error$[key])
+	if ($auth0_token_error_) {
+		for (let key in $auth0_token_error_) {
+			error_text_a.push($auth0_token_error_[key])
 		}
 	}
 	error_text = error_text_a.join('<br>') || ''
@@ -33,7 +33,7 @@ $: {
 	<Auth0_Dialog_Close/>
 	<h1><slot name="signup_text">Sign Up</slot></h1>
 	<form
-		action="https://{$AUTH0_DOMAIN$}/dbconnections/signup"
+		action="https://{$AUTH0_DOMAIN_}/dbconnections/signup"
 		accept-charset="UTF-8"
 		method="post"
 		on:submit={event =>
@@ -44,7 +44,7 @@ $: {
 			}, _.schedule_forms_clear(root))
 		}
 	>
-		{#if $auth0_token_error$}
+		{#if $auth0_token_error_}
 			<ul>
 				<li class="error {error_class}">
 					{error_text}

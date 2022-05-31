@@ -1,22 +1,22 @@
 <script lang="ts">
 import { createEventDispatcher } from 'svelte'
-import { AUTH0_DOMAIN$_, auth0_token_error$_ } from '@ctx-core/auth0'
+import { AUTH0_DOMAIN__, auth0_token_error__ } from '@ctx-core/auth0'
 import { getContext_auth0_ui_ctx } from '../getContext_auth0_ui_ctx.js'
 import { Auth0_c } from './Auth0_c.js'
 import Auth0_Dialog_Close from './Auth0_Dialog_Close.svelte'
 const ctx = getContext_auth0_ui_ctx()
 const dispatch = createEventDispatcher()
 export let error_class = '', input_class = '', button_class = '', label_class = '.js'
-const AUTH0_DOMAIN$ = AUTH0_DOMAIN$_(ctx)
-const auth0_token_error$ = auth0_token_error$_(ctx)
+const AUTH0_DOMAIN_ = AUTH0_DOMAIN__(ctx)
+const auth0_token_error_ = auth0_token_error__(ctx)
 const _ = new Auth0_c(ctx)
 let root:HTMLDivElement
 let password_input:HTMLInputElement
 let password_confirmation_input
 let password_error:any|undefined //region
-$: password_error = $auth0_token_error$?.password //endregion
+$: password_error = $auth0_token_error_?.password //endregion
 let password_error_confirmation:string|undefined //region
-$: password_error_confirmation = $auth0_token_error$?.password_confirmation //endregion
+$: password_error_confirmation = $auth0_token_error_?.password_confirmation //endregion
 async function onsubmit_change_password(event:FormDataEvent) {
 	dispatch('submit__start')
 	try {
@@ -38,12 +38,12 @@ async function onsubmit_change_password(event:FormDataEvent) {
 	<Auth0_Dialog_Close></Auth0_Dialog_Close>
 	<h1>Change Password</h1>
 	<form
-		action="https://{$AUTH0_DOMAIN$}/dbconnections/change_password"
+		action="https://{$AUTH0_DOMAIN_}/dbconnections/change_password"
 		accept-charset="UTF-8"
 		method="post"
 		on:submit|preventDefault={onsubmit_change_password}
 	>
-		{#if $auth0_token_error$}
+		{#if $auth0_token_error_}
 			<ul>
 				{#if password_error}
 					<li class="error {error_class}">
