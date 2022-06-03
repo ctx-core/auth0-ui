@@ -1,5 +1,13 @@
 # @ctx-core/auth0-ui
 
+## 12.2.88
+
+### Patch Changes
+
+- .js + .d.ts instead of .ts
+- Updated dependencies
+  - @ctx-core/fetch-undici@2.1.16
+
 ## 12.2.87
 
 ### Patch Changes
