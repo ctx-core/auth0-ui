@@ -48,7 +48,7 @@
 		"@ctx-core/object": "^22.2.1",
 		"@ctx-core/svelte": "^10.2.2",
 		"@swc/cli": "^0.1.57",
-		"@swc/core": "^1.2.198",
+		"@swc/core": "^1.2.203",
 		"auth0-js": "^9.19.0",
 		"jsonwebtoken": "^8.5.1",
 		"polka": "next"
