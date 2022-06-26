@@ -61,9 +61,9 @@
 		"@types/trouter": "^3.1.1",
 		"rimraf": "^3.0.2",
 		"svelte": "^3.48.0",
-		"svelte-check": "^2.7.2",
+		"svelte-check": "^2.8.0",
 		"svelte-preprocess": "^4.10.7",
-		"svelte2tsx": "^0.5.10",
+		"svelte2tsx": "^0.5.11",
 		"tslib": "^2.4.0",
 		"typescript": "next"
 	},
