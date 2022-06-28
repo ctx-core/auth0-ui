@@ -1,4 +1,4 @@
-import type { Auth0Error } from 'auth0-js'
+import { type Auth0Error } from 'auth0-js'
 import { onDestroy } from 'svelte'
 import type {
 	auth0_client_id_body_I, auth0_grant_type_body_I, login_data_I, password_realm_body_T, post_auth0_oauth_token_body_I,
@@ -13,7 +13,7 @@ import {
 } from '@ctx-core/auth0'
 import { has_dom, dom_a_ } from '@ctx-core/dom'
 import { noop } from '@ctx-core/function'
-import type { Ctx } from '@ctx-core/object'
+import { type Ctx } from '@ctx-core/object'
 export class Auth0_c {
 	constructor(protected ctx:Ctx) {}
 	readonly login_auth0_body_ = (data:any)=>

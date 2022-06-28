@@ -2,7 +2,7 @@
 import {
 	AUTH0_DOMAIN__, auth0_token_error__, auth0_token_error_txt__, open_auth0_forgot_password, open_auth0_signup
 } from '@ctx-core/auth0'
-import type { Ctx } from '@ctx-core/object'
+import { type Ctx } from '@ctx-core/object'
 import { Auth0_c } from './Auth0_c.js'
 import Auth0_Dialog_Close from './Auth0_Dialog_Close.svelte'
 export let ctx:Ctx, error_class = '', input_class = '', button_class = '', label_class = '.js'
