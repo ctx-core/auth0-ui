@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/auth0-ui",
-	"version": "12.2.89",
+	"version": "12.2.90",
 	"description": "ctx-core auth0 ui component & express endpoints",
 	"keywords": [
 		"ctx-core",
@@ -34,21 +34,21 @@
 		"prepublishOnly": "npm run clean && npm run build"
 	},
 	"dependencies": {
-		"@ctx-core/auth0": "^34.4.5",
+		"@ctx-core/auth0": "^34.4.6",
 		"@ctx-core/auth0-management": "^9.0.67",
 		"@ctx-core/dialog": "^20.1.2",
-		"@ctx-core/dialog-ui-svelte": "^1.0.19",
+		"@ctx-core/dialog-ui-svelte": "^1.0.20",
 		"@ctx-core/dom": "^11.1.21",
 		"@ctx-core/error": "^11.5.0",
-		"@ctx-core/fetch-undici": "^2.2.2",
+		"@ctx-core/fetch-undici": "^2.2.3",
 		"@ctx-core/function": "^20.8.1",
 		"@ctx-core/http": "^9.0.31",
 		"@ctx-core/jwt": "^10.1.13",
 		"@ctx-core/logger": "^9.0.45",
 		"@ctx-core/object": "^22.2.1",
-		"@ctx-core/svelte": "^10.2.2",
+		"@ctx-core/svelte": "^10.2.3",
 		"@swc/cli": "^0.1.57",
-		"@swc/core": "^1.2.209",
+		"@swc/core": "^1.2.210",
 		"auth0-js": "^9.19.0",
 		"jsonwebtoken": "^8.5.1",
 		"polka": "next"
@@ -60,7 +60,7 @@
 		"@types/jsonwebtoken": "^8.5.8",
 		"@types/trouter": "^3.1.1",
 		"rimraf": "^3.0.2",
-		"svelte": "^3.48.0",
+		"svelte": "^3.49.0",
 		"svelte-check": "^2.8.0",
 		"svelte-preprocess": "^4.10.7",
 		"svelte2tsx": "^0.5.11",
