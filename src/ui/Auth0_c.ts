@@ -1,19 +1,37 @@
-import { type Auth0Error } from 'auth0-js'
-import { onDestroy } from 'svelte'
 import type {
-	auth0_client_id_body_I, auth0_grant_type_body_I, login_data_I, password_realm_body_T, post_auth0_oauth_token_body_I,
-	post_auth0_passwordless_start_body_T, post_auth0_passwordless_start_optional_body_T, signup_data_I
+	auth0_client_id_body_I,
+	auth0_grant_type_body_I,
+	login_data_I,
+	password_realm_body_T,
+	post_auth0_oauth_token_body_I,
+	post_auth0_passwordless_start_body_T,
+	post_auth0_passwordless_start_optional_body_T,
+	signup_data_I
 } from '@ctx-core/auth0'
 import {
-	auth0_body_, auth0_opened_class__, auth0_token_error__, auth0_token_json__, clear_auth0_token_error,
-	close_auth0, logout_auth0_token_error, open_auth0_forgot_password_check_email, open_auth0_login,
-	password_realm_body_, post_auth0_auth_change_password, post_auth0_dbconnections_signup,
-	post_auth0_oauth_token, post_auth0_passwordless_start, validate_auth0_change_password,
-	validate_auth0_forgot_password, validate_auth0_signup
+	auth0_body_,
+	auth0_opened_class__,
+	auth0_token_error__,
+	auth0_token_json__,
+	clear_auth0_token_error,
+	close_auth0,
+	logout_auth0_token_error,
+	open_auth0_forgot_password_check_email,
+	open_auth0_login,
+	password_realm_body_,
+	post_auth0_auth_change_password,
+	post_auth0_dbconnections_signup,
+	post_auth0_oauth_token,
+	post_auth0_passwordless_start,
+	validate_auth0_change_password,
+	validate_auth0_forgot_password,
+	validate_auth0_signup
 } from '@ctx-core/auth0'
-import { has_dom, dom_a_ } from '@ctx-core/dom'
+import { dom_a_, has_dom } from '@ctx-core/dom'
 import { noop } from '@ctx-core/function'
-import { type Ctx } from '@ctx-core/object'
+import type { Ctx } from '@ctx-core/object'
+import type { Auth0Error } from 'auth0-js'
+import { onDestroy } from 'svelte'
 export class Auth0_c {
 	constructor(protected ctx:Ctx) {}
 	readonly login_auth0_body_ = (data:any)=>
