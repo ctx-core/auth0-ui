@@ -1,5 +1,18 @@
 # @ctx-core/auth0-ui
 
+## 12.2.92
+
+### Patch Changes
+
+- @ctx-core/svelte: 11.0.0
+
+## 12.2.91
+
+### Patch Changes
+
+- Updated dependencies
+  - @ctx-core/svelte@11.0.0
+
 ## 12.2.90
 
 ### Patch Changes
