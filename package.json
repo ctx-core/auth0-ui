@@ -48,7 +48,7 @@
 		"@ctx-core/object": "^22.2.6",
 		"@ctx-core/svelte": "^12.0.4",
 		"@swc/cli": "^0.1.57",
-		"@swc/core": "^1.2.233",
+		"@swc/core": "^1.2.237",
 		"auth0-js": "^9.19.0",
 		"jsonwebtoken": "^8.5.1",
 		"polka": "next"
@@ -61,9 +61,9 @@
 		"@types/trouter": "^3.1.1",
 		"rimraf": "^3.0.2",
 		"svelte": "^3.49.0",
-		"svelte-check": "^2.8.0",
+		"svelte-check": "^2.8.1",
 		"svelte-preprocess": "^4.10.7",
-		"svelte2tsx": "^0.5.13",
+		"svelte2tsx": "^0.5.14",
 		"tslib": "^2.4.0",
 		"typescript": "next"
 	},
