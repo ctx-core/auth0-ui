@@ -1,5 +1,25 @@
 # @ctx-core/auth0-ui
 
+## 12.2.104
+
+### Patch Changes
+
+- svelte-check: ^2.8.1 -> ^2.9.0
+- svelte2tsx: ^0.5.14 -> ^0.5.15
+- Updated dependencies
+- Updated dependencies
+  - @ctx-core/auth0@35.0.3
+  - @ctx-core/auth0-management@9.0.71
+  - @ctx-core/dialog@20.1.10
+  - @ctx-core/dom@11.1.27
+  - @ctx-core/error@11.5.1
+  - @ctx-core/fetch-undici@2.3.5
+  - @ctx-core/function@21.0.1
+  - @ctx-core/jwt@10.1.19
+  - @ctx-core/object@22.2.7
+  - @ctx-core/svelte@12.0.5
+  - @ctx-core/dialog-ui-svelte@1.0.21
+
 ## 12.2.103
 
 ### Patch Changes
