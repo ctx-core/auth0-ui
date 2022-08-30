@@ -1,5 +1,23 @@
 # @ctx-core/auth0-ui
 
+## 12.2.107
+
+### Patch Changes
+
+- update dependencies
+- Updated dependencies
+  - @ctx-core/auth0@35.0.5
+  - @ctx-core/dialog@20.1.12
+
+## 12.2.106
+
+### Patch Changes
+
+- Updated dependencies
+  - @ctx-core/svelte@13.0.0
+  - @ctx-core/auth0@35.0.4
+  - @ctx-core/dialog@20.1.11
+
 ## 12.2.105
 
 ### Patch Changes
