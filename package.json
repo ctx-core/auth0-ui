@@ -46,7 +46,7 @@
 		"@ctx-core/jwt": "^10.1.19",
 		"@ctx-core/logger": "^9.0.45",
 		"@ctx-core/object": "^22.2.7",
-		"@ctx-core/svelte": "^13.0.0",
+		"@ctx-core/svelte": "^13.0.1",
 		"@swc/cli": "^0.1.57",
 		"@swc/core": "^1.2.245",
 		"auth0-js": "^9.19.0",
