@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/auth0-ui",
-	"version": "12.2.107",
+	"version": "12.2.108",
 	"description": "ctx-core auth0 ui component & express endpoints",
 	"keywords": [
 		"ctx-core",
@@ -34,10 +34,10 @@
 		"prepublishOnly": "npm run clean && npm run build"
 	},
 	"dependencies": {
-		"@ctx-core/auth0": "^35.0.5",
+		"@ctx-core/auth0": "^35.0.6",
 		"@ctx-core/auth0-management": "^9.0.71",
 		"@ctx-core/dialog": "^20.1.12",
-		"@ctx-core/dialog-ui-svelte": "^1.0.22",
+		"@ctx-core/dialog-ui-svelte": "^1.0.23",
 		"@ctx-core/dom": "^11.1.27",
 		"@ctx-core/error": "^11.5.1",
 		"@ctx-core/fetch-undici": "^2.3.5",
@@ -46,7 +46,7 @@
 		"@ctx-core/jwt": "^10.1.19",
 		"@ctx-core/logger": "^9.0.45",
 		"@ctx-core/object": "^22.2.7",
-		"@ctx-core/svelte": "^13.0.1",
+		"@ctx-core/svelte": "^13.0.2",
 		"@swc/cli": "^0.1.57",
 		"@swc/core": "^1.2.246",
 		"auth0-js": "^9.19.0",
@@ -60,7 +60,7 @@
 		"@types/jsonwebtoken": "^8.5.9",
 		"@types/trouter": "^3.1.1",
 		"rimraf": "^3.0.2",
-		"svelte": "^3.49.0",
+		"svelte": "^3.50.0",
 		"svelte-check": "^2.9.0",
 		"svelte-preprocess": "^4.10.7",
 		"svelte2tsx": "^0.5.16",
