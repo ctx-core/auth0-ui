@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/auth0-ui",
-	"version": "12.2.114",
+	"version": "12.2.115",
 	"description": "ctx-core auth0 ui component & express endpoints",
 	"keywords": [
 		"ctx-core",
@@ -37,7 +37,7 @@
 		"@ctx-core/auth0": "^35.0.11",
 		"@ctx-core/auth0-management": "^9.0.71",
 		"@ctx-core/dialog": "^20.1.14",
-		"@ctx-core/dialog-ui-svelte": "^1.0.26",
+		"@ctx-core/dialog-ui-svelte": "^1.0.27",
 		"@ctx-core/dom": "^11.1.28",
 		"@ctx-core/error": "^11.5.1",
 		"@ctx-core/fetch-undici": "^2.3.5",
@@ -61,9 +61,9 @@
 		"@types/trouter": "^3.1.1",
 		"rimraf": "^3.0.2",
 		"svelte": "^3.50.1",
-		"svelte-check": "^2.9.0",
+		"svelte-check": "^2.9.1",
 		"svelte-preprocess": "^4.10.7",
-		"svelte2tsx": "^0.5.18",
+		"svelte2tsx": "^0.5.19",
 		"tslib": "^2.4.0",
 		"typescript": "next"
 	},
