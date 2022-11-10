@@ -1,5 +1,15 @@
 # @ctx-core/auth0-ui
 
+## 12.2.120
+
+### Patch Changes
+
+- svelte: ^3.53.0 -> ^3.53.1
+- Updated dependencies
+  - @ctx-core/auth0@35.0.17
+  - @ctx-core/dialog-ui-svelte@1.0.31
+  - @ctx-core/svelte@13.4.4
+
 ## 12.2.119
 
 ### Patch Changes
