@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/auth0-ui",
-	"version": "12.2.122",
+	"version": "12.2.123",
 	"description": "ctx-core auth0 ui component & express endpoints",
 	"keywords": [
 		"ctx-core",
@@ -34,13 +34,13 @@
 		"prepublishOnly": "npm run clean && npm run build"
 	},
 	"dependencies": {
-		"@ctx-core/auth0": "^35.0.19",
-		"@ctx-core/auth0-management": "^9.0.74",
+		"@ctx-core/auth0": "^35.0.20",
+		"@ctx-core/auth0-management": "^9.0.75",
 		"@ctx-core/dialog": "^20.1.14",
 		"@ctx-core/dialog-ui-svelte": "^1.0.31",
 		"@ctx-core/dom": "^11.2.0",
 		"@ctx-core/error": "^11.5.1",
-		"@ctx-core/fetch-undici": "^2.3.9",
+		"@ctx-core/fetch-undici": "^2.3.10",
 		"@ctx-core/function": "^21.6.0",
 		"@ctx-core/http": "^9.0.31",
 		"@ctx-core/jwt": "^10.1.20",
@@ -56,7 +56,7 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
-		"@types/auth0-js": "^9.14.6",
+		"@types/auth0-js": "^9.14.7",
 		"@types/jsonwebtoken": "^8.5.9",
 		"@types/trouter": "^3.1.1",
 		"rimraf": "^3.0.2",
