@@ -1,5 +1,16 @@
 # @ctx-core/auth0-ui
 
+## 12.2.127
+
+### Patch Changes
+
+- svelte-check: ^2.10.1 -> ^2.10.2
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+  - @ctx-core/fetch-undici@2.3.11
+  - @ctx-core/auth0-management@9.0.76
+
 ## 12.2.126
 
 ### Patch Changes
