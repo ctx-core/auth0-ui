@@ -1,5 +1,19 @@
 # @ctx-core/auth0-ui
 
+## 12.2.147
+
+### Patch Changes
+
+- @ctx-core/jwt: ^10.1.23 -> ^10.1.24
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+  - @ctx-core/auth0@35.0.36
+  - @ctx-core/fetch-undici@2.3.19
+  - @ctx-core/dom@11.2.4
+
 ## 12.2.146
 
 ### Patch Changes
