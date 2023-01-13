@@ -1,5 +1,21 @@
 # @ctx-core/auth0-ui
 
+## 12.2.183
+
+### Patch Changes
+
+- rimraf: ^4.0.1 -> ^4.0.4
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+  - @ctx-core/fetch-undici@2.3.45
+  - @ctx-core/dom@11.2.20
+  - @ctx-core/dialog-ui-svelte@1.0.41
+  - @ctx-core/http@9.0.43
+  - @ctx-core/logger@9.0.47
+
 ## 12.2.182
 
 ### Patch Changes
