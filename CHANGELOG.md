@@ -1,5 +1,22 @@
 # @ctx-core/auth0-ui
 
+## 12.2.182
+
+### Patch Changes
+
+- rimraf: ^3.0.2 -> ^4.0.1
+- auth0-js: ^9.20.0 -> ^9.20.1
+- @types/jsonwebtoken: ^9.0.0 -> ^9.0.1
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+  - @ctx-core/auth0-management@9.0.118
+  - @ctx-core/dialog-ui-svelte@1.0.40
+  - @ctx-core/http@9.0.42
+  - @ctx-core/logger@9.0.46
+  - @ctx-core/auth0@35.0.63
+
 ## 12.2.181
 
 ### Patch Changes
