@@ -1,5 +1,13 @@
 # @ctx-core/auth0-ui
 
+## 12.2.188
+
+### Patch Changes
+
+- svelte-preprocess: ^5.0.0 -> ^5.0.1
+- Updated dependencies
+  - @ctx-core/dialog-ui-svelte@1.0.42
+
 ## 12.2.187
 
 ### Patch Changes
