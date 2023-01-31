@@ -1,5 +1,25 @@
 # @ctx-core/auth0-ui
 
+## 12.2.204
+
+### Patch Changes
+
+- tsconfig.json: - importsNotUsedAsValues
+- Updated dependencies
+  - @ctx-core/auth0@35.0.78
+  - @ctx-core/auth0-management@9.0.135
+  - @ctx-core/dialog@20.1.29
+  - @ctx-core/dialog-ui-svelte@1.0.44
+  - @ctx-core/dom@11.2.25
+  - @ctx-core/error@11.5.14
+  - @ctx-core/fetch-undici@2.3.57
+  - @ctx-core/function@21.6.1
+  - @ctx-core/http@9.0.46
+  - @ctx-core/jwt@10.1.46
+  - @ctx-core/logger@9.0.48
+  - @ctx-core/object@24.1.1
+  - @ctx-core/svelte@13.4.20
+
 ## 12.2.203
 
 ### Patch Changes
