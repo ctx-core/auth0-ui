@@ -1,5 +1,16 @@
 # @ctx-core/auth0-ui
 
+## 12.2.209
+
+### Patch Changes
+
+- @swc/core: ^1.3.31 -> ^1.3.32
+- Updated dependencies
+  - @ctx-core/dialog-ui-svelte@1.0.45
+  - @ctx-core/http@9.0.48
+  - @ctx-core/jwt@10.1.49
+  - @ctx-core/logger@9.0.49
+
 ## 12.2.208
 
 ### Patch Changes
