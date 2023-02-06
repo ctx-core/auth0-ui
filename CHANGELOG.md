@@ -1,5 +1,20 @@
 # @ctx-core/auth0-ui
 
+## 12.2.225
+
+### Patch Changes
+
+- @ctx-core/object: ^24.1.3 -> ^24.1.4
+- Updated dependencies
+  - @ctx-core/auth0@35.0.95
+  - @ctx-core/auth0-management@9.0.152
+  - @ctx-core/dialog@20.1.35
+  - @ctx-core/dom@11.2.32
+  - @ctx-core/error@11.5.18
+  - @ctx-core/fetch-undici@2.3.69
+  - @ctx-core/http@9.1.2
+  - @ctx-core/svelte@13.4.24
+
 ## 12.2.224
 
 ### Patch Changes
