@@ -21,8 +21,8 @@ import {
 	password_realm__body_,
 	auth0__change_password__fetch_post,
 	auth0__dbconnections_signup__fetch_get,
-	auth0__oauth_token__fetch_get,
-	auth0__passwordless_start__fetch_get,
+	auth0__oauth_token__fetch_post,
+	auth0__passwordless_start__fetch_post,
 	auth0__change_password__validate,
 	auth0__forgot_password__validate,
 	auth0__signup__validate
@@ -59,7 +59,7 @@ export class Auth0_c {
 		}
 	}
 	readonly login = async (data:auth0__login_data_T, schedule_forms_clear = ()=>{})=>{
-		const [auth0_token, response] = await auth0__oauth_token__fetch_get(
+		const [auth0_token, response] = await auth0__oauth_token__fetch_post(
 			this.ctx, this.login_password_realm_body_(data)
 		)
 		if (response.ok) {
@@ -181,7 +181,7 @@ export class Auth0_c {
 			auth0__token__error__logout(this.ctx, auth0_token_error)
 			return
 		}
-		await auth0__passwordless_start__fetch_get(
+		await auth0__passwordless_start__fetch_post(
 			this.ctx, this.login_auth0_body_(data) as auth0__passwordless_start__fetch__body_T
 		)
 		auth0__forgot_password__check_email__open(this.ctx)

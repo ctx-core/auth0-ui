@@ -1,5 +1,13 @@
 # @ctx-core/auth0-ui
 
+## 12.2.233
+
+### Patch Changes
+
+- fix: auth0**oauth_token**fetch_get=>auth0**oauth_token**fetch_post,auth0**passwordless_start**fetch_get=>auth0**passwordless_start**fetch_post
+- Updated dependencies
+  - @ctx-core/auth0-management@9.1.4
+
 ## 12.2.232
 
 ### Patch Changes
