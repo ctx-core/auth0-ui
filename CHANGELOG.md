@@ -1,5 +1,16 @@
 # @ctx-core/auth0-ui
 
+## 13.0.0
+
+### Major Changes
+
+- name convention updates
+
+### Patch Changes
+
+- Updated dependencies
+  - @ctx-core/auth0@35.1.7
+
 ## 12.2.236
 
 ### Patch Changes

@@ -6,7 +6,7 @@ import { type Ctx } from '@ctx-core/object'
 import { Auth0_c } from './Auth0_c.js'
 import Auth0_Dialog_Close from './Auth0_Dialog_Close.svelte'
 export let ctx:Ctx, error_class = '', input_class = '', button_class = '', label_class = '.js'
-const auth0_token_error_ = auth0__token__error__(ctx)
+const auth0__token__error_ = auth0__token__error__(ctx)
 const auth0_token_error_txt_ = auth0__token__error_txt__(ctx)
 const AUTH0_DOMAIN = AUTH0_DOMAIN__(ctx)
 const _ = new Auth0_c(ctx)
@@ -26,10 +26,10 @@ $: error_password = $auth0_token_error_?.password //endregion
 		accept-charset="UTF-8"
 		method="post"
 		on:submit={event =>
-			_.onsubmit_login(event, {
+			_.login__onsubmit(event, {
 				username_login_input,
 				password_login_input
-			}, ()=>_.schedule_forms_clear(root))}
+			}, ()=>_.forms__clear__schedule(root))}
 	>
 		{#if $auth0_token_error_txt_}
 			<ul>

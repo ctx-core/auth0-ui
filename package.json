@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/auth0-ui",
-	"version": "12.2.236",
+	"version": "13.0.0",
 	"description": "ctx-core auth0 ui component & express endpoints",
 	"keywords": [
 		"ctx-core",
@@ -34,7 +34,7 @@
 		"prepublishOnly": "npm run clean && npm run build"
 	},
 	"dependencies": {
-		"@ctx-core/auth0": "^35.1.6",
+		"@ctx-core/auth0": "^35.1.7",
 		"@ctx-core/auth0-management": "^9.1.7",
 		"@ctx-core/dialog": "^20.1.35",
 		"@ctx-core/dialog-ui-svelte": "^1.0.46",

@@ -1,4 +1,4 @@
-export function auth_script_html_():string {
+export function auth0__script__html_():string {
 	return `
 <script>
 	(function() {
@@ -31,6 +31,7 @@ export function auth_script_html_():string {
 	`.trim()
 }
 export {
-	auth_script_html_ as _auth_script_html,
-	auth_script_html_ as _html__script__auth,
+	auth0__script__html_ as auth_script_html_,
+	auth0__script__html_ as _auth_script_html,
+	auth0__script__html_ as _html__script__auth,
 }

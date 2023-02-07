@@ -34,49 +34,49 @@ import type { Auth0Error } from 'auth0-js'
 import { onDestroy } from 'svelte'
 export class Auth0_c {
 	constructor(protected ctx:Ctx) {}
-	readonly login_auth0_body_ = (data:any)=>
-		auth0__body_<login_data_password_realm_body_I>(
+	readonly auth0__login__body_ = (data:any)=>
+		auth0__body_<login__password_realm__body_T>(
 			this.ctx, data
 		)
-	readonly login_password_realm_body_ = (data:any)=>
-		password_realm__body_<login_data_password_realm_body_I>(
+	readonly auth0__login__password_realm__body_ = (data:any)=>
+		password_realm__body_<login__password_realm__body_T>(
 			this.ctx,
-			this.login_auth0_body_(data)
+			this.auth0__login__body_(data)
 		)
-	readonly signup_auth0_body_ = (data:any)=>
-		auth0__body_<signup_data_password_realm_body_I>(this.ctx, data) as signup_data_password_realm_body_I
-	readonly signup_password_realm_body_ = (data:any)=>
-		password_realm__body_<signup_data_password_realm_body_I>(this.ctx, this.signup_auth0_body_(data))
-	readonly auth0_opened_class = auth0__opened__class__(this.ctx)
-	readonly auth0_token_json_ = auth0__token__json__(this.ctx)
-	readonly auth0_token_error_ = auth0__token__error__(this.ctx)
+	readonly auth0__signup__body_ = (data:any)=>
+		auth0__body_<signup__password_realm__body_T>(this.ctx, data) as signup__password_realm__body_T
+	readonly auth0__signup__password_realm__body_ = (data:any)=>
+		password_realm__body_<signup__password_realm__body_T>(this.ctx, this.auth0__signup__body_(data))
+	readonly auth0__opened__class = auth0__opened__class__(this.ctx)
+	readonly auth0__token__json_ = auth0__token__json__(this.ctx)
+	readonly auth0__token__error_ = auth0__token__error__(this.ctx)
 	readonly auth0__close = ()=>auth0__close(this.ctx)
 	readonly onMount = async (root:HTMLElement)=>{
 		if (has_dom) {
 			const unsubscribe =
-				this.auth0_opened_class.subscribe(()=>this.schedule_forms_clear(root))
+				this.auth0__opened__class.subscribe(()=>this.forms__clear__schedule(root))
 			onDestroy(unsubscribe)
 		}
 	}
-	readonly login = async (data:auth0__login_data_T, schedule_forms_clear = ()=>{})=>{
+	readonly login = async (data:auth0__login_data_T, forms__clear__schedule = ()=>{})=>{
 		const [auth0_token, response] = await auth0__oauth_token__fetch_post(
-			this.ctx, this.login_password_realm_body_(data)
+			this.ctx, this.auth0__login__password_realm__body_(data)
 		)
 		if (response.ok) {
 			const auth0_token_json = JSON.stringify(auth0_token)
-			this.auth0_token_json_.$ = auth0_token_json
-			schedule_forms_clear()
+			this.auth0__token__json_.$ = auth0_token_json
+			forms__clear__schedule()
 			this.auth0__close()
 		} else {
 			const auth_token_error = auth0_token as Auth0Error
-			this.auth0_token_error_.$ = auth_token_error
+			this.auth0__token__error_.$ = auth_token_error
 			auth0__token__error__logout(this.ctx, auth_token_error)
 		}
 	}
-	readonly signup = async (data:auth0__signup_data_T, schedule_forms_clear = ()=>{})=>{
+	readonly signup = async (data:auth0__signup_data_T, forms__clear__schedule = ()=>{})=>{
 		const [auth0_userinfo] = await auth0__dbconnections_signup__fetch_get(
 			this.ctx,
-			this.signup_password_realm_body_(data))
+			this.auth0__signup__password_realm__body_(data))
 		const auth0_userinfo_Auth0Error = auth0_userinfo as Auth0Error
 		const { statusCode } = auth0_userinfo_Auth0Error
 		if (statusCode) {
@@ -92,13 +92,13 @@ export class Auth0_c {
 			auth0__token__error__logout(this.ctx, auth0_token_error)
 			return
 		}
-		schedule_forms_clear()
+		forms__clear__schedule()
 		await this.login({
 			username: data.email,
 			password: data.password,
-		}, schedule_forms_clear)
+		}, forms__clear__schedule)
 	}
-	readonly change_password = async (form:{ password:string }, schedule_forms_clear = ()=>{})=>{
+	readonly change_password = async (form:{ password:string }, forms__clear__schedule = ()=>{})=>{
 		const { password } = form
 		let error
 		try {
@@ -121,20 +121,20 @@ export class Auth0_c {
 			auth0__token__error__logout(this.ctx, auth0_token_error)
 			return
 		}
-		schedule_forms_clear()
+		forms__clear__schedule()
 		this.auth0__close()
 	}
-	readonly schedule_forms_clear_:(root:HTMLElement)=>void = (root:HTMLElement)=>{
-		return ()=>this.schedule_forms_clear(root)
+	readonly forms__clear__schedule_:(root:HTMLElement)=>void = (root:HTMLElement)=>{
+		return ()=>this.forms__clear__schedule(root)
 	}
-	readonly schedule_forms_clear = (root:HTMLElement)=>{
+	readonly forms__clear__schedule = (root:HTMLElement)=>{
 		setTimeout(()=>{
 			auth0__token__error__clear(this.ctx)
-			clear_inputs(dom_a_('input[type=text]', root))
-			clear_inputs(dom_a_('input[type=password]', root))
+			inputs__clear(dom_a_('input[type=text]', root))
+			inputs__clear(dom_a_('input[type=password]', root))
 		}, 100)
 	}
-	readonly onsubmit_signup = async (event:Event, ctx:onsubmit_signup_Ctx, schedule_forms_clear = ()=>{})=>{
+	readonly signup__onsubmit = async (event:Event, ctx:signup__onsubmit__o_T, forms__clear__schedule = ()=>{})=>{
 		event.preventDefault()
 		const {
 			email_input,
@@ -157,17 +157,17 @@ export class Auth0_c {
 		await this.signup({
 			email,
 			password
-		}, schedule_forms_clear)
+		}, forms__clear__schedule)
 		return
 	}
-	readonly onsubmit_login = async (event:Event, ctx:onsubmit_login_Ctx, schedule_forms_clear = ()=>{})=>{
+	readonly login__onsubmit = async (event:Event, ctx:login__onsubmit__o_T, forms__clear__schedule = ()=>{})=>{
 		event.preventDefault()
 		const { username_login_input, password_login_input } = ctx
 		const username = username_login_input.value
 		const password = password_login_input.value
-		await this.login({ username, password }, schedule_forms_clear)
+		await this.login({ username, password }, forms__clear__schedule)
 	}
-	readonly onsubmit_forgot_password = async (event:Event, ctx:onsubmit_forgot_password_Ctx)=>{
+	readonly forgot_password__onsubmit = async (event:Event, ctx:forgot_password__onsubmit__o_T)=>{
 		event.preventDefault()
 		const { email_input } = ctx
 		const email = email_input.value
@@ -182,12 +182,12 @@ export class Auth0_c {
 			return
 		}
 		await auth0__passwordless_start__fetch_post(
-			this.ctx, this.login_auth0_body_(data) as auth0__passwordless_start__fetch__body_T
+			this.ctx, this.auth0__login__body_(data) as auth0__passwordless_start__fetch__body_T
 		)
 		auth0__forgot_password__check_email__open(this.ctx)
 	}
-	readonly onsubmit_change_password = async (
-		event:Event, ctx:onsubmit_change_password_Ctx, schedule_forms_clear = noop
+	readonly change_password__onsubmit = async (
+		event:Event, ctx:change_password__onsubmit__o_T, forms__clear__schedule = noop
 	)=>{
 		event.preventDefault()
 		const {
@@ -206,45 +206,45 @@ export class Auth0_c {
 			auth0__token__error__logout(this.ctx, auth0_token_error)
 			throw auth0_token_error
 		}
-		return await this.change_password({ password }, schedule_forms_clear)
+		return await this.change_password({ password }, forms__clear__schedule)
 	}
 	readonly onclose = async (event:MouseEvent)=>{
 		event.preventDefault()
 		this.auth0__close()
 	}
 }
-function clear_inputs(inputs:NodeList) {
+function inputs__clear(inputs:NodeList) {
 	for (let i = 0; i < inputs.length; i++) {
 		const input = inputs[i] as HTMLInputElement
 		input.value = ''
 	}
 }
-export interface signup_data_password_realm_body_I
+export interface signup__password_realm__body_T
 	extends auth0__signup_data_T,
 		auth0__client_id__body_T,
 		auth0__passwordless_start__fetch__body_T,
 		password_realm__body_T,
 		auth0__grant_type__body_T,
 		auth0__oauth_token__fetch__body_T {}
-export interface login_data_password_realm_body_I
+export interface login__password_realm__body_T
 	extends auth0__login_data_T,
 		auth0__client_id__body_T,
 		auth0__passwordless_start__fetch__body_T,
 		password_realm__body_T,
 		auth0__grant_type__body_T,
 		auth0__oauth_token__fetch__body_T {}
-export interface onsubmit_change_password_Ctx {
+export interface change_password__onsubmit__o_T {
 	password_input:HTMLInputElement
 	password_confirmation_input:HTMLInputElement
 }
-export interface onsubmit_forgot_password_Ctx {
+export interface forgot_password__onsubmit__o_T {
 	email_input:HTMLInputElement
 }
-export interface onsubmit_login_Ctx {
+export interface login__onsubmit__o_T {
 	username_login_input:HTMLInputElement
 	password_login_input:HTMLInputElement
 }
-export interface onsubmit_signup_Ctx {
+export interface signup__onsubmit__o_T {
 	email_input:HTMLInputElement
 	password_input:HTMLInputElement
 	password_confirmation_input:HTMLInputElement

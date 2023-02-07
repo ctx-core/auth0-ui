@@ -2,13 +2,13 @@
 import {
 	AUTH0_DOMAIN__, auth0__token__error__, auth0__forgot_password__open, auth0__login__open,
 } from '@ctx-core/auth0'
-import { getContext_auth0_ui_ctx } from '../getContext_auth0_ui_ctx.js'
+import { auth0__ui__o__getContext } from '../auth0__ui__o__getContext.js'
 import { Auth0_c } from './Auth0_c.js'
 import Auth0_Dialog_Close from './Auth0_Dialog_Close.svelte'
 export let error_class = '', input_class = '', button_class = '', label_class = '.js'
-const ctx = getContext_auth0_ui_ctx()
+const ctx = auth0__ui__o__getContext()
 const AUTH0_DOMAIN_ = AUTH0_DOMAIN__(ctx)
-const auth0_token_error_ = auth0__token__error__(ctx)
+const auth0__token__error_ = auth0__token__error__(ctx)
 const _ = new Auth0_c(ctx)
 let root, signup_email_input, signup_password_input, signup_password_confirmation_input
 let error_username:string|undefined //region
@@ -37,11 +37,11 @@ $: {
 		accept-charset="UTF-8"
 		method="post"
 		on:submit={event =>
-			_.onsubmit_signup(event, {
+			_.signup__onsubmit(event, {
 				signup_email_input,
 				signup_password_input,
 				signup_password_confirmation_input
-			}, _.schedule_forms_clear(root))
+			}, _.forms__clear__schedule(root))
 		}
 	>
 		{#if $auth0_token_error_}

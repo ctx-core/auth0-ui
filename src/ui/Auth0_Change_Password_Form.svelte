@@ -1,14 +1,14 @@
 <script lang="ts">
 import { createEventDispatcher } from 'svelte'
 import { AUTH0_DOMAIN__, auth0__token__error__ } from '@ctx-core/auth0'
-import { getContext_auth0_ui_ctx } from '../getContext_auth0_ui_ctx.js'
+import { auth0__ui__o__getContext } from '../auth0__ui__o__getContext.js'
 import { Auth0_c } from './Auth0_c.js'
 import Auth0_Dialog_Close from './Auth0_Dialog_Close.svelte'
-const ctx = getContext_auth0_ui_ctx()
+const ctx = auth0__ui__o__getContext()
 const dispatch = createEventDispatcher()
 export let error_class = '', input_class = '', button_class = '', label_class = '.js'
 const AUTH0_DOMAIN_ = AUTH0_DOMAIN__(ctx)
-const auth0_token_error_ = auth0__token__error__(ctx)
+const auth0__token__error_ = auth0__token__error__(ctx)
 const _ = new Auth0_c(ctx)
 let root:HTMLDivElement
 let password_input:HTMLInputElement
@@ -17,13 +17,13 @@ let password_error:any|undefined //region
 $: password_error = $auth0_token_error_?.password //endregion
 let password_error_confirmation:string|undefined //region
 $: password_error_confirmation = $auth0_token_error_?.password_confirmation //endregion
-async function onsubmit_change_password(event:FormDataEvent) {
+async function change_password__onsubmit(event:FormDataEvent) {
 	dispatch('submit__start')
 	try {
-		await _.onsubmit_change_password(event, {
+		await _.change_password__onsubmit(event, {
 			password_input,
 			password_confirmation_input,
-		}, ()=>_.schedule_forms_clear(root))
+		}, ()=>_.forms__clear__schedule(root))
 		dispatch('success')
 	} catch (error) {
 		dispatch('error', { error })
@@ -41,7 +41,7 @@ async function onsubmit_change_password(event:FormDataEvent) {
 		action="https://{$AUTH0_DOMAIN_}/dbconnections/change_password"
 		accept-charset="UTF-8"
 		method="post"
-		on:submit|preventDefault={onsubmit_change_password}
+		on:submit|preventDefault={change_password__onsubmit}
 	>
 		{#if $auth0_token_error_}
 			<ul>
