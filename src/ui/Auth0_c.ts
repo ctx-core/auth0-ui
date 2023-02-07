@@ -19,7 +19,7 @@ import {
 	auth0__forgot_password__check_email__open,
 	auth0__login__open,
 	password_realm__body_,
-	auth0__change_password__fetch,
+	auth0__change_password__fetch_post,
 	auth0__dbconnections_signup__fetch_get,
 	auth0__oauth_token__fetch_get,
 	auth0__passwordless_start__fetch_get,
@@ -102,7 +102,7 @@ export class Auth0_c {
 		const { password } = form
 		let error
 		try {
-			const [response_json, response] = await auth0__change_password__fetch(this.ctx, password)
+			const [response_json, response] = await auth0__change_password__fetch_post(this.ctx, password)
 			if (!response.ok) {
 				if (response.status == 401) {
 					auth0__login__open(this.ctx)
