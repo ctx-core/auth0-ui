@@ -1,6 +1,6 @@
 <script lang="ts">
 import { createEventDispatcher } from 'svelte'
-import { AUTH0_DOMAIN__, auth0_token_error__ } from '@ctx-core/auth0'
+import { AUTH0_DOMAIN__, auth0__token__error__ } from '@ctx-core/auth0'
 import { getContext_auth0_ui_ctx } from '../getContext_auth0_ui_ctx.js'
 import { Auth0_c } from './Auth0_c.js'
 import Auth0_Dialog_Close from './Auth0_Dialog_Close.svelte'
@@ -8,7 +8,7 @@ const ctx = getContext_auth0_ui_ctx()
 const dispatch = createEventDispatcher()
 export let error_class = '', input_class = '', button_class = '', label_class = '.js'
 const AUTH0_DOMAIN_ = AUTH0_DOMAIN__(ctx)
-const auth0_token_error_ = auth0_token_error__(ctx)
+const auth0_token_error_ = auth0__token__error__(ctx)
 const _ = new Auth0_c(ctx)
 let root:HTMLDivElement
 let password_input:HTMLInputElement
