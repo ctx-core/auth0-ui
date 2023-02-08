@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/auth0-ui",
-	"version": "13.0.1",
+	"version": "14.0.0",
 	"description": "ctx-core auth0 ui component & express endpoints",
 	"keywords": [
 		"ctx-core",
@@ -17,55 +17,28 @@
 	"license": "Apache-2.0",
 	"author": "Brian Takita",
 	"type": "module",
-	"svelte": "./lib/index.js",
-	"types": "./lib/index.d.ts",
+	"types": "./src/index.d.ts",
+	"svelte": "./src/index.js",
 	"exports": {
-		".": "./lib/index.js",
+		".": "./src/index.js",
 		"./package.json": "./package.json"
 	},
 	"scripts": {
-		"build": "npm run compile",
-		"clean": "rimraf lib && npm run clean:tsbuildinfo",
-		"clean:tsbuildinfo": "rimraf tsconfig.tsbuildinfo && rimraf lib/**/*.d.ts",
-		"compile": "npm run compile:source && npm run compile:declaration",
-		"compile:source": "swc src --out-dir lib --copy-files --source-maps --config-file .swcrc",
-		"compile:declaration": "npm run clean:tsbuildinfo && tsc --declaration --emitDeclarationOnly --declarationDir lib",
+		"build": ":",
+		"clean": ":",
 		"exec": "$@",
-		"prepublishOnly": "npm run clean && npm run build"
+		"prepublishOnly": "npm run clean && npm run build && npm run test",
+		"test": "pnpm test-unit && check-dts",
+		"test-unit": "tsx node_modules/uvu/bin.js . '\\.test\\.(ts|js)$'",
+		"test-unit-coverage": "c8 pnpm test-unit"
 	},
-	"dependencies": {
-		"@ctx-core/auth0": "^35.1.7",
-		"@ctx-core/auth0-management": "^9.1.8",
-		"@ctx-core/dialog": "^20.1.35",
-		"@ctx-core/dialog-ui-svelte": "^1.0.46",
-		"@ctx-core/dom": "^11.2.33",
-		"@ctx-core/error": "^11.6.0",
-		"@ctx-core/fetch-undici": "^2.3.72",
-		"@ctx-core/function": "^21.6.1",
-		"@ctx-core/http": "^9.1.2",
-		"@ctx-core/jwt": "^10.2.0",
-		"@ctx-core/logger": "^9.0.49",
-		"@ctx-core/object": "^24.1.4",
-		"@ctx-core/svelte": "^13.4.24",
-		"@swc/cli": "^0.1.61",
-		"@swc/core": "^1.3.32",
-		"auth0-js": "^9.20.1",
-		"jsonwebtoken": "^9.0.0",
-		"polka": "next"
-	},
+	"dependencies": {},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "next",
-		"@sveltejs/kit": "next",
-		"@types/auth0-js": "^9.14.7",
-		"@types/jsonwebtoken": "^9.0.1",
-		"@types/trouter": "^3.1.1",
-		"rimraf": "^4.1.2",
-		"svelte": "^3.55.1",
-		"svelte-check": "^3.0.3",
-		"svelte-preprocess": "^5.0.1",
-		"svelte2tsx": "^0.6.1",
-		"tslib": "^2.5.0",
-		"typescript": "next"
+		"c8": "^7.12.0",
+		"check-dts": "^0.7.0",
+		"tsx": "^3.12.3",
+		"typescript": "next",
+		"uvu": "^0.5.6"
 	},
 	"publishConfig": {
 		"access": "public",

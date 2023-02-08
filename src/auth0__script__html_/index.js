@@ -1,4 +1,4 @@
-export function auth0__script__html_():string {
+export function auth0__script__html_() {
 	return `
 <script>
 	(function() {
@@ -7,11 +7,9 @@ export function auth0__script__html_():string {
 		var search_values = _values(search.substr(1))
 		var hash = location.hash
 		var auth0_token = _values(hash.substr(1))
-		var auth0_token_json = JSON.stringify(auth0_token)
-		var redirect_url =
-					search_values
-					&& search_values.redirect_url
-		localStorage.setItem('auth0_token_json', auth0_token_json)
+		var auth0__token__json = JSON.stringify(auth0_token)
+		var redirect_url = search_values && search_values.redirect_url
+		localStorage.setItem('auth0__token__json', auth0__token__json)
 		if (redirect_url) {
 			location.href = redirect_url
 		}

@@ -1,5 +1,11 @@
 # @ctx-core/auth0-ui
 
+## 14.0.0
+
+### Major Changes
+
+- extracted svelte components into @ctx-core/auth0-ui-svelte
+
 ## 13.0.1
 
 ### Patch Changes
