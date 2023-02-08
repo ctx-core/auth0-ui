@@ -1,5 +1,11 @@
 # @ctx-core/auth0-ui
 
+## 15.0.0
+
+### Major Changes
+
+- - auth0**ui**o_key: moved to @ctx-core/auth0-spa-svelte: auth0_ui_svelte**ctx**key
+
 ## 14.0.0
 
 ### Major Changes
