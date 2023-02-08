@@ -1,5 +1,11 @@
 # @ctx-core/auth0-ui
 
+## 13.0.1
+
+### Patch Changes
+
+- @ctx-core/auth0-management: ^9.1.7 -> ^9.1.8
+
 ## 13.0.0
 
 ### Major Changes
