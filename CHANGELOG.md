@@ -1,5 +1,11 @@
 # @ctx-core/auth0-ui
 
+## 15.0.1
+
+### Patch Changes
+
+- variable names: auth0_token=>auth0\_\_token
+
 ## 15.0.0
 
 ### Major Changes

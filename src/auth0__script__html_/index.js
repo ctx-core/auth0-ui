@@ -6,8 +6,8 @@ export function auth0__script__html_() {
 		var search = location.search
 		var search_values = _values(search.substr(1))
 		var hash = location.hash
-		var auth0_token = _values(hash.substr(1))
-		var auth0__token__json = JSON.stringify(auth0_token)
+		var auth0__token = _values(hash.substr(1))
+		var auth0__token__json = JSON.stringify(auth0__token)
 		var redirect_url = search_values && search_values.redirect_url
 		localStorage.setItem('auth0__token__json', auth0__token__json)
 		if (redirect_url) {
