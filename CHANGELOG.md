@@ -1,5 +1,11 @@
 # @ctx-core/auth0-ui
 
+## 15.0.21
+
+### Patch Changes
+
+- @ctx-core/monorepo: ^20.3.3 -> ^20.3.4
+
 ## 15.0.20
 
 ### Patch Changes
