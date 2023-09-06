@@ -1,5 +1,11 @@
 # @ctx-core/auth0-ui
 
+## 15.0.22
+
+### Patch Changes
+
+- version bump
+
 ## 15.0.21
 
 ### Patch Changes
