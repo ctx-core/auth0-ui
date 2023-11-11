@@ -1,5 +1,20 @@
 # @ctx-core/auth0-ui
 
+## 15.1.0
+
+### Minor Changes
+
+- fix:types package.json exports
+- tsconfig:
+
+      "module": "ESNext"
+      "moduleResolution": "nodenext"
+      "target": "ESNext"
+
+### Patch Changes
+
+- package.json: - "svelte": "./src/index.js"
+
 ## 15.0.23
 
 ### Patch Changes
@@ -2731,7 +2746,7 @@
 
 ### Patch Changes
 
-- fix: Auth0: import { ctx\_ } from '@ctx-core/object'
+- fix: Auth0: import { ctx\_ } from 'ctx-core'
 
 ## 12.1.12
 
@@ -3201,7 +3216,7 @@
 
 ### Patch Changes
 
-- - index.browser.js
+- - index.js
 
 ## 11.0.2
 
