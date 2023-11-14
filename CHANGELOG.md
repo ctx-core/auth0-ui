@@ -1,5 +1,11 @@
 # @ctx-core/auth0-ui
 
+## 15.1.3
+
+### Patch Changes
+
+- package.json: files: + \*.js
+
 ## 15.1.2
 
 ### Patch Changes
