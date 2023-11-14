@@ -1,5 +1,11 @@
 # @ctx-core/auth0-ui
 
+## 15.1.2
+
+### Patch Changes
+
+- fix: missing tsconfig.json
+
 ## 15.1.1
 
 ### Patch Changes
