@@ -1,5 +1,11 @@
 # @ctx-core/auth0-ui
 
+## 15.1.1
+
+### Patch Changes
+
+- tsx: ^4.0.0 -> ^4.1.2
+
 ## 15.1.0
 
 ### Minor Changes
