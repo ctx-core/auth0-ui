@@ -1,5 +1,11 @@
 # @ctx-core/auth0-ui
 
+## 15.1.9
+
+### Patch Changes
+
+- consolidate dependencies
+
 ## 15.1.8
 
 ### Patch Changes
