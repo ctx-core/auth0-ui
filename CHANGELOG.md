@@ -1,5 +1,11 @@
 # @ctx-core/auth0-ui
 
+## 15.1.12
+
+### Patch Changes
+
+- package.json: author: url,email
+
 ## 15.1.11
 
 ### Patch Changes
