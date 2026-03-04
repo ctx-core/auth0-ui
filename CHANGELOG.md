@@ -1,5 +1,13 @@
 # @ctx-core/auth0-ui
 
+## 15.1.13
+
+### Patch Changes
+
+- c8: ^10.1.3 -> ^11.0.0
+- check-dts: ^0.8.2 -> ^0.9.0
+- tsx: ^4.20.6 -> ^4.21.0
+
 ## 15.1.12
 
 ### Patch Changes
