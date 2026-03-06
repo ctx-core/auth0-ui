@@ -1,5 +1,11 @@
 # @ctx-core/auth0-ui
 
+## 15.1.14
+
+### Patch Changes
+
+- chore: migrate scripts from pnpm to bun
+
 ## 15.1.13
 
 ### Patch Changes
